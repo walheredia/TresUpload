@@ -10,3 +10,11 @@ C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\bin\Debug\TresUpload.pdb
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.csprojResolveAssemblyReference.cache
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.exe
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.pdb
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\bin\Debug\TresUpload.exe.config
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\bin\Debug\TresUpload.exe
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\bin\Debug\TresUpload.pdb
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.csprojResolveAssemblyReference.cache
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.MainForm.resources
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.csproj.GenerateResource.Cache
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.exe
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.pdb
