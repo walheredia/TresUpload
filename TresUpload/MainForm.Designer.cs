@@ -14,8 +14,11 @@ namespace TresUpload
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem teamToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem activeDirectoryToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem azureToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -38,38 +41,69 @@ namespace TresUpload
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.teamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.activeDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.azureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// button1
+			// menuStrip1
 			// 
-			this.button1.Location = new System.Drawing.Point(78, 35);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(113, 49);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "AD";
-			this.button1.UseVisualStyleBackColor = true;
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.teamToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(768, 24);
+			this.menuStrip1.TabIndex = 0;
+			this.menuStrip1.Text = "MenuStrip_Principal";
 			// 
-			// button2
+			// teamToolStripMenuItem
 			// 
-			this.button2.Location = new System.Drawing.Point(78, 102);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(113, 49);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "AZ";
-			this.button2.UseVisualStyleBackColor = true;
+			this.teamToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.activeDirectoryToolStripMenuItem,
+			this.azureToolStripMenuItem,
+			this.closeToolStripMenuItem});
+			this.teamToolStripMenuItem.Name = "teamToolStripMenuItem";
+			this.teamToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+			this.teamToolStripMenuItem.Text = "Team";
+			// 
+			// activeDirectoryToolStripMenuItem
+			// 
+			this.activeDirectoryToolStripMenuItem.Name = "activeDirectoryToolStripMenuItem";
+			this.activeDirectoryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.activeDirectoryToolStripMenuItem.Text = "Active Directory";
+			this.activeDirectoryToolStripMenuItem.Click += new System.EventHandler(this.ActiveDirectoryToolStripMenuItemClick);
+			// 
+			// azureToolStripMenuItem
+			// 
+			this.azureToolStripMenuItem.Name = "azureToolStripMenuItem";
+			this.azureToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.azureToolStripMenuItem.Text = "Azure";
+			// 
+			// closeToolStripMenuItem
+			// 
+			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.closeToolStripMenuItem.Text = "Close";
+			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.ClientSize = new System.Drawing.Size(768, 599);
+			this.Controls.Add(this.menuStrip1);
+			this.IsMdiContainer = true;
+			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "TresUpload";
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 	}

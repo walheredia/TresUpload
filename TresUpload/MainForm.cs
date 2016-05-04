@@ -30,5 +30,18 @@ namespace TresUpload
 			//
 			//asd
 		}
+		void ActiveDirectoryToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			AD form = new AD();
+			// show the newly created instance
+			form.MdiParent = this;
+			form.WindowState = FormWindowState.Maximized;			
+			form.Show();
+			
+		}
+		void CloseToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
