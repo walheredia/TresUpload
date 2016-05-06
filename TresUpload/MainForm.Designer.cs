@@ -81,6 +81,7 @@ namespace TresUpload
 			this.azureToolStripMenuItem.Name = "azureToolStripMenuItem";
 			this.azureToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
 			this.azureToolStripMenuItem.Text = "Azure";
+			this.azureToolStripMenuItem.Click += new System.EventHandler(this.AzureToolStripMenuItemClick);
 			// 
 			// closeToolStripMenuItem
 			// 

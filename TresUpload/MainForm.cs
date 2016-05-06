@@ -39,6 +39,14 @@ namespace TresUpload
 			form.Show();
 			
 		}
+		void AzureToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Azure form = new Azure();
+			// show the newly created instance
+			form.MdiParent = this;
+			form.WindowState = FormWindowState.Maximized;			
+			form.Show();
+		}
 		void CloseToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			this.Close();

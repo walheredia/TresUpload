@@ -54,6 +54,10 @@
     <Compile Include="AD.Designer.cs">
       <DependentUpon>AD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Azure.cs" />
+    <Compile Include="Azure.Designer.cs">
+      <DependentUpon>Azure.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -67,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AD.resx">
       <DependentUpon>AD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Azure.resx">
+      <DependentUpon>Azure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
