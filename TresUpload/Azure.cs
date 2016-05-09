@@ -9,6 +9,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.IO;
 
 namespace TresUpload
 {
@@ -17,6 +19,9 @@ namespace TresUpload
 	/// </summary>
 	public partial class Azure : Form
 	{
+		string[] target_langcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] target_langcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
+		
 		public Azure()
 		{
 			//
@@ -27,21 +32,102 @@ namespace TresUpload
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+		}		
+		void Btn_CheckAllClick(object sender, EventArgs e)
+		{
+			foreach (Control c in this.GrBox_Select_Components.Controls)
+            {                
+                if(c is CheckBox) 
+                {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Checked = true;                
+                }
+            }
+		}
+		void Btn_UnCheckAllClick(object sender, EventArgs e)
+		{
+			foreach (Control c in this.GrBox_Select_Components.Controls)
+            {                
+                if(c is CheckBox) 
+                {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Checked = false;                
+                }
+            }
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-			foreach(Control ctrl in LblTitle_Panel1.Controls)
-			{
-
-			      if(ctrl.GetType().ToString().ToUpper() == "CHECKBOX")
-			     {
-			             CheckBox cbx = (CheckBox)ctrl;
-			             if (cbx.Checked=true) {
-			             	cbx.Checked=false;
-			             }
-			      }
-			}
-	    
+			foreach (Control c in this.GrBox_Select_Components.Controls)
+            {                
+                if(c is CheckBox) 
+                {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    if (chk.Checked == true)
+                    {
+                    	chk.Checked = false;
+                    }
+                    else
+                    {	
+                    	chk.Checked = true;
+                    }
+                }
+            }
 		}
+		
+		//Function to disable all Checkbox
+		void disable()
+		{
+			foreach (Control c in this.GrBox_Select_Components.Controls)
+            {                
+                if(c is CheckBox) 
+                {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Enabled = false;
+                }
+            }
+		}
+		
+		//Function to enable all checkbox
+		void enable()
+		{
+			foreach (Control c in this.GrBox_Select_Components.Controls)
+            {                
+                if(c is CheckBox) 
+                {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Enabled = true;
+                }
+            }
+		}
+		
+		void Btn_CreateStructureClick(object sender, EventArgs e)
+		{
+			disable();
+			pb_structure.MaximumSize = target_langcode_17.Length;
+			pb_structure.Value = 0;
+			fbd_createStructure.SelectedPath = "C:/Users/v-wahere/Desktop/TresUpload";
+			fbd_createStructure.Description = "Please select the directory where you want to create the new structure";
+			fbd_createStructure.SelectedPath = "";
+			fbd_createStructure.ShowDialog();
+			if (fbd_createStructure.SelectedPath.ToString() != "") {
+				Directory.SetCurrentDirectory(fbd_createStructure.SelectedPath.ToString());
+				for (int i=0; i<target_langcode_17.Length; i++)
+				{
+					pb_structure.Value = pb_structure.Value + 1;
+					if (chkb_SchedulerExtension.Checked)
+					{
+						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Scheduler Extension/");
+					}
+					pb_structure.Value = pb_structure + 1;
+				}
+				MessageBox.Show("Directory Succesfully Created");
+				pb_structure.Value = 0;
+			}
+		}		
 	}
 }

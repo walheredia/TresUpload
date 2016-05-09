@@ -118,16 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_Invert.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAPcAAAD3AbkPSH8AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABIElEQVRYR+2XMQ6CUBBEKYw3sTDxAl6Ag9ByA3p6C1uuQ2thYuFFjLHAGYLJsiwhi5ENiZu8Qp2/
-        M/JX8CdN0ySoFNTgAfjGL6EHvdLOuzXXoqWgd5vG+nAJ6P31ZT85uYDPWnr3mrnhPnpAMYTs0XvhRhtM
-        gVp/gDuoQA6OgIN0BhnYWaYS1OwAT1CAjWooNS9Qgq3USFCzAtzAYaSh1pIr2I/o3QH4zU1zInQahhhc
-        CZQ7QKGbSJRWUxp6VwAOXG/PNUJrwZnoDSbKFaCSiy2U3iJTeleAXC62UHqLs9K7AhzlYgult6iVfl0B
-        wrcgfAjDf4Yk9EZEwm/FJPRh9CH0cSwJ+0Niog2mQP0DDAKEH0zCj2axh9NuX4KO503yBtcVv2p2hdse
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        9wAAAPcBuQ9IfwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEgSURBVFhH7Zcx
+        DoJQEEQpjDexMPECXoCD0HIDenoLW65Da2Fi4UWMscAZgsmyLCGLkQ2Jm7xCnb8z8lfwJ03TJKgU1OAB
+        +MYvoQe90s67NdeipaB3m8b6cAno/fVlPzm5gM9aeveaueE+ekAxhOzRe+FGG0yBWn+AO6hADo6Ag3QG
+        GdhZphLU7ABPUICNaig1L1CCrdRIULMC3MBhpKHWkivYj+jdAfjNTXMidBqGGFwJlDtAoZtIlFZTGnpX
+        AA5cb881QmvBmegNJsoVoJKLLZTeIlN6V4BcLrZQeouz0rsCHOViC6W3qJV+XQHCtyB8CMN/hiT0RkTC
+        b8Uk9GH0IfRxLAn7Q2KiDaZA/QMMAoQfTMKPZrGH025fgo7nTfIG1xW/anaF2x4AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="fbd_createStructure.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
