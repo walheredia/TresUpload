@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        9wAAAPcBuQ9IfwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEgSURBVFhH7Zcx
+        DoJQEEQpjDexMPECXoCD0HIDenoLW65Da2Fi4UWMscAZgsmyLCGLkQ2Jm7xCnb8z8lfwJ03TJKgU1OAB
+        +MYvoQe90s67NdeipaB3m8b6cAno/fVlPzm5gM9aeveaueE+ekAxhOzRe+FGG0yBWn+AO6hADo6Ag3QG
+        GdhZphLU7ABPUICNaig1L1CCrdRIULMC3MBhpKHWkivYj+jdAfjNTXMidBqGGFwJlDtAoZtIlFZTGnpX
+        AA5cb881QmvBmegNJsoVoJKLLZTeIlN6V4BcLrZQeouz0rsCHOViC6W3qJV+XQHCtyB8CMN/hiT0RkTC
+        b8Uk9GH0IfRxLAn7Q2KiDaZA/QMMAoQfTMKPZrGH025fgo7nTfIG1xW/anaF2x4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_Invert.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        9wAAAPcBuQ9IfwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEgSURBVFhH7Zcx
+        DoJQEEQpjDexMPECXoCD0HIDenoLW65Da2Fi4UWMscAZgsmyLCGLkQ2Jm7xCnb8z8lfwJ03TJKgU1OAB
+        +MYvoQe90s67NdeipaB3m8b6cAno/fVlPzm5gM9aeveaueE+ekAxhOzRe+FGG0yBWn+AO6hADo6Ag3QG
+        GdhZphLU7ABPUICNaig1L1CCrdRIULMC3MBhpKHWkivYj+jdAfjNTXMidBqGGFwJlDtAoZtIlFZTGnpX
+        AA5cb881QmvBmegNJsoVoJKLLZTeIlN6V4BcLrZQeouz0rsCHOViC6W3qJV+XQHCtyB8CMN/hiT0RkTC
+        b8Uk9GH0IfRxLAn7Q2KiDaZA/QMMAoQfTMKPZrGH025fgo7nTfIG1xW/anaF2x4AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

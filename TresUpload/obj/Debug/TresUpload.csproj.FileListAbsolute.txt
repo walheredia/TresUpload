@@ -22,3 +22,5 @@ C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.Mai
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.csproj.GenerateResource.Cache
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.AD.resources
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.Azure.resources
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.AD.resources
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.Azure.resources
