@@ -101,52 +101,58 @@ namespace TresUpload
 				for (int i=0; i<target_langcode_17.Length; i++) {
 					Directory.CreateDirectory("Latest/" + target_langcode_17[i]);
 					if (chkb_SchedulerExtension.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Scheduler Extension/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler Extension/");
 					}
 					if (chkb_SchedulerRP.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Scheduler RP/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler RP/");
 					}
 					if (chkb_RedisChacheRP.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Redis Cache RP/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache RP/");
 					}
 					if (chkb_RedisCacheExtension.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Redis Cache Extension/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache Extension/");
 					}
 					if (chkb_ResourceProviderSDK.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Resource Provider SDK/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Provider SDK/");
 					}
 					if (chkb_ResourceManager.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Resource Manager/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Manager/");
 					}
 					if (chkb_PortalFX.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Portal FX/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal FX/");
 					}
 					if (chkb_InsightNotRP.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Insight NotRP/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight NotRP/");
 					}
 					if (chkb_InsightEvtRP.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Insight EvtRP/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight EvtRP/");
 					}
 					if (chkb_InsightMonRP.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Insight MonRP/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight MonRP/");
 					}
 					if (chkb_InsightCommon.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Insight Common/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Common/");
 					}
 					if (chkb_StoreMarketplace.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Store Marketplace/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Marketplace/");
 					}
 					if (chkb_StoreExperience.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Store Experience/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Experience/");
 					}
 					if (chkb_PortalClassic.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Portal (Classic)/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal (Classic)/");
 					}
 					if (chkb_InsightExtension.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Azure Insight Extension/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Extension/");
 					}
 					if (chkb_WindowsAzurePack.Checked) {
-						Directory.CreateDirectory("Latest/" + target_langcode_17[i] + "/Windows Azure Pack (Classic)/");
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Windows Azure Pack (Classic)/");
+					}
+					if (chkb_B2B.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2B/");
+					}
+					if (chkb_B2C.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2C/");
 					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
