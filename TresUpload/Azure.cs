@@ -99,60 +99,83 @@ namespace TresUpload
 			if (fbd_createStructure.SelectedPath.ToString() != "") {
 				Directory.SetCurrentDirectory(fbd_createStructure.SelectedPath.ToString());
 				for (int i=0; i<target_langcode_17.Length; i++) {
-					Directory.CreateDirectory("Latest/" + target_langcode_17[i]);
-					if (chkb_SchedulerExtension.Checked) {
+					if (chkbx_SchedulerExtension.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler Extension/");
 					}
-					if (chkb_SchedulerRP.Checked) {
+					if (chkbx_SchedulerRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler RP/");
 					}
-					if (chkb_RedisChacheRP.Checked) {
+					if (chkbx_RedisChacheRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache RP/");
 					}
-					if (chkb_RedisCacheExtension.Checked) {
+					if (chkbx_RedisCacheExtension.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache Extension/");
 					}
-					if (chkb_ResourceProviderSDK.Checked) {
+					if (chkbx_ResourceProviderSDK.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Provider SDK/");
 					}
-					if (chkb_ResourceManager.Checked) {
+					if (chkbx_ResourceManager.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Manager/");
 					}
-					if (chkb_PortalFX.Checked) {
+					if (chkbx_PortalFX.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal FX/");
 					}
-					if (chkb_InsightNotRP.Checked) {
+					if (chkbx_InsightNotRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight NotRP/");
 					}
-					if (chkb_InsightEvtRP.Checked) {
+					if (chkbx_InsightEvtRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight EvtRP/");
 					}
-					if (chkb_InsightMonRP.Checked) {
+					if (chkbx_InsightMonRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight MonRP/");
 					}
-					if (chkb_InsightCommon.Checked) {
+					if (chkbx_InsightCommon.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Common/");
 					}
-					if (chkb_StoreMarketplace.Checked) {
+					if (chkbx_StoreMarketplace.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Marketplace/");
 					}
-					if (chkb_StoreExperience.Checked) {
+					if (chkbx_StoreExperience.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Experience/");
 					}
-					if (chkb_PortalClassic.Checked) {
+					if (chkbx_PortalClassic.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal (Classic)/");
 					}
-					if (chkb_InsightExtension.Checked) {
+					if (chkbx_InsightExtension.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Extension/");
 					}
-					if (chkb_WindowsAzurePack.Checked) {
+					if (chkbx_WindowsAzurePack.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Windows Azure Pack (Classic)/");
 					}
-					if (chkb_B2B.Checked) {
+					if (chkbx_B2B.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2B/");
 					}
-					if (chkb_B2C.Checked) {
+					if (chkbx_B2C.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2C/");
+					}
+					if (chkbx_IntuneMAMExtension.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft Intune MAM Extension/");
+					}
+					if (chkbx_DocDB.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure DocDB/");
+					}
+					if (chkbx_AzureSearch.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure Search/");
+					}
+					if (chkbx_SQLDB.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure SQLDB/");
+					}
+					if (chkbx_RBAC.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Role Based Access Control/");
+					}
+					if (chkbx_ADIAM.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD IAM/");
+					}
+					if (chkbx_ADProtectionCenter.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD Protection Center/");
+					}
+					if (chkbx_CloudAppDiscovery.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Cloud App Discovery/");
 					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
