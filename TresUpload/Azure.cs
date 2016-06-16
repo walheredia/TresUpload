@@ -19,9 +19,12 @@ namespace TresUpload
 	/// </summary>
 	public partial class Azure : Form
 	{
+		string[] target_langcode_8 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "zh-CN", "zh-TW"};
+		string[] target_langcode_10 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "ru-RU", "zh-CN", "zh-TW"};
+		string[] target_langcode_13 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pl-PL", "pt-BR", "ru-RU", "tr-TR", "zh-CN", "zh-TW"};
 		string[] target_langcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] target_langcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
-		
+		string[] target_langcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		public Azure()
 		{
 			//
@@ -105,32 +108,9 @@ namespace TresUpload
 					if (chkbx_SchedulerRP.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler RP/");
 					}
-					if (chkbx_RedisChacheRP.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache RP/");
-					}
-					if (chkbx_RedisCacheExtension.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Redis Cache Extension/");
-					}
-					if (chkbx_ResourceProviderSDK.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Provider SDK/");
-					}
-					if (chkbx_ResourceManager.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Resource Manager/");
-					}
+					
 					if (chkbx_PortalFX.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal FX/");
-					}
-					if (chkbx_InsightNotRP.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight NotRP/");
-					}
-					if (chkbx_InsightEvtRP.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight EvtRP/");
-					}
-					if (chkbx_InsightMonRP.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight MonRP/");
-					}
-					if (chkbx_InsightCommon.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Common/");
 					}
 					if (chkbx_StoreMarketplace.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Marketplace/");
@@ -143,9 +123,6 @@ namespace TresUpload
 					}
 					if (chkbx_InsightExtension.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Extension/");
-					}
-					if (chkbx_WindowsAzurePack.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Windows Azure Pack (Classic)/");
 					}
 					if (chkbx_B2B.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2B/");
@@ -177,12 +154,29 @@ namespace TresUpload
 					if (chkbx_CloudAppDiscovery.Checked) {
 						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Cloud App Discovery/");
 					}
+					if (chkbx_ESSO.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft Enterprise Single Sign On/");
+					}
+					if (chkbx_DBOLEDB.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft OLE DB Provider for DB2/");
+					}
+					if (chkbx_HisConnectors.Checked) {
+						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/HIS Connectors/");
+					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
 				MessageBox.Show("Directory Succesfully Created");
 				pb_structure.Value = 0;
 			}
 			enable();
+		}
+		void LblTitle_Panel1Click(object sender, EventArgs e)
+		{
+	
+		}
+		void AzureLoad(object sender, EventArgs e)
+		{
+	
 		}		
 	}
 }
