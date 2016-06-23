@@ -19,12 +19,12 @@ namespace TresUpload
 	/// </summary>
 	public partial class Azure : Form
 	{
-		string[] target_langcode_8 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "zh-CN", "zh-TW"};
-		string[] target_langcode_10 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "ru-RU", "zh-CN", "zh-TW"};
-		string[] target_langcode_13 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pl-PL", "pt-BR", "ru-RU", "tr-TR", "zh-CN", "zh-TW"};
-		string[] target_langcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
-		string[] target_langcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
-		string[] target_langcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_8 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_10 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "ru-RU", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_13 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pl-PL", "pt-BR", "ru-RU", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		public Azure()
 		{
 			//
@@ -93,7 +93,7 @@ namespace TresUpload
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e) {
 			disable();
-			pb_structure.Maximum = target_langcode_17.Length;
+			pb_structure.Maximum = tgt_lcode_8.Length + tgt_lcode_10.Length + tgt_lcode_13.Length + tgt_lcode_17.Length + tgt_lcode_28.Length + tgt_lcode_43.Length;
 			pb_structure.Value = 0;
 			fbd_createStructure.SelectedPath = "C:/Users/v-wahere/Desktop/TresUpload";
 			fbd_createStructure.Description = "Please select the directory where you want to create the new structure";
@@ -101,67 +101,81 @@ namespace TresUpload
 			fbd_createStructure.ShowDialog();
 			if (fbd_createStructure.SelectedPath.ToString() != "") {
 				Directory.SetCurrentDirectory(fbd_createStructure.SelectedPath.ToString());
-				for (int i=0; i<target_langcode_17.Length; i++) {
-					if (chkbx_SchedulerExtension.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler Extension/");
+				for (int i=0; i<tgt_lcode_8.Length; i++) {
+					if (chkbx_ESSO.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_8[i] + "/Microsoft Enterprise Single Sign On/");
 					}
-					if (chkbx_SchedulerRP.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Scheduler RP/");
-					}
-					
-					if (chkbx_PortalFX.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal FX/");
-					}
-					if (chkbx_StoreMarketplace.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Marketplace/");
-					}
-					if (chkbx_StoreExperience.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Store Experience/");
-					}
+					pb_structure.Value = pb_structure.Value + 1;
+				}
+				for (int i=0; i<tgt_lcode_10.Length; i++) {
 					if (chkbx_PortalClassic.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Portal (Classic)/");
-					}
-					if (chkbx_InsightExtension.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Azure Insight Extension/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_10[i] + "/Azure Portal (Classic)/");
 					}
 					if (chkbx_B2B.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2B/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_10[i] + "/AD B2B/");
 					}
-					if (chkbx_B2C.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD B2C/");
+					pb_structure.Value = pb_structure.Value + 1;
+				}
+				for (int i=0; i<tgt_lcode_13.Length; i++) {
+					if (chkbx_DBOLEDB.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_13[i] + "/Microsoft OLE DB Provider for DB2/");
+					}
+					pb_structure.Value = pb_structure.Value + 1;
+				}
+				for (int i=0; i<tgt_lcode_17.Length; i++) {
+					if (chkbx_SchedulerExtension.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Scheduler Extension/");
+					}
+					if (chkbx_SchedulerRP.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Scheduler RP/");
+					}
+					if (chkbx_PortalFX.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Portal FX/");
+					}
+					if (chkbx_StoreMarketplace.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Store Marketplace/");
+					}
+					if (chkbx_StoreExperience.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Store Experience/");
+					}
+					if (chkbx_InsightExtension.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Azure Insight Extension/");
 					}
 					if (chkbx_IntuneMAMExtension.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft Intune MAM Extension/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Microsoft Intune MAM Extension/");
 					}
 					if (chkbx_DocDB.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure DocDB/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/DataInsight Azure DocDB/");
 					}
 					if (chkbx_AzureSearch.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure Search/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/DataInsight Azure Search/");
 					}
 					if (chkbx_SQLDB.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/DataInsight Azure SQLDB/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/DataInsight Azure SQLDB/");
 					}
 					if (chkbx_RBAC.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Role Based Access Control/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Role Based Access Control/");
 					}
 					if (chkbx_ADIAM.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD IAM/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/AD IAM/");
 					}
 					if (chkbx_ADProtectionCenter.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/AD Protection Center/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/AD Protection Center/");
 					}
 					if (chkbx_CloudAppDiscovery.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Cloud App Discovery/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_17[i] + "/Cloud App Discovery/");
 					}
-					if (chkbx_ESSO.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft Enterprise Single Sign On/");
+					pb_structure.Value = pb_structure.Value + 1;
+				}
+				for (int i=0; i<tgt_lcode_28.Length; i++) {
+					if (chkbx_B2C.Checked) {
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_28[i] + "/AD B2C/");
 					}
-					if (chkbx_DBOLEDB.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/Microsoft OLE DB Provider for DB2/");
-					}
+					pb_structure.Value = pb_structure.Value + 1;
+				}
+				for (int i=0; i<tgt_lcode_43.Length; i++) {
 					if (chkbx_HisConnectors.Checked) {
-						Directory.CreateDirectory("Azure/month/" + target_langcode_17[i] + "/HIS Connectors/");
+						Directory.CreateDirectory("Azure/month/" + tgt_lcode_43[i] + "/HIS Connectors/");
 					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
