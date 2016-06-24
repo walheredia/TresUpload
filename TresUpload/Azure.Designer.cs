@@ -45,6 +45,15 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chkbx_HisConnectors;
 		private System.Windows.Forms.CheckBox chkbx_DBOLEDB;
 		private System.Windows.Forms.CheckBox chkbx_ESSO;
+		private System.Windows.Forms.MaskedTextBox txt_yearmonth;month;
+		private System.Windows.Forms.Label lbl_yearmonth;
+		private System.Windows.Forms.Button btn_copyfiles;
+		private System.Windows.Forms.ProgressBar pb_copyfiles;
+		private System.Windows.Forms.Label lvl_eventlog;
+		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.FolderBrowserDialog fbd_copyfiles;
+		private System.Windows.Forms.Label lbl_structuredescription;
+		private System.Windows.Forms.Label lbl_structuredescription;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -65,11 +74,12 @@ namespace TresUpload
 		/// Do not change the method contents inside the source code editor. The Forms designer might
 		/// not be able to load this method if it was changed manually.
 		/// </summary>
-		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Azure));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.lbl_structuredescription = new System.Windows.Forms.Label();
+			this.lbl_yearmonth = new System.Windows.Forms.Label();
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.pb_structure = new System.Windows.Forms.ProgressBar();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
@@ -99,6 +109,12 @@ namespace TresUpload
 			this.LblTitle_Panel1 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
+			this.txt_yearmonth = new System.Windows.Forms.MaskedTextBox();
+			this.listView1 = new System.Windows.Forms.ListView();
+			this.lvl_eventlog = new System.Windows.Forms.Label();
+			this.pb_copyfiles = new System.Windows.Forms.ProgressBar();
+			this.btn_copyfiles = new System.Windows.Forms.Button();
+			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -114,7 +130,7 @@ namespace TresUpload
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1147, 663);
+			this.panel1.Size = new System.Drawing.Size(1257, 614);
 			this.panel1.TabIndex = 0;
 			// 
 			// splitContainer1
@@ -125,6 +141,9 @@ namespace TresUpload
 			// 
 			// splitContainer1.Panel1
 			// 
+			this.splitContainer1.Panel1.Controls.Add(this.txt_yearmonth);
+			this.splitContainer1.Panel1.Controls.Add(this.lbl_structuredescription);
+			this.splitContainer1.Panel1.Controls.Add(this.lbl_yearmonth);
 			this.splitContainer1.Panel1.Controls.Add(this.btn_CreateStructure);
 			this.splitContainer1.Panel1.Controls.Add(this.pb_structure);
 			this.splitContainer1.Panel1.Controls.Add(this.GrBox_Select_Components);
@@ -132,14 +151,38 @@ namespace TresUpload
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.btn_copyfiles);
+			this.splitContainer1.Panel2.Controls.Add(this.pb_copyfiles);
+			this.splitContainer1.Panel2.Controls.Add(this.lvl_eventlog);
+			this.splitContainer1.Panel2.Controls.Add(this.listView1);
 			this.splitContainer1.Panel2.Controls.Add(this.label1);
-			this.splitContainer1.Size = new System.Drawing.Size(1147, 663);
-			this.splitContainer1.SplitterDistance = 614;
+			this.splitContainer1.Size = new System.Drawing.Size(1257, 614);
+			this.splitContainer1.SplitterDistance = 672;
 			this.splitContainer1.TabIndex = 0;
+			// 
+			// lbl_structuredescription
+			// 
+			this.lbl_structuredescription.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_structuredescription.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_structuredescription.Location = new System.Drawing.Point(166, 480);
+			this.lbl_structuredescription.Name = "lbl_structuredescription";
+			this.lbl_structuredescription.Size = new System.Drawing.Size(183, 23);
+			this.lbl_structuredescription.TabIndex = 6;
+			this.lbl_structuredescription.Text = "Azure/\'YearMonth\'/Component";
+			// 
+			// lbl_yearmonth
+			// 
+			this.lbl_yearmonth.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_yearmonth.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_yearmonth.Location = new System.Drawing.Point(23, 481);
+			this.lbl_yearmonth.Name = "lbl_yearmonth";
+			this.lbl_yearmonth.Size = new System.Drawing.Size(84, 23);
+			this.lbl_yearmonth.TabIndex = 4;
+			this.lbl_yearmonth.Text = "YearMonth:";
 			// 
 			// btn_CreateStructure
 			// 
-			this.btn_CreateStructure.Location = new System.Drawing.Point(403, 624);
+			this.btn_CreateStructure.Location = new System.Drawing.Point(403, 570);
 			this.btn_CreateStructure.Name = "btn_CreateStructure";
 			this.btn_CreateStructure.Size = new System.Drawing.Size(170, 27);
 			this.btn_CreateStructure.TabIndex = 3;
@@ -149,7 +192,7 @@ namespace TresUpload
 			// 
 			// pb_structure
 			// 
-			this.pb_structure.Location = new System.Drawing.Point(12, 595);
+			this.pb_structure.Location = new System.Drawing.Point(12, 541);
 			this.pb_structure.Name = "pb_structure";
 			this.pb_structure.Size = new System.Drawing.Size(561, 23);
 			this.pb_structure.TabIndex = 2;
@@ -181,7 +224,7 @@ namespace TresUpload
 			this.GrBox_Select_Components.Controls.Add(this.chkbx_SchedulerExtension);
 			this.GrBox_Select_Components.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.GrBox_Select_Components.ForeColor = System.Drawing.Color.SlateBlue;
-			this.GrBox_Select_Components.Location = new System.Drawing.Point(12, 31);
+			this.GrBox_Select_Components.Location = new System.Drawing.Point(12, 55);
 			this.GrBox_Select_Components.MaximumSize = new System.Drawing.Size(561, 392);
 			this.GrBox_Select_Components.MinimumSize = new System.Drawing.Size(561, 392);
 			this.GrBox_Select_Components.Name = "GrBox_Select_Components";
@@ -493,7 +536,7 @@ namespace TresUpload
 			this.LblTitle_Panel1.ForeColor = System.Drawing.Color.SlateBlue;
 			this.LblTitle_Panel1.Location = new System.Drawing.Point(0, 0);
 			this.LblTitle_Panel1.Name = "LblTitle_Panel1";
-			this.LblTitle_Panel1.Size = new System.Drawing.Size(614, 663);
+			this.LblTitle_Panel1.Size = new System.Drawing.Size(672, 614);
 			this.LblTitle_Panel1.TabIndex = 0;
 			this.LblTitle_Panel1.Text = "Please, select components in order to create the structure";
 			this.LblTitle_Panel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -506,22 +549,81 @@ namespace TresUpload
 			this.label1.ForeColor = System.Drawing.Color.SlateBlue;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(529, 663);
+			this.label1.Size = new System.Drawing.Size(581, 614);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Here will be everything related to source files";
+			this.label1.Text = "File Copy Menu";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// txt_yearmonth
+			// 
+			this.txt_yearmonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+			this.txt_yearmonth.Location = new System.Drawing.Point(96, 481);
+			this.txt_yearmonth.Mask = "000000";
+			this.txt_yearmonth.Name = "txt_yearmonth";
+			this.txt_yearmonth.Size = new System.Drawing.Size(64, 22);
+			this.txt_yearmonth.TabIndex = 7;
+			// 
+			// listView1
+			// 
+			this.listView1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.listView1.Enabled = false;
+			this.listView1.Location = new System.Drawing.Point(14, 80);
+			this.listView1.Name = "listView1";
+			this.listView1.Size = new System.Drawing.Size(271, 367);
+			this.listView1.TabIndex = 2;
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			// 
+			// lvl_eventlog
+			// 
+			this.lvl_eventlog.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvl_eventlog.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lvl_eventlog.Location = new System.Drawing.Point(14, 55);
+			this.lvl_eventlog.Name = "lvl_eventlog";
+			this.lvl_eventlog.Size = new System.Drawing.Size(84, 23);
+			this.lvl_eventlog.TabIndex = 5;
+			this.lvl_eventlog.Text = "Event Log";
+			// 
+			// pb_copyfiles
+			// 
+			this.pb_copyfiles.Location = new System.Drawing.Point(14, 541);
+			this.pb_copyfiles.Name = "pb_copyfiles";
+			this.pb_copyfiles.Size = new System.Drawing.Size(561, 23);
+			this.pb_copyfiles.TabIndex = 8;
+			// 
+			// btn_copyfiles
+			// 
+			this.btn_copyfiles.Location = new System.Drawing.Point(405, 570);
+			this.btn_copyfiles.Name = "btn_copyfiles";
+			this.btn_copyfiles.Size = new System.Drawing.Size(170, 27);
+			this.btn_copyfiles.TabIndex = 8;
+			this.btn_copyfiles.Text = "Copy Files";
+			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			// 
 			// Azure
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1147, 663);
+			this.ClientSize = new System.Drawing.Size(1257, 614);
 			this.Controls.Add(this.panel1);
 			this.Name = "Azure";
 			this.Text = "Azure";
 			this.Load += new System.EventHandler(this.AzureLoad);
 			this.panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel1.PerformLayout();
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
+			this.GrBox_Select_Components.ResumeLayout(false);
+			this.ResumeLayout(false);
+
+		}this.Controls.Add(this.panel1);
+			this.Name = "Azure";
+			this.Text = "Azure";
+			this.Load += new System.EventHandler(this.AzureLoad);
+			this.panel1.ResumeLayout(false);
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
