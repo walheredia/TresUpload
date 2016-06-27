@@ -25,7 +25,6 @@ namespace TresUpload
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btn_UnCheckAll;
 		private System.Windows.Forms.CheckBox checkBox25;
-		private System.Windows.Forms.CheckBox chkb_ProtectionCenter;
 		private System.Windows.Forms.CheckBox chbx_IAMUX;
 		private System.Windows.Forms.CheckBox chbx_PIM;
 		private System.Windows.Forms.CheckBox chbx_MIM;
@@ -40,6 +39,13 @@ namespace TresUpload
 		private System.Windows.Forms.Label LblTitle_Panel1;
 		private System.Windows.Forms.ProgressBar pb_structure;
 		private System.Windows.Forms.CheckBox chbx_Rome;
+		private System.Windows.Forms.CheckBox chbx_MFA;
+		private System.Windows.Forms.CheckBox chbx_MFAAgent;
+		private System.Windows.Forms.CheckBox chbx_MFAiPhone;
+		private System.Windows.Forms.CheckBox chbx_MFAAndroid;
+		private System.Windows.Forms.CheckBox chbx_MFAiPhone25;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox chbx_MFAWinPhone;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -66,6 +72,7 @@ namespace TresUpload
 			this.PanelLeft = new System.Windows.Forms.Panel();
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
+			this.chbx_Rome = new System.Windows.Forms.CheckBox();
 			this.button3 = new System.Windows.Forms.Button();
 			this.btn_Invert = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
@@ -73,7 +80,6 @@ namespace TresUpload
 			this.button1 = new System.Windows.Forms.Button();
 			this.btn_UnCheckAll = new System.Windows.Forms.Button();
 			this.checkBox25 = new System.Windows.Forms.CheckBox();
-			this.chkb_ProtectionCenter = new System.Windows.Forms.CheckBox();
 			this.chbx_IAMUX = new System.Windows.Forms.CheckBox();
 			this.chbx_PIM = new System.Windows.Forms.CheckBox();
 			this.chbx_MIM = new System.Windows.Forms.CheckBox();
@@ -88,7 +94,13 @@ namespace TresUpload
 			this.LblTitle_Panel1 = new System.Windows.Forms.Label();
 			this.pb_structure = new System.Windows.Forms.ProgressBar();
 			this.PanelRight = new System.Windows.Forms.Panel();
-			this.chbx_Rome = new System.Windows.Forms.CheckBox();
+			this.chbx_MFAAgent = new System.Windows.Forms.CheckBox();
+			this.chbx_MFA = new System.Windows.Forms.CheckBox();
+			this.chbx_MFAAndroid = new System.Windows.Forms.CheckBox();
+			this.chbx_MFAiPhone = new System.Windows.Forms.CheckBox();
+			this.chbx_MFAiPhone25 = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.chbx_MFAWinPhone = new System.Windows.Forms.CheckBox();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.SuspendLayout();
@@ -116,6 +128,13 @@ namespace TresUpload
 			// 
 			// GrBox_Select_Components
 			// 
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAWinPhone);
+			this.GrBox_Select_Components.Controls.Add(this.checkBox1);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAiPhone25);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAiPhone);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAAndroid);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFA);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAAgent);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_Rome);
 			this.GrBox_Select_Components.Controls.Add(this.button3);
 			this.GrBox_Select_Components.Controls.Add(this.btn_Invert);
@@ -124,7 +143,6 @@ namespace TresUpload
 			this.GrBox_Select_Components.Controls.Add(this.button1);
 			this.GrBox_Select_Components.Controls.Add(this.btn_UnCheckAll);
 			this.GrBox_Select_Components.Controls.Add(this.checkBox25);
-			this.GrBox_Select_Components.Controls.Add(this.chkb_ProtectionCenter);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_IAMUX);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_PIM);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MIM);
@@ -146,6 +164,16 @@ namespace TresUpload
 			this.GrBox_Select_Components.TabIndex = 5;
 			this.GrBox_Select_Components.TabStop = false;
 			this.GrBox_Select_Components.Text = "Check components";
+			// 
+			// chbx_Rome
+			// 
+			this.chbx_Rome.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_Rome.Location = new System.Drawing.Point(7, 234);
+			this.chbx_Rome.Name = "chbx_Rome";
+			this.chbx_Rome.Size = new System.Drawing.Size(179, 24);
+			this.chbx_Rome.TabIndex = 30;
+			this.chbx_Rome.Text = "Azure Security Center (17)";
+			this.chbx_Rome.UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
@@ -219,25 +247,12 @@ namespace TresUpload
 			this.checkBox25.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.checkBox25.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.checkBox25.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBox25.Location = new System.Drawing.Point(381, 25);
+			this.checkBox25.Location = new System.Drawing.Point(374, 255);
 			this.checkBox25.Name = "checkBox25";
 			this.checkBox25.Size = new System.Drawing.Size(175, 24);
 			this.checkBox25.TabIndex = 24;
 			this.checkBox25.Text = "AD Protection Center";
 			this.checkBox25.UseVisualStyleBackColor = true;
-			// 
-			// chkb_ProtectionCenter
-			// 
-			this.chkb_ProtectionCenter.Checked = true;
-			this.chkb_ProtectionCenter.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkb_ProtectionCenter.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.chkb_ProtectionCenter.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkb_ProtectionCenter.Location = new System.Drawing.Point(380, 25);
-			this.chkb_ProtectionCenter.Name = "chkb_ProtectionCenter";
-			this.chkb_ProtectionCenter.Size = new System.Drawing.Size(175, 24);
-			this.chkb_ProtectionCenter.TabIndex = 24;
-			this.chkb_ProtectionCenter.Text = "AD Protection Center";
-			this.chkb_ProtectionCenter.UseVisualStyleBackColor = true;
 			// 
 			// chbx_IAMUX
 			// 
@@ -408,14 +423,75 @@ namespace TresUpload
 			this.PanelRight.Size = new System.Drawing.Size(518, 626);
 			this.PanelRight.TabIndex = 1;
 			// 
-			// chbx_Rome
+			// chbx_MFAAgent
 			// 
-			this.chbx_Rome.Location = new System.Drawing.Point(7, 234);
-			this.chbx_Rome.Name = "chbx_Rome";
-			this.chbx_Rome.Size = new System.Drawing.Size(179, 24);
-			this.chbx_Rome.TabIndex = 30;
-			this.chbx_Rome.Text = "Azure Security Center (17)";
-			this.chbx_Rome.UseVisualStyleBackColor = true;
+			this.chbx_MFAAgent.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFAAgent.Location = new System.Drawing.Point(8, 295);
+			this.chbx_MFAAgent.Name = "chbx_MFAAgent";
+			this.chbx_MFAAgent.Size = new System.Drawing.Size(141, 24);
+			this.chbx_MFAAgent.TabIndex = 31;
+			this.chbx_MFAAgent.Text = "MFA Agent (17)";
+			this.chbx_MFAAgent.UseVisualStyleBackColor = true;
+			// 
+			// chbx_MFA
+			// 
+			this.chbx_MFA.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFA.Location = new System.Drawing.Point(8, 326);
+			this.chbx_MFA.Name = "chbx_MFA";
+			this.chbx_MFA.Size = new System.Drawing.Size(104, 24);
+			this.chbx_MFA.TabIndex = 32;
+			this.chbx_MFA.Text = "MFA (43)";
+			this.chbx_MFA.UseVisualStyleBackColor = true;
+			// 
+			// chbx_MFAAndroid
+			// 
+			this.chbx_MFAAndroid.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFAAndroid.Location = new System.Drawing.Point(374, 24);
+			this.chbx_MFAAndroid.Name = "chbx_MFAAndroid";
+			this.chbx_MFAAndroid.Size = new System.Drawing.Size(145, 24);
+			this.chbx_MFAAndroid.TabIndex = 33;
+			this.chbx_MFAAndroid.Text = "MFA Android (43)";
+			this.chbx_MFAAndroid.UseVisualStyleBackColor = true;
+			// 
+			// chbx_MFAiPhone
+			// 
+			this.chbx_MFAiPhone.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFAiPhone.Location = new System.Drawing.Point(374, 55);
+			this.chbx_MFAiPhone.Name = "chbx_MFAiPhone";
+			this.chbx_MFAiPhone.Size = new System.Drawing.Size(125, 24);
+			this.chbx_MFAiPhone.TabIndex = 34;
+			this.chbx_MFAiPhone.Text = "MFA iPhone (43)";
+			this.chbx_MFAiPhone.UseVisualStyleBackColor = true;
+			// 
+			// chbx_MFAiPhone25
+			// 
+			this.chbx_MFAiPhone25.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFAiPhone25.Location = new System.Drawing.Point(374, 85);
+			this.chbx_MFAiPhone25.Name = "chbx_MFAiPhone25";
+			this.chbx_MFAiPhone25.Size = new System.Drawing.Size(125, 24);
+			this.chbx_MFAiPhone25.TabIndex = 35;
+			this.chbx_MFAiPhone25.Text = "MFA iPhone (25)";
+			this.chbx_MFAiPhone25.UseVisualStyleBackColor = true;
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.checkBox1.Location = new System.Drawing.Point(374, 115);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(125, 24);
+			this.checkBox1.TabIndex = 36;
+			this.checkBox1.Text = "MFA iPhone (25)";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// chbx_MFAWinPhone
+			// 
+			this.chbx_MFAWinPhone.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFAWinPhone.Location = new System.Drawing.Point(374, 145);
+			this.chbx_MFAWinPhone.Name = "chbx_MFAWinPhone";
+			this.chbx_MFAWinPhone.Size = new System.Drawing.Size(125, 24);
+			this.chbx_MFAWinPhone.TabIndex = 37;
+			this.chbx_MFAWinPhone.Text = "MFA WinPhone (61)";
+			this.chbx_MFAWinPhone.UseVisualStyleBackColor = true;
 			// 
 			// AD
 			// 
