@@ -46,7 +46,7 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chkbx_DBOLEDB;
 		private System.Windows.Forms.CheckBox chkbx_ESSO;
 		private System.Windows.Forms.Button btn_copyfiles;
-		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.ProgressBar pb_copyfiles;
 		private System.Windows.Forms.Label lbl_example_yearmonth;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.MaskedTextBox mtb_yearmonth;
@@ -111,7 +111,7 @@ namespace TresUpload
 			this.lbl_eventlog = new System.Windows.Forms.Label();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.pb_copyfiles = new System.Windows.Forms.ProgressBar();
 			this.label1 = new System.Windows.Forms.Label();
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
@@ -154,7 +154,7 @@ namespace TresUpload
 			this.splitContainer1.Panel2.Controls.Add(this.lbl_eventlog);
 			this.splitContainer1.Panel2.Controls.Add(this.listView1);
 			this.splitContainer1.Panel2.Controls.Add(this.btn_copyfiles);
-			this.splitContainer1.Panel2.Controls.Add(this.progressBar1);
+			this.splitContainer1.Panel2.Controls.Add(this.pb_copyfiles);
 			this.splitContainer1.Panel2.Controls.Add(this.label1);
 			this.splitContainer1.Size = new System.Drawing.Size(1262, 663);
 			this.splitContainer1.SplitterDistance = 675;
@@ -565,9 +565,10 @@ namespace TresUpload
 			// 
 			this.listView1.Location = new System.Drawing.Point(10, 56);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(257, 367);
+			this.listView1.Size = new System.Drawing.Size(561, 367);
 			this.listView1.TabIndex = 6;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.View = System.Windows.Forms.View.List;
 			// 
 			// btn_copyfiles
 			// 
@@ -579,12 +580,12 @@ namespace TresUpload
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
 			// 
-			// progressBar1
+			// pb_copyfiles
 			// 
-			this.progressBar1.Location = new System.Drawing.Point(10, 595);
-			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(561, 23);
-			this.progressBar1.TabIndex = 4;
+			this.pb_copyfiles.Location = new System.Drawing.Point(10, 595);
+			this.pb_copyfiles.Name = "pb_copyfiles";
+			this.pb_copyfiles.Size = new System.Drawing.Size(561, 23);
+			this.pb_copyfiles.TabIndex = 4;
 			// 
 			// label1
 			// 
