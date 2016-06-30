@@ -215,7 +215,6 @@ namespace TresUpload
 			if (fbd_copyfiles.ShowDialog() == DialogResult.OK) {
 				src_files = fbd_copyfiles.SelectedPath.ToString();
 				
-				//for Files with EOL= 8
 				try {
 					if (chkbx_ESSO.Checked) {
 						ESSO();
@@ -226,14 +225,13 @@ namespace TresUpload
 					if (chkbx_B2B.Checked) {
 						B2B();
 					}
-					
+					if (chkbx_DBOLEDB.Checked) {
+						OLEDB();
+					}					
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
-				}
-				
-				//for Files with EOL= 10
-				
+				}				
 				
 				
 				pb_copyfiles.Value = 0;
@@ -241,6 +239,7 @@ namespace TresUpload
 
 			}					
 		}
+		//EOL=8
 		public void ESSO(){
 		    for (int i = 0; i < src_lcode_8.Length; i++) {
 				string srcpath = src_files + @"/Windows Server OOBs/ESSO/V10/Alternative/"+ src_lcode_8[i] + "/tgt/";
@@ -257,6 +256,7 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Microsoft Enterprise Single Sign On - Success - (56 lcl files per locate, 448 in total)");
 		}
+		//EOL=10
 		public void PortalClassic(){
 			for (int i = 0; i < src_lcode_10.Length; i++) {
 				string srcpath = src_files + @"/azure/Azure_Portal_vCurrent/OnGoing/AuxPortal_n_f5/auxportal/Localization/LCL/"+ src_lcode_10[i] + "/";
@@ -273,6 +273,7 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
 		}
+		//EOL=10
 		public void B2B(){
 			for (int i = 0; i < src_lcode_10_short.Length; i++) {
 				string srcpath = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocCommon/lba/"+ src_lcode_10_short[i] + "/B2BLocCommon/lcl/";
@@ -312,6 +313,23 @@ namespace TresUpload
 		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
 			}
 			listView1.Items.Add("AD B2B - Success - (8 lcl files per locate, 80 in total)");
+		}
+		//EOL=13
+		public void OLEDB(){
+		    for (int i = 0; i < src_lcode_13.Length; i++) {
+				string srcpath = src_files + @"/Windows Server OOBs/DB2OLEDB/V10/Alternative/"+ src_lcode_13[i] + "/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_13[i] + "/Microsoft OLE DB Provider for DB2/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Microsoft OLE DB Provider for DB2 - Success - (31 lcl files per locate, 403 in total)");
 		}
 	}
 }
