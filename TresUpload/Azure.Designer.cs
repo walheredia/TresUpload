@@ -274,7 +274,7 @@ namespace TresUpload
 			this.chkbx_ESSO.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ESSO.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ESSO.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ESSO.Location = new System.Drawing.Point(218, 174);
+			this.chkbx_ESSO.Location = new System.Drawing.Point(6, 24);
 			this.chkbx_ESSO.Name = "chkbx_ESSO";
 			this.chkbx_ESSO.Size = new System.Drawing.Size(224, 24);
 			this.chkbx_ESSO.TabIndex = 30;
@@ -362,7 +362,7 @@ namespace TresUpload
 			this.chkbx_RBAC.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_RBAC.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_RBAC.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_RBAC.Location = new System.Drawing.Point(218, 54);
+			this.chkbx_RBAC.Location = new System.Drawing.Point(244, 54);
 			this.chkbx_RBAC.Name = "chkbx_RBAC";
 			this.chkbx_RBAC.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_RBAC.TabIndex = 22;
@@ -375,7 +375,7 @@ namespace TresUpload
 			this.chkbx_SQLDB.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SQLDB.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SQLDB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SQLDB.Location = new System.Drawing.Point(218, 25);
+			this.chkbx_SQLDB.Location = new System.Drawing.Point(235, 24);
 			this.chkbx_SQLDB.Name = "chkbx_SQLDB";
 			this.chkbx_SQLDB.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_SQLDB.TabIndex = 21;
@@ -440,7 +440,7 @@ namespace TresUpload
 			this.chkbx_B2B.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_B2B.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_B2B.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_B2B.Location = new System.Drawing.Point(5, 234);
+			this.chkbx_B2B.Location = new System.Drawing.Point(6, 84);
 			this.chkbx_B2B.Name = "chkbx_B2B";
 			this.chkbx_B2B.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_B2B.TabIndex = 16;
@@ -466,7 +466,7 @@ namespace TresUpload
 			this.chkbx_PortalClassic.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_PortalClassic.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_PortalClassic.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_PortalClassic.Location = new System.Drawing.Point(5, 174);
+			this.chkbx_PortalClassic.Location = new System.Drawing.Point(6, 54);
 			this.chkbx_PortalClassic.Name = "chkbx_PortalClassic";
 			this.chkbx_PortalClassic.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_PortalClassic.TabIndex = 13;
@@ -505,7 +505,7 @@ namespace TresUpload
 			this.chkbx_PortalFX.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_PortalFX.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_PortalFX.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_PortalFX.Location = new System.Drawing.Point(5, 84);
+			this.chkbx_PortalFX.Location = new System.Drawing.Point(5, 174);
 			this.chkbx_PortalFX.Name = "chkbx_PortalFX";
 			this.chkbx_PortalFX.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_PortalFX.TabIndex = 6;
@@ -518,7 +518,7 @@ namespace TresUpload
 			this.chkbx_SchedulerRP.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SchedulerRP.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SchedulerRP.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SchedulerRP.Location = new System.Drawing.Point(5, 54);
+			this.chkbx_SchedulerRP.Location = new System.Drawing.Point(218, 174);
 			this.chkbx_SchedulerRP.Name = "chkbx_SchedulerRP";
 			this.chkbx_SchedulerRP.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_SchedulerRP.TabIndex = 1;
@@ -531,7 +531,7 @@ namespace TresUpload
 			this.chkbx_SchedulerExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SchedulerExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SchedulerExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SchedulerExtension.Location = new System.Drawing.Point(5, 25);
+			this.chkbx_SchedulerExtension.Location = new System.Drawing.Point(218, 264);
 			this.chkbx_SchedulerExtension.Name = "chkbx_SchedulerExtension";
 			this.chkbx_SchedulerExtension.Size = new System.Drawing.Size(180, 24);
 			this.chkbx_SchedulerExtension.TabIndex = 0;

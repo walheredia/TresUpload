@@ -33,6 +33,8 @@ namespace TresUpload
 		string[] src_lcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
 		string[] src_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		
+		string[] src_lcode_10_short = {"de", "es", "fr", "it", "ja", "ko", "pt-BR", "ru", "zh-HANS", "zh-HANT"};
+	
 		public static string tgt_files = "";
 		public static string src_files = "";
 		
@@ -122,7 +124,7 @@ namespace TresUpload
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/Azure Portal (Classic)/");
 					}
 					if (chkbx_B2B.Checked) {
-						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/Resources/");
 					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
@@ -214,48 +216,95 @@ namespace TresUpload
 				src_files = fbd_copyfiles.SelectedPath.ToString();
 				
 				//for Files with EOL= 8
-				for (int i = 0; i < src_lcode_8.Length; i++) {
-					string srcpath = src_files + @"/Windows Server OOBs/ESSO/V10/Alternative/"+ src_lcode_8[i] + "/tgt/";
-					string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/Microsoft Enterprise Single Sign On/";		        	
-					string fileName;
-					string destFile;					
-			            
-					string[] files = System.IO.Directory.GetFiles(srcpath);
-		            // Copy the files and overwrite destination files if they already exist.
-		            foreach (string s in files){
-		                // Use static Path methods to extract only the file name from the path.
-		                fileName = System.IO.Path.GetFileName(s);
-		                destFile = System.IO.Path.Combine(tgtpath, fileName);
-		                System.IO.File.Copy(s, destFile, true);
-		            }
-			    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+				try {
+					ESSO();
+					PortalClassic();
+					B2B();
+				} catch (Exception ex) {
+					MessageBox.Show(ex.Message);
+					throw;
 				}
-				listView1.Items.Add("Microsoft Enterprise Single Sign On - Success - (56 lcl files per locate, 448 in total)");
 				
 				//for Files with EOL= 10
-				for (int i = 0; i < src_lcode_10.Length; i++) {
-					string srcpath = src_files + @"/azure/Azure_Portal_vCurrent/OnGoing/AuxPortal_n_f5/auxportal/Localization/LCL/"+ src_lcode_10[i] + "/";
-					string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/Azure Portal (Classic)/";		        	
-					string fileName;
-					string destFile;				
-			            
-					string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
-		            // Copy the files and overwrite destination files if they already exist.
-		            foreach (string s in files){
-		                // Use static Path methods to extract only the file name from the path.
-		                fileName = System.IO.Path.GetFileName(s);
-		                destFile = System.IO.Path.Combine(tgtpath, fileName);
-		                System.IO.File.Copy(s, destFile, true);
-		            }
-			    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
-				}
-				listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
+				
 				
 				
 				pb_copyfiles.Value = 0;
 				MessageBox.Show("Succesfully Done!");
 
-			}			
-		}		
+			}					
+		}
+		public void ESSO(){
+		    for (int i = 0; i < src_lcode_8.Length; i++) {
+				string srcpath = src_files + @"/Windows Server OOBs/ESSO/V10/Alternative/"+ src_lcode_8[i] + "/tgt/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/Microsoft Enterprise Single Sign On/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Microsoft Enterprise Single Sign On - Success - (56 lcl files per locate, 448 in total)");
+		}
+		public void PortalClassic(){
+			for (int i = 0; i < src_lcode_10.Length; i++) {
+				string srcpath = src_files + @"/azure/Azure_Portal_vCurrent/OnGoing/AuxPortal_n_f5/auxportal/Localization/LCL/"+ src_lcode_10[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/Azure Portal (Classic)/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
+		}
+		public void B2B(){
+			for (int i = 0; i < src_lcode_10_short.Length; i++) {
+				string srcpath = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocCommon/lba/"+ src_lcode_10_short[i] + "/B2BLocCommon/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		        
+		        string srcpath1 = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocEmailWorker/lba/"+ src_lcode_10_short[i] + "/B2BLocEmailWorker/lcl/";
+				string tgtpath1 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/";
+		        string srcfile1 = System.IO.Path.Combine(srcpath1, "EmailTemplate.html.lcl");
+	        	string dstfile1 = System.IO.Path.Combine(tgtpath1, "EmailTemplate.html.lcl");
+	        	System.IO.File.Copy(srcfile1, dstfile1, true);
+	        	
+	        	string srcpath2 = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocEmailWorker/lba/"+ src_lcode_10_short[i] + "/B2BLocEmailWorker/lcl/Resources/";
+				string tgtpath2 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/Resources/";
+		        string srcfile2 = System.IO.Path.Combine(srcpath2, "EmailTemplate.html.lcl");
+	        	string dstfile2 = System.IO.Path.Combine(tgtpath2, "EmailTemplate.html.lcl");
+	        	System.IO.File.Copy(srcfile2, dstfile2, true);
+	        	
+	        	string srcpath3 = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocRedeemPortalWebRole/lba/"+ src_lcode_10_short[i] + "/B2BLocRedeemPortalWebRole/lcl/";
+				string tgtpath3 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/";		        	
+				string fileName3;
+				string destFile3;				
+		        string[] files3 = System.IO.Directory.GetFiles(srcpath3, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files3){
+	                fileName3 = System.IO.Path.GetFileName(s);
+	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
+	                System.IO.File.Copy(s, destFile3, true);
+	            }
+		        
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
+		}
 	}
 }
