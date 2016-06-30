@@ -217,9 +217,16 @@ namespace TresUpload
 				
 				//for Files with EOL= 8
 				try {
-					ESSO();
-					PortalClassic();
-					B2B();
+					if (chkbx_ESSO.Checked) {
+						ESSO();
+					}
+					if (chkbx_PortalClassic.Checked) {
+						PortalClassic();
+					}
+					if (chkbx_B2B.Checked) {
+						B2B();
+					}
+					
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
@@ -304,7 +311,7 @@ namespace TresUpload
 		        
 		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
 			}
-			listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
+			listView1.Items.Add("AD B2B - Success - (8 lcl files per locate, 80 in total)");
 		}
 	}
 }
