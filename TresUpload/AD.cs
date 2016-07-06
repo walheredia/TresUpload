@@ -19,8 +19,11 @@ namespace TresUpload
 	/// </summary>
 	public partial class AD : Form
 	{
-		string[] src_lcode_17 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
-		string[] tgt_lcode_17 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] src_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		
+		string[] src_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		
 		public static string tgt_files = "";
 		public static string src_files = "";
@@ -50,25 +53,34 @@ namespace TresUpload
 		//Function to disable all Checkbox
 		void disable() {
 			foreach (Control c in this.GrBox_Select_Components.Controls) {                
-                if(c is CheckBox) {
+                if(c is CheckBox)  {
                     CheckBox chk;
                     chk = (CheckBox)c;
-                    if (chk.Checked == true) {
-                    	chk.Checked = false;
-                    }
-                    
+                    chk.Enabled = false;
                 }
             }
 		}
 		
 		void Btn_ChekAllClick(object sender, EventArgs e)
 		{
-			this.enable();
+			foreach (Control c in this.GrBox_Select_Components.Controls) {                
+                if(c is CheckBox) {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Checked = true;                
+                }
+            }
 		}
 		
 		void Btn_UnchekAllClick(object sender, EventArgs e)
 		{
-			this.disable();
+			foreach (Control c in this.GrBox_Select_Components.Controls) {                
+                if(c is CheckBox) {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    chk.Checked = false;                
+                }
+            }
 		}
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e)
@@ -81,13 +93,18 @@ namespace TresUpload
 				Directory.SetCurrentDirectory(fbd_createStructure.SelectedPath.ToString());
 				tgt_files=fbd_createStructure.SelectedPath.ToString();
 				
-				
-				for (int i=0; i<tgt_lcode_17.Length; i++) 
+				for (int i=0; i<tgt_lcode_16.Length; i++) 
 				{
 					if (chkbx_ADBilling.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Billing/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/");
 					}
+					
+					
+				}
+				
+				for (int i=0; i<tgt_lcode_17.Length; i++) 
+				{
 					
 					if (chbx_ADBillingExtension.Checked) 
 					{
@@ -124,12 +141,12 @@ namespace TresUpload
 				
 				
 				//for Files with EOL= 17
-				for (int i = 0; i < src_lcode_17.Length; i++) 
+				for (int i = 0; i < src_lcode_16.Length; i++) 
 				{
 					if(chkbx_ADBilling.Checked)
 					{
-						string srcpath = src_files + @"/ADBilling/Accounts.Resources.locbld/lba/"+ src_lcode_17[i] + "/";
-						string tgtpath = tgt_files + @"/ACtiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Billing/";		        	
+						string srcpath = src_files + @"/ADBilling/Accounts.Resources.locbld/lba/"+ src_lcode_16[i] + "/";
+						string tgtpath = tgt_files + @"/ACtiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/";		        	
 						string fileName;
 						string destFile;				
 			            

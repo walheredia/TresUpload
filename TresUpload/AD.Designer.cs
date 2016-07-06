@@ -50,6 +50,8 @@ namespace TresUpload
 		private System.Windows.Forms.MaskedTextBox mtb_yearmonth;
 		private System.Windows.Forms.FolderBrowserDialog fbd_copyfiles;
 		private System.Windows.Forms.Button btn_copyfiles;
+		private System.Windows.Forms.ProgressBar pbr_structure;
+		private System.Windows.Forms.ProgressBar pbr_CopyFiles;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -109,6 +111,8 @@ namespace TresUpload
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
 			this.PanelRight = new System.Windows.Forms.Panel();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
+			this.pbr_structure = new System.Windows.Forms.ProgressBar();
+			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -116,6 +120,7 @@ namespace TresUpload
 			// 
 			// PanelLeft
 			// 
+			this.PanelLeft.Controls.Add(this.pbr_structure);
 			this.PanelLeft.Controls.Add(this.mtb_yearmonth);
 			this.PanelLeft.Controls.Add(this.btn_CreateStructure);
 			this.PanelLeft.Controls.Add(this.GrBox_Select_Components);
@@ -138,7 +143,7 @@ namespace TresUpload
 			// 
 			// btn_CreateStructure
 			// 
-			this.btn_CreateStructure.Location = new System.Drawing.Point(388, 484);
+			this.btn_CreateStructure.Location = new System.Drawing.Point(188, 484);
 			this.btn_CreateStructure.Name = "btn_CreateStructure";
 			this.btn_CreateStructure.Size = new System.Drawing.Size(181, 23);
 			this.btn_CreateStructure.TabIndex = 7;
@@ -509,6 +514,7 @@ namespace TresUpload
 			// 
 			// PanelRight
 			// 
+			this.PanelRight.Controls.Add(this.pbr_CopyFiles);
 			this.PanelRight.Controls.Add(this.btn_copyfiles);
 			this.PanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.PanelRight.Location = new System.Drawing.Point(565, 0);
@@ -518,13 +524,27 @@ namespace TresUpload
 			// 
 			// btn_copyfiles
 			// 
-			this.btn_copyfiles.Location = new System.Drawing.Point(10, 483);
+			this.btn_copyfiles.Location = new System.Drawing.Point(173, 484);
 			this.btn_copyfiles.Name = "btn_copyfiles";
 			this.btn_copyfiles.Size = new System.Drawing.Size(163, 23);
 			this.btn_copyfiles.TabIndex = 0;
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
+			// 
+			// pbr_structure
+			// 
+			this.pbr_structure.Location = new System.Drawing.Point(29, 535);
+			this.pbr_structure.Name = "pbr_structure";
+			this.pbr_structure.Size = new System.Drawing.Size(528, 23);
+			this.pbr_structure.TabIndex = 9;
+			// 
+			// pbr_CopyFiles
+			// 
+			this.pbr_CopyFiles.Location = new System.Drawing.Point(10, 535);
+			this.pbr_CopyFiles.Name = "pbr_CopyFiles";
+			this.pbr_CopyFiles.Size = new System.Drawing.Size(496, 23);
+			this.pbr_CopyFiles.TabIndex = 1;
 			// 
 			// AD
 			// 
