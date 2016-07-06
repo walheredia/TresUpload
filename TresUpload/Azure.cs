@@ -33,6 +33,7 @@ namespace TresUpload
 		string[] src_lcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
 		string[] src_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		
+		string[] src_lcode_17_short = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_10_short = {"de", "es", "fr", "it", "ja", "ko", "pt-BR", "ru", "zh-HANS", "zh-HANT"};
 	
 		public static string tgt_files = "";
@@ -227,7 +228,13 @@ namespace TresUpload
 					}
 					if (chkbx_DBOLEDB.Checked) {
 						OLEDB();
-					}					
+					}
+					if (chkbx_StoreMarketplace.Checked) {
+						StoreMarketPlace();
+					}
+					if (chkbx_StoreExperience.Checked) {
+						StoreExperience();
+					}						
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
@@ -331,5 +338,39 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Microsoft OLE DB Provider for DB2 - Success - (31 lcl files per locate, 403 in total)");
 		}
+		//EOL=17
+		public void StoreMarketPlace(){
+		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX-Store/Ongoing/dev/GalleryService.Client/lba/"+ src_lcode_17_short[i] + "/GalleryService.Client/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Marketplace/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Azure Store Marketplace - Success - (1 lcl file per locate, 17 in total)");
+		}
+		public void StoreExperience(){
+		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX-StoreExperience/Ongoing/dev/GalleryService.Client/lba/"+ src_lcode_17_short[i] + "/GalleryService.Client/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Experience/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Azure Store Experience - Success - (3 lcl file per locate, 51 in total)");
+		}
+		
 	}
 }
