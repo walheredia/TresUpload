@@ -144,6 +144,12 @@ namespace TresUpload
 					}
 					if (chkbx_PortalFX.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/ResourceGroup/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/SecurityAadPortal/");
+						
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/CoBrand/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/SignIn/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/TokenAuthorize/");
 					}
 					if (chkbx_StoreMarketplace.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Marketplace/");
@@ -152,7 +158,8 @@ namespace TresUpload
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Experience/");
 					}
 					if (chkbx_InsightExtension.Checked) {
-						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/GalleryTemplates/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/Insights/ServerResources/");
 					}
 					if (chkbx_IntuneMAMExtension.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Microsoft Intune MAM Extension/");
@@ -234,7 +241,13 @@ namespace TresUpload
 					}
 					if (chkbx_StoreExperience.Checked) {
 						StoreExperience();
-					}						
+					}
+					if (chkbx_PortalFX.Checked) {
+						PortalFX();
+					}
+					if (chkbx_InsightExtension.Checked) {
+						InsightExtension();
+					}					
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
@@ -355,6 +368,7 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Azure Store Marketplace - Success - (1 lcl file per locate, 17 in total)");
 		}
+		//EOL=17
 		public void StoreExperience(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX-StoreExperience/Ongoing/dev/GalleryService.Client/lba/"+ src_lcode_17_short[i] + "/GalleryService.Client/lcl/";
@@ -371,6 +385,184 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Azure Store Experience - Success - (3 lcl file per locate, 51 in total)");
 		}
-		
+		//EOL=17
+		public void PortalFX(){
+		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/AzureHubsExtension/lba/"+ src_lcode_17_short[i] + "/AzureHubsExtension/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		        
+		        string srcpath1 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/CreateFromTemplate/lba/"+ src_lcode_17_short[i] + "/CreateFromTemplate/lcl/";
+				string tgtpath1 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/";		        	
+				string fileName1;
+				string destFile1;
+		        string[] files1 = System.IO.Directory.GetFiles(srcpath1, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files1){
+	                fileName1 = System.IO.Path.GetFileName(s);
+	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
+	                System.IO.File.Copy(s, destFile1, true);
+	            }
+		        
+		        string srcpath2 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Framework/lba/"+ src_lcode_17_short[i] + "/Framework/lcl/";
+				string tgtpath2 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/";		        	
+				string fileName2;
+				string destFile2;
+		        string[] files2 = System.IO.Directory.GetFiles(srcpath2, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files2){
+	                fileName2 = System.IO.Path.GetFileName(s);
+	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
+	                System.IO.File.Copy(s, destFile2, true);
+	            }
+		        
+		        string srcpath3 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/HubsExtension/lba/"+ src_lcode_17_short[i] + "/HubsExtension/lcl/";
+				string tgtpath3 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/";		        	
+				string fileName3;
+				string destFile3;
+		        string[] files3 = System.IO.Directory.GetFiles(srcpath3, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files3){
+	                fileName3 = System.IO.Path.GetFileName(s);
+	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
+	                System.IO.File.Copy(s, destFile3, true);
+	            }
+		        
+		        string srcpath4 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/ResourceGroup/lba/"+ src_lcode_17_short[i] + "/ResourceGroup/lcl/";
+				string tgtpath4 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/ResourceGroup/";		        	
+				string fileName4;
+				string destFile4;
+		        string[] files4 = System.IO.Directory.GetFiles(srcpath4, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files4){
+	                fileName4 = System.IO.Path.GetFileName(s);
+	                destFile4 = System.IO.Path.Combine(tgtpath4, fileName4);
+	                System.IO.File.Copy(s, destFile4, true);
+	            }
+		        
+		        string srcpath5 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/SecurityAadPortal/lba/"+ src_lcode_17_short[i] + "/SecurityAadPortal/lcl/";
+				string tgtpath5 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/SecurityAadPortal/";		        	
+				string fileName5;
+				string destFile5;
+		        string[] files5 = System.IO.Directory.GetFiles(srcpath5, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files5){
+	                fileName5 = System.IO.Path.GetFileName(s);
+	                destFile5 = System.IO.Path.Combine(tgtpath5, fileName5);
+	                System.IO.File.Copy(s, destFile5, true);
+	            }
+		        
+		        string srcpath6 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/CoBrand/";
+				string tgtpath6 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/CoBrand/";		        	
+				string fileName6;
+				string destFile6;
+		        string[] files6 = System.IO.Directory.GetFiles(srcpath6, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files6){
+	                fileName6 = System.IO.Path.GetFileName(s);
+	                destFile6 = System.IO.Path.Combine(tgtpath6, fileName6);
+	                System.IO.File.Copy(s, destFile6, true);
+	            }
+		        
+		        string srcpath7 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/SignIn/";
+				string tgtpath7 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/SignIn/";		        	
+				string fileName7;
+				string destFile7;
+		        string[] files7 = System.IO.Directory.GetFiles(srcpath7, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files7){
+	                fileName7 = System.IO.Path.GetFileName(s);
+	                destFile7 = System.IO.Path.Combine(tgtpath7, fileName7);
+	                System.IO.File.Copy(s, destFile7, true);
+	            }
+		        
+		        string srcpath8 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/TokenAuthorize/";
+				string tgtpath8 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/TokenAuthorize/";		        	
+				string fileName8;
+				string destFile8;
+		        string[] files8 = System.IO.Directory.GetFiles(srcpath8, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files8){
+	                fileName8 = System.IO.Path.GetFileName(s);
+	                destFile8 = System.IO.Path.Combine(tgtpath8, fileName8);
+	                System.IO.File.Copy(s, destFile8, true);
+	            }
+		        
+		        string srcpath9 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/TypeScript/";
+				string tgtpath9 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/Website/";		        	
+				string fileName9;
+				string destFile9;
+		        string[] files9 = System.IO.Directory.GetFiles(srcpath9, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files9){
+	                fileName9 = System.IO.Path.GetFileName(s);
+	                destFile9 = System.IO.Path.Combine(tgtpath9, fileName9);
+	                System.IO.File.Copy(s, destFile9, true);
+	            }
+		        
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Azure Portal FX - Success - (39 lcl file per locate, 663 in total)");
+		}
+		//EOL=17
+		public void InsightExtension(){
+		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/EMA/lba/"+ src_lcode_17_short[i] + "/EMA/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		        
+		        string srcpath1 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/ExtensionCore/lba/"+ src_lcode_17_short[i] + "/ExtensionCore/lcl/";
+				string tgtpath1 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/";		        	
+				string fileName1;
+				string destFile1;
+		        string[] files1 = System.IO.Directory.GetFiles(srcpath1, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files1){
+	                fileName1 = System.IO.Path.GetFileName(s);
+	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
+	                System.IO.File.Copy(s, destFile1, true);
+	            }
+		        
+		        string srcpath2 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/GalleryTemplates/lba/"+ src_lcode_17_short[i] + "/GalleryTemplates/lcl/";
+				string tgtpath2 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/GalleryTemplates/";		        	
+				string fileName2;
+				string destFile2;
+		        string[] files2 = System.IO.Directory.GetFiles(srcpath2, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files2){
+	                fileName2 = System.IO.Path.GetFileName(s);
+	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
+	                System.IO.File.Copy(s, destFile2, true);
+	            }
+		        
+		        string srcpath3 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/Insights/lba/"+ src_lcode_17_short[i] + "/Insights/lcl/Client";
+				string tgtpath3 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/";		        	
+				string fileName3;
+				string destFile3;
+		        string[] files3 = System.IO.Directory.GetFiles(srcpath3, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files3){
+	                fileName3 = System.IO.Path.GetFileName(s);
+	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
+	                System.IO.File.Copy(s, destFile3, true);
+	            }
+		        
+		        string srcpath4 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/Insights/lba/"+ src_lcode_17_short[i] + "/Insights/lcl/ServerResources/";
+				string tgtpath4 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/Insights/ServerResources/";		        	
+				string fileName4;
+				string destFile4;
+		        string[] files4 = System.IO.Directory.GetFiles(srcpath4, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files4){
+	                fileName4 = System.IO.Path.GetFileName(s);
+	                destFile4 = System.IO.Path.Combine(tgtpath4, fileName4);
+	                System.IO.File.Copy(s, destFile4, true);
+	            }
+		        
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Azure Insight Extension - Success - (18 lcl file per locate, 306 in total)");
+		}
 	}
 }
