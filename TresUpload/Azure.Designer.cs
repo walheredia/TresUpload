@@ -375,7 +375,7 @@ namespace TresUpload
 			this.chkbx_SQLDB.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SQLDB.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SQLDB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SQLDB.Location = new System.Drawing.Point(276, 25);
+			this.chkbx_SQLDB.Location = new System.Drawing.Point(6, 294);
 			this.chkbx_SQLDB.Name = "chkbx_SQLDB";
 			this.chkbx_SQLDB.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_SQLDB.TabIndex = 21;
@@ -414,7 +414,7 @@ namespace TresUpload
 			this.chkbx_IntuneMAMExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_IntuneMAMExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_IntuneMAMExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_IntuneMAMExtension.Location = new System.Drawing.Point(5, 294);
+			this.chkbx_IntuneMAMExtension.Location = new System.Drawing.Point(6, 264);
 			this.chkbx_IntuneMAMExtension.Name = "chkbx_IntuneMAMExtension";
 			this.chkbx_IntuneMAMExtension.Size = new System.Drawing.Size(205, 24);
 			this.chkbx_IntuneMAMExtension.TabIndex = 18;
@@ -427,7 +427,7 @@ namespace TresUpload
 			this.chkbx_B2C.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_B2C.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_B2C.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_B2C.Location = new System.Drawing.Point(5, 264);
+			this.chkbx_B2C.Location = new System.Drawing.Point(244, 204);
 			this.chkbx_B2C.Name = "chkbx_B2C";
 			this.chkbx_B2C.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_B2C.TabIndex = 17;
