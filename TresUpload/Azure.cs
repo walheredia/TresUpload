@@ -34,6 +34,7 @@ namespace TresUpload
 		string[] src_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		
 		string[] src_lcode_17_short = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
+		string[] src_lcode_17_short_pt = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_10_short = {"de", "es", "fr", "it", "ja", "ko", "pt-BR", "ru", "zh-HANS", "zh-HANT"};
 	
 		public static string tgt_files = "";
@@ -140,7 +141,10 @@ namespace TresUpload
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler Extension/");
 					}
 					if (chkbx_SchedulerRP.Checked) {
-						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Common/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Data/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Web/");
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Worker/");
 					}
 					if (chkbx_PortalFX.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/");
@@ -247,7 +251,37 @@ namespace TresUpload
 					}
 					if (chkbx_InsightExtension.Checked) {
 						InsightExtension();
-					}					
+					}
+					if (chkbx_IntuneMAMExtension.Checked) {
+						IntuneMAMExtension();
+					}
+					if (chkbx_SQLDB.Checked) {
+						DataInsightSQLDB();
+					}
+					if (chkbx_DocDB.Checked) {
+						DataInsightDocDB();
+					}
+					if (chkbx_AzureSearch.Checked) {
+						DataInsightAzureSearch();
+					}
+					if (chkbx_RBAC.Checked) {
+						RBAC();
+					}
+					if (chkbx_ADIAM.Checked) {
+						ADIAM();
+					}
+					if (chkbx_ADProtectionCenter.Checked) {
+						ProtectionCenter();
+					}
+					if (chkbx_CloudAppDiscovery.Checked) {
+						CloudAppDiscovery();
+					}
+					if (chkbx_SchedulerRP.Checked) {
+						SchedulerRP();
+					}
+					if (chkbx_SchedulerExtension.Checked) {
+						SchedulerExtension();
+					}
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
@@ -563,6 +597,210 @@ namespace TresUpload
 		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
 			}
 			listView1.Items.Add("Azure Insight Extension - Success - (18 lcl file per locate, 306 in total)");
+		}
+		//EOL=17
+		public void IntuneMAMExtension(){
+			for (int i = 0; i < src_lcode_17.Length; i++) {
+				string srcpath = src_files + @"/Windows Intune/AzureUIExtension/Monthly/AzureUIExtension_CnE_TFS/Loc/LBA/"+ src_lcode_17[i] + "/AzureUIExtension/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Microsoft Intune MAM Extension/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Microsoft Intune MAM Extension - Success - (2 lcl files per locate, 34 in total)");
+		}
+		//EOL=17
+		public void DataInsightSQLDB(){
+			for (int i = 0; i < src_lcode_17.Length; i++) {
+				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/SQLAzureDB/Source/LOC/LCL/"+ src_lcode_17[i] + "/LCL/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure SQLDB/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("DataInsight Azure SQLDB - Success - (2 lcl files per locate, 34 in total)");
+		}
+		//EOL=17
+		public void DataInsightDocDB(){
+			for (int i = 0; i < src_lcode_17.Length; i++) {
+				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/DocDB_IbizaProd/Product/Loc/LCL/"+ src_lcode_17[i] + "/LCL/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure DocDB/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("DataInsight Azure DocDB - Success - (4 lcl files per locate, 68 in total)");
+		}
+		//EOL=17
+		public void DataInsightAzureSearch(){
+			for (int i = 0; i < src_lcode_17.Length; i++) {
+				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/AzureSearch/Product/Loc/LCL/"+ src_lcode_17[i] + "/LCL/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure Search/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("DataInsight Azure Search - Success - (2 lcl files per locate, 34 in total)");
+		}
+		//EOL=17
+		public void RBAC(){
+			for (int i = 0; i < src_lcode_17_short_pt.Length; i++) {
+				string srcpath = src_files + @"/Active Directory/IAM-Services-ADIUX/OnGoing/master/PortalExtension/Lba/"+ src_lcode_17_short_pt[i] + "/PortalExtension/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Role Based Access Control/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Role Based Access Control - Success - (1 lcl files per locate, 17 in total)");
+		}
+		//EOL=17
+		public void ADIAM(){
+			for (int i = 0; i < src_lcode_17_short_pt.Length; i++) {
+				string srcpath = src_files + @"/AAPT/Microsoft_AAD_IAM/ongoing/AzExt_Microsoft_AAD_IAM/ADExtension/lba/"+ src_lcode_17_short_pt[i] + "/ADExtension/lcl/Client/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD IAM/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("AD IAM - Success - (10 lcl files per locate, 170 in total)");
+		}
+		//EOL=17
+		public void ProtectionCenter(){
+			for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/AAPT/AD_Serres_Protection center_cloudapp discovery/Ongoing/master/ProtectionCenter/lba/"+ src_lcode_17_short[i] + "/ProtectionCenter/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Protection Center/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("AD Protection Center - (9 lcl files per locate, 153 in total)");
+		}
+		//EOL=17
+		public void CloudAppDiscovery(){
+			for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/AAPT/AD_Serres_Protection center_cloudapp discovery/Ongoing/master/CloudAppDiscovery/lba/"+ src_lcode_17_short[i] + "/CloudAppDiscovery/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Cloud App Discovery/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Cloud App Discovery - (3 lcl files per locate, 51 in total)");
+		}
+		//EOL=17
+		public void SchedulerRP(){
+		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Common/lba/"+ src_lcode_17_short[i] + "/Scheduler.Common/lcl/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Common/";		        	
+				string fileName;
+				string destFile;
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		        
+		        string srcpath1 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Data/lba/"+ src_lcode_17_short[i] + "/Scheduler.Data/lcl/";
+				string tgtpath1 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Data/";		        	
+				string fileName1;
+				string destFile1;
+		        string[] files1 = System.IO.Directory.GetFiles(srcpath1, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files1){
+	                fileName1 = System.IO.Path.GetFileName(s);
+	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
+	                System.IO.File.Copy(s, destFile1, true);
+	            }
+		        
+		        string srcpath2 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Web/lba/"+ src_lcode_17_short[i] + "/Scheduler.Web/lcl/";
+				string tgtpath2 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Web/";		        	
+				string fileName2;
+				string destFile2;
+		        string[] files2 = System.IO.Directory.GetFiles(srcpath2, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files2){
+	                fileName2 = System.IO.Path.GetFileName(s);
+	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
+	                System.IO.File.Copy(s, destFile2, true);
+	            }
+		        
+		        string srcpath3 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Worker/lba/"+ src_lcode_17_short[i] + "/Scheduler.Worker/lcl/";
+				string tgtpath3 = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Worker/";		        	
+				string fileName3;
+				string destFile3;
+		        string[] files3 = System.IO.Directory.GetFiles(srcpath3, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files3){
+	                fileName3 = System.IO.Path.GetFileName(s);
+	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
+	                System.IO.File.Copy(s, destFile3, true);
+	            }
+		        
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
+			}
+			listView1.Items.Add("Azure Scheduler RP - Success - (4 lcl file per locate, 68 in total)");
+		}
+		//EOL=17
+		public void SchedulerExtension(){
+			for (int i = 0; i < src_lcode_17.Length; i++) {
+				string srcpath = src_files + @"/azure/AzureUX-SchedulerUX-FE/OnGoing/SLVso/Projects/AzureUX-SchedulerUX-FE/Localization/LCL/"+ src_lcode_17[i] + "/LocProject/lcl/src/SchedulerExtension/Client/Resources/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler Extension/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Azure Scheduler Extension - (1 lcl file per locate, 17 in total)");
 		}
 	}
 }
