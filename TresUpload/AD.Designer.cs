@@ -52,6 +52,10 @@ namespace TresUpload
 		private System.Windows.Forms.Button btn_copyfiles;
 		private System.Windows.Forms.ProgressBar pbr_structure;
 		private System.Windows.Forms.ProgressBar pbr_CopyFiles;
+		private System.Windows.Forms.Label lbl_yearmonth;
+		private System.Windows.Forms.Label lbl_copyfiles;
+		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.Label lbl_event;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -76,6 +80,8 @@ namespace TresUpload
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AD));
 			this.PanelLeft = new System.Windows.Forms.Panel();
+			this.lbl_yearmonth = new System.Windows.Forms.Label();
+			this.pbr_structure = new System.Windows.Forms.ProgressBar();
 			this.mtb_yearmonth = new System.Windows.Forms.MaskedTextBox();
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
@@ -110,9 +116,11 @@ namespace TresUpload
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
 			this.PanelRight = new System.Windows.Forms.Panel();
-			this.btn_copyfiles = new System.Windows.Forms.Button();
-			this.pbr_structure = new System.Windows.Forms.ProgressBar();
+			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
+			this.btn_copyfiles = new System.Windows.Forms.Button();
+			this.listView1 = new System.Windows.Forms.ListView();
+			this.lbl_event = new System.Windows.Forms.Label();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -120,6 +128,7 @@ namespace TresUpload
 			// 
 			// PanelLeft
 			// 
+			this.PanelLeft.Controls.Add(this.lbl_yearmonth);
 			this.PanelLeft.Controls.Add(this.pbr_structure);
 			this.PanelLeft.Controls.Add(this.mtb_yearmonth);
 			this.PanelLeft.Controls.Add(this.btn_CreateStructure);
@@ -129,13 +138,30 @@ namespace TresUpload
 			this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
 			this.PanelLeft.Location = new System.Drawing.Point(0, 0);
 			this.PanelLeft.Name = "PanelLeft";
-			this.PanelLeft.Size = new System.Drawing.Size(565, 626);
+			this.PanelLeft.Size = new System.Drawing.Size(565, 663);
 			this.PanelLeft.TabIndex = 0;
+			// 
+			// lbl_yearmonth
+			// 
+			this.lbl_yearmonth.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_yearmonth.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_yearmonth.Location = new System.Drawing.Point(16, 450);
+			this.lbl_yearmonth.Name = "lbl_yearmonth";
+			this.lbl_yearmonth.Size = new System.Drawing.Size(77, 23);
+			this.lbl_yearmonth.TabIndex = 10;
+			this.lbl_yearmonth.Text = "YearMonth:";
+			// 
+			// pbr_structure
+			// 
+			this.pbr_structure.Location = new System.Drawing.Point(29, 535);
+			this.pbr_structure.Name = "pbr_structure";
+			this.pbr_structure.Size = new System.Drawing.Size(528, 23);
+			this.pbr_structure.TabIndex = 9;
 			// 
 			// mtb_yearmonth
 			// 
 			this.mtb_yearmonth.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-			this.mtb_yearmonth.Location = new System.Drawing.Point(99, 481);
+			this.mtb_yearmonth.Location = new System.Drawing.Point(99, 447);
 			this.mtb_yearmonth.Mask = "000000";
 			this.mtb_yearmonth.Name = "mtb_yearmonth";
 			this.mtb_yearmonth.Size = new System.Drawing.Size(58, 25);
@@ -143,7 +169,7 @@ namespace TresUpload
 			// 
 			// btn_CreateStructure
 			// 
-			this.btn_CreateStructure.Location = new System.Drawing.Point(188, 484);
+			this.btn_CreateStructure.Location = new System.Drawing.Point(376, 564);
 			this.btn_CreateStructure.Name = "btn_CreateStructure";
 			this.btn_CreateStructure.Size = new System.Drawing.Size(181, 23);
 			this.btn_CreateStructure.TabIndex = 7;
@@ -500,7 +526,7 @@ namespace TresUpload
 			this.LblTitle_Panel1.ForeColor = System.Drawing.Color.SlateBlue;
 			this.LblTitle_Panel1.Location = new System.Drawing.Point(0, 0);
 			this.LblTitle_Panel1.Name = "LblTitle_Panel1";
-			this.LblTitle_Panel1.Size = new System.Drawing.Size(565, 626);
+			this.LblTitle_Panel1.Size = new System.Drawing.Size(565, 663);
 			this.LblTitle_Panel1.TabIndex = 4;
 			this.LblTitle_Panel1.Text = "Please, select components to create structure";
 			this.LblTitle_Panel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -514,30 +540,27 @@ namespace TresUpload
 			// 
 			// PanelRight
 			// 
+			this.PanelRight.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.PanelRight.Controls.Add(this.lbl_event);
+			this.PanelRight.Controls.Add(this.listView1);
+			this.PanelRight.Controls.Add(this.lbl_copyfiles);
 			this.PanelRight.Controls.Add(this.pbr_CopyFiles);
 			this.PanelRight.Controls.Add(this.btn_copyfiles);
-			this.PanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.PanelRight.Location = new System.Drawing.Point(565, 0);
+			this.PanelRight.Location = new System.Drawing.Point(682, 0);
 			this.PanelRight.Name = "PanelRight";
-			this.PanelRight.Size = new System.Drawing.Size(518, 626);
+			this.PanelRight.Size = new System.Drawing.Size(580, 663);
 			this.PanelRight.TabIndex = 1;
 			// 
-			// btn_copyfiles
+			// lbl_copyfiles
 			// 
-			this.btn_copyfiles.Location = new System.Drawing.Point(173, 484);
-			this.btn_copyfiles.Name = "btn_copyfiles";
-			this.btn_copyfiles.Size = new System.Drawing.Size(163, 23);
-			this.btn_copyfiles.TabIndex = 0;
-			this.btn_copyfiles.Text = "Copy Files";
-			this.btn_copyfiles.UseVisualStyleBackColor = true;
-			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
-			// 
-			// pbr_structure
-			// 
-			this.pbr_structure.Location = new System.Drawing.Point(29, 535);
-			this.pbr_structure.Name = "pbr_structure";
-			this.pbr_structure.Size = new System.Drawing.Size(528, 23);
-			this.pbr_structure.TabIndex = 9;
+			this.lbl_copyfiles.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_copyfiles.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_copyfiles.Location = new System.Drawing.Point(232, 9);
+			this.lbl_copyfiles.Name = "lbl_copyfiles";
+			this.lbl_copyfiles.Size = new System.Drawing.Size(138, 23);
+			this.lbl_copyfiles.TabIndex = 2;
+			this.lbl_copyfiles.Text = "Copy Files Menu";
+			this.lbl_copyfiles.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// pbr_CopyFiles
 			// 
@@ -546,11 +569,39 @@ namespace TresUpload
 			this.pbr_CopyFiles.Size = new System.Drawing.Size(496, 23);
 			this.pbr_CopyFiles.TabIndex = 1;
 			// 
+			// btn_copyfiles
+			// 
+			this.btn_copyfiles.Location = new System.Drawing.Point(343, 564);
+			this.btn_copyfiles.Name = "btn_copyfiles";
+			this.btn_copyfiles.Size = new System.Drawing.Size(163, 23);
+			this.btn_copyfiles.TabIndex = 0;
+			this.btn_copyfiles.Text = "Copy Files";
+			this.btn_copyfiles.UseVisualStyleBackColor = true;
+			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
+			// 
+			// listView1
+			// 
+			this.listView1.Location = new System.Drawing.Point(31, 86);
+			this.listView1.Name = "listView1";
+			this.listView1.Size = new System.Drawing.Size(537, 331);
+			this.listView1.TabIndex = 3;
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			// 
+			// lbl_event
+			// 
+			this.lbl_event.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_event.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_event.Location = new System.Drawing.Point(31, 57);
+			this.lbl_event.Name = "lbl_event";
+			this.lbl_event.Size = new System.Drawing.Size(100, 23);
+			this.lbl_event.TabIndex = 4;
+			this.lbl_event.Text = "Event Log";
+			// 
 			// AD
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1083, 626);
+			this.ClientSize = new System.Drawing.Size(1262, 663);
 			this.Controls.Add(this.PanelRight);
 			this.Controls.Add(this.PanelLeft);
 			this.Name = "AD";

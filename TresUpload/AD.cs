@@ -21,7 +21,7 @@ namespace TresUpload
 	{
 		string[] src_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
-		
+		string[] src_lcode2_17 = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		
@@ -85,7 +85,7 @@ namespace TresUpload
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e)
 		{
-			fbd_createStructure.SelectedPath="C:/eliseo/tool";
+			fbd_createStructure.SelectedPath="C:/Eliseo/TRES/Upload";
 			fbd_createStructure.Description="Please select the directory where you want to create the new structure";
 			
 			if (fbd_createStructure.ShowDialog()==DialogResult.OK)
@@ -123,7 +123,7 @@ namespace TresUpload
 					
 					if (chbx_PIM.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/PIM/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-PIM/API/");
 					}
 					
 				}
@@ -132,7 +132,7 @@ namespace TresUpload
 		}
 		void Btn_copyfilesClick(object sender, EventArgs e)
 		{
-			fbd_copyfiles.SelectedPath="C:\\sd_enlist";
+			fbd_copyfiles.SelectedPath="C:/Eliseo/TRES/";
 			fbd_copyfiles.Description="Please select the directory of the Source Files (Enlistment from SDW)";
 			
 			if (fbd_copyfiles.ShowDialog() == DialogResult.OK)
@@ -140,11 +140,46 @@ namespace TresUpload
 				src_files = fbd_copyfiles.SelectedPath.ToString();
 				
 				
-				//for Files with EOL= 17
-				for (int i = 0; i < src_lcode_16.Length; i++) 
+				try 
 				{
 					if(chkbx_ADBilling.Checked)
 					{
+						ADBilling();
+					}
+					if(chbx_PIM.Checked)
+					{
+						PIM();
+					}
+					
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+					throw;
+				}
+				
+			
+				
+				//for Files with EOL= 16
+				
+				//for files with EOL=17
+				for (int i = 0; i < src_lcode_17.Length; i++)
+				{
+					if(chbx_PIM.Checked)
+					{
+						
+					}
+				}
+			}
+	
+		}
+		
+		public void ADBilling()
+		{
+			for (int i = 0; i < src_lcode_16.Length; i++) 
+				{
+					
+					
 						string srcpath = src_files + @"/ADBilling/Accounts.Resources.locbld/lba/"+ src_lcode_16[i] + "/";
 						string tgtpath = tgt_files + @"/ACtiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/";		        	
 						string fileName;
@@ -159,17 +194,75 @@ namespace TresUpload
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
 		            	}
-					}
+					
 					
 			       
 				}
-			}
-	
 		}
 		
-		
-		
-		
+		public void PIM()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					
+					string srcpath = src_files + @"/AD-PIM/OnGoing/master/PIM.Common/lba/"+ src_lcode2_17[i] + "/PIM.Common/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-PIM/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            		{
+	                		fileName = System.IO.Path.GetFileName(s);
+	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                		System.IO.File.Copy(s, destFile, true);
+	            		}
+					
+					//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.Common.DbManager\lba\cs\PIM.Common.DbManager\lcl\
+			      	srcpath = src_files + @"/AD-PIM/OnGoing/master/PIM.Common.DbManager/lba/"+ src_lcode2_17[i] + "/PIM.Common.DbManager/lcl/";
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            		{
+	                		fileName = System.IO.Path.GetFileName(s);
+	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                		System.IO.File.Copy(s, destFile, true);
+	            		}
+					
+	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.Extension\lba\cs\PIM.Extension\lcl\Client\
+			      	srcpath = src_files + @"/AD-PIM/OnGoing/master/PIM.Extension/lba/"+ src_lcode2_17[i] + "/PIM.Extension/lcl/Client/";
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            		{
+	                		fileName = System.IO.Path.GetFileName(s);
+	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                		System.IO.File.Copy(s, destFile, true);
+	            		}
+	            	
+	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.PSModule\lba\cs\PIM.PSModule\lcl\
+			      	srcpath = src_files + @"/AD-PIM/OnGoing/master/PIM.PSModule/lba/"+ src_lcode2_17[i] + "/PIM.PSModule/lcl/";
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            		{
+	                		fileName = System.IO.Path.GetFileName(s);
+	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                		System.IO.File.Copy(s, destFile, true);
+	            		}
+	            	
+	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.API\lba\cs\PIM.API\lcl\
+	            	srcpath = src_files + @"/AD-PIM/OnGoing/master/PIM.API/lba/"+ src_lcode2_17[i] + "/PIM.API/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-PIM/API/";				
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            		{
+	                		fileName = System.IO.Path.GetFileName(s);
+	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                		System.IO.File.Copy(s, destFile, true);
+	            		}
+				}
+		}
 	
 		}
 	}
