@@ -85,7 +85,8 @@ namespace TresUpload
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e)
 		{
-			fbd_createStructure.SelectedPath="C:/Eliseo/TRES/Upload";
+			fbd_createStructure.SelectedPath = "C:/Eliseo/TRES/Upload";
+			MessageBox.Show(fbd_createStructure.SelectedPath.ToString());
 			fbd_createStructure.Description="Please select the directory where you want to create the new structure";
 			
 			if (fbd_createStructure.ShowDialog()==DialogResult.OK)
@@ -97,7 +98,7 @@ namespace TresUpload
 				{
 					if (chkbx_ADBilling.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/Billing/");
 					}
 					
 					
@@ -108,17 +109,21 @@ namespace TresUpload
 					
 					if (chbx_ADBillingExtension.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Billing Extension/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/BillingExt/");
 					}
 					
 					if (chbx_ADConnect.Checked)
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Connect/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Azure.ActiveDirectory.Synchronization.Setup/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.Framework/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.OneADWizard/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.Types/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.PSModule/");
 					}
 					
 					if (chbxADConnectHealth.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Connect Health/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/");
 					}
 					
 					if (chbx_PIM.Checked) 
@@ -150,6 +155,14 @@ namespace TresUpload
 					{
 						PIM();
 					}
+					if(chbx_ADBillingExtension.Checked)
+					{
+						ADBillingEx();
+					}
+					if(chbx_ADConnect.Checked)
+					{
+						AADConnect();
+					}
 					
 				}
 				catch(Exception ex)
@@ -163,13 +176,7 @@ namespace TresUpload
 				//for Files with EOL= 16
 				
 				//for files with EOL=17
-				for (int i = 0; i < src_lcode_17.Length; i++)
-				{
-					if(chbx_PIM.Checked)
-					{
-						
-					}
-				}
+				
 			}
 	
 		}
@@ -179,9 +186,9 @@ namespace TresUpload
 			for (int i = 0; i < src_lcode_16.Length; i++) 
 				{
 					
-					
-						string srcpath = src_files + @"/ADBilling/Accounts.Resources.locbld/lba/"+ src_lcode_16[i] + "/";
-						string tgtpath = tgt_files + @"/ACtiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/";		        	
+						//c:\Eliseo\TRES\AD-Billing\Ongoing\stage\Accounts.Resources\lba\da-dk\Accounts.Resources\lcl\
+						string srcpath = src_files + @"/AD-Billing/Ongoing/stage/Accounts.Resources/lba/"+ src_lcode_16[i] + "/Accounts.Resources/lcl/";
+						string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/";		        	
 						string fileName;
 						string destFile;				
 			            
@@ -197,6 +204,36 @@ namespace TresUpload
 					
 					
 			       
+				}
+		}
+		
+		public void ADBillingEx()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-BillingExt\OnGoing\stage\AzureBillingExtension\lba\cs\AzureBillingExtension\lcl\
+					string srcpath = src_files + @"/AD-BillingExt/Ongoing/stage/AzureBillingExtension/lba/"+ src_lcode2_17[i] + "/AzureBillingExtension/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Billing Extension/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+					//c:\Eliseo\TRES\AD-BillingExt\OnGoing\stage\BillingExtension\lba\cs\BillingExtension\lcl\Client\
+			        srcpath = src_files + @"/AD-BillingExt/Ongoing/stage/BillingExtension/lba/"+ src_lcode2_17[i] + "/BillingExtension/lcl/Client/";
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
 				}
 		}
 		
@@ -261,6 +298,68 @@ namespace TresUpload
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
 	            		}
+				}
+		}
+		
+		public void AADConnect()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-IAM-HybridSync\Continuous\develop\Microsoft.Azure.ActiveDirectory.Synchronization.Setup\lba\cs\Microsoft.Azure.ActiveDirectory.Synchronization.Setup\lcl\
+					string srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Azure.ActiveDirectory.Synchronization.Setup/lba/"+ src_lcode2_17[i] + "/Microsoft.Azure.ActiveDirectory.Synchronization.Setup/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Azure.ActiveDirectory.Synchronization.Setup/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+	            	//c:\Eliseo\TRES\AD-IAM-HybridSync\Continuous\develop\Microsoft.Online.Deployment.Framework\lba\cs\Microsoft.Online.Deployment.Framework\lcl\
+					srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.Framework/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.Framework/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.Framework/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+	            	
+					srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.OneADWizard/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.OneADWizard/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.OneADWizard/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.PSModule/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.PSModule/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.PSModule/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.Types/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.Types/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.Types/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
 				}
 		}
 	
