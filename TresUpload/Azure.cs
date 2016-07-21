@@ -40,8 +40,7 @@ namespace TresUpload
 		public static string tgt_files = "";
 		public static string src_files = "";
 		
-		public Azure()
-		{
+		public Azure(){
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
@@ -51,6 +50,10 @@ namespace TresUpload
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}		
+		void Mtb_yearmonthMouseClick(object sender, MouseEventArgs e){
+			mtb_yearmonth.SelectionStart = 0;
+			mtb_yearmonth.SelectionStart = mtb_yearmonth.Text.Length;
+		}
 		void Btn_CheckAllClick(object sender, EventArgs e) {
 			foreach (Control c in this.GrBox_Select_Components.Controls) {                
                 if(c is CheckBox) {
@@ -281,6 +284,9 @@ namespace TresUpload
 					}
 					if (chkbx_SchedulerExtension.Checked) {
 						SchedulerExtension();
+					}
+					if (chkbx_B2C.Checked) {
+						B2C();
 					}
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
@@ -802,5 +808,23 @@ namespace TresUpload
 			}
 			listView1.Items.Add("Azure Scheduler Extension - (1 lcl file per locate, 17 in total)");
 		}
+		//EOL=28
+		public void B2C(){
+			for (int i = 0; i < src_lcode_28.Length; i++) {
+				string srcpath = src_files + @"/AAPT/B2C_CPIM/Ongoing/B2C_CPIM/LBA/"+ src_lcode_28[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_28[i] + "/AD B2C/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("AD B2C - (247 files copied in total)");
+		}
+		
 	}
 }

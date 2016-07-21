@@ -116,11 +116,11 @@ namespace TresUpload
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
 			this.PanelRight = new System.Windows.Forms.Panel();
+			this.lbl_event = new System.Windows.Forms.Label();
+			this.listView1 = new System.Windows.Forms.ListView();
 			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
-			this.listView1 = new System.Windows.Forms.ListView();
-			this.lbl_event = new System.Windows.Forms.Label();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -166,6 +166,8 @@ namespace TresUpload
 			this.mtb_yearmonth.Name = "mtb_yearmonth";
 			this.mtb_yearmonth.Size = new System.Drawing.Size(58, 25);
 			this.mtb_yearmonth.TabIndex = 8;
+			this.mtb_yearmonth.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Mtb_yearmonthMaskInputRejected);
+			this.mtb_yearmonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Mtb_yearmonthMouseClick);
 			// 
 			// btn_CreateStructure
 			// 
@@ -551,6 +553,24 @@ namespace TresUpload
 			this.PanelRight.Size = new System.Drawing.Size(580, 663);
 			this.PanelRight.TabIndex = 1;
 			// 
+			// lbl_event
+			// 
+			this.lbl_event.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_event.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_event.Location = new System.Drawing.Point(31, 57);
+			this.lbl_event.Name = "lbl_event";
+			this.lbl_event.Size = new System.Drawing.Size(100, 23);
+			this.lbl_event.TabIndex = 4;
+			this.lbl_event.Text = "Event Log";
+			// 
+			// listView1
+			// 
+			this.listView1.Location = new System.Drawing.Point(31, 86);
+			this.listView1.Name = "listView1";
+			this.listView1.Size = new System.Drawing.Size(537, 331);
+			this.listView1.TabIndex = 3;
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			// 
 			// lbl_copyfiles
 			// 
 			this.lbl_copyfiles.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
@@ -578,24 +598,6 @@ namespace TresUpload
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
-			// 
-			// listView1
-			// 
-			this.listView1.Location = new System.Drawing.Point(31, 86);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(537, 331);
-			this.listView1.TabIndex = 3;
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			// 
-			// lbl_event
-			// 
-			this.lbl_event.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-			this.lbl_event.ForeColor = System.Drawing.Color.SlateBlue;
-			this.lbl_event.Location = new System.Drawing.Point(31, 57);
-			this.lbl_event.Name = "lbl_event";
-			this.lbl_event.Size = new System.Drawing.Size(100, 23);
-			this.lbl_event.TabIndex = 4;
-			this.lbl_event.Text = "Event Log";
 			// 
 			// AD
 			// 

@@ -40,6 +40,12 @@ namespace TresUpload
 			//
 		}
 		
+		//Cursor to the left
+		void Mtb_yearmonthMouseClick(object sender, MouseEventArgs e)
+		{
+			mtb_yearmonth.SelectionStart = 0;
+			mtb_yearmonth.SelectionStart = mtb_yearmonth.Text.Length;
+		}
 		//Function to enable all checkbox
 		void enable() {
 			foreach (Control c in this.GrBox_Select_Components.Controls) {                
@@ -361,6 +367,10 @@ namespace TresUpload
 	                	System.IO.File.Copy(s, destFile, true);
 	            	}
 				}
+		}
+		void Mtb_yearmonthMaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+		{
+	
 		}
 	
 		}

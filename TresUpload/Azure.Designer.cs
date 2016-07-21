@@ -188,6 +188,7 @@ namespace TresUpload
 			this.mtb_yearmonth.Name = "mtb_yearmonth";
 			this.mtb_yearmonth.Size = new System.Drawing.Size(58, 25);
 			this.mtb_yearmonth.TabIndex = 4;
+			this.mtb_yearmonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Mtb_yearmonthMouseClick);
 			// 
 			// btn_CreateStructure
 			// 
@@ -248,7 +249,7 @@ namespace TresUpload
 			this.chkbx_HisConnectors.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_HisConnectors.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_HisConnectors.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_HisConnectors.Location = new System.Drawing.Point(325, 234);
+			this.chkbx_HisConnectors.Location = new System.Drawing.Point(244, 234);
 			this.chkbx_HisConnectors.Name = "chkbx_HisConnectors";
 			this.chkbx_HisConnectors.Size = new System.Drawing.Size(164, 24);
 			this.chkbx_HisConnectors.TabIndex = 32;
@@ -427,7 +428,7 @@ namespace TresUpload
 			this.chkbx_B2C.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_B2C.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_B2C.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_B2C.Location = new System.Drawing.Point(325, 204);
+			this.chkbx_B2C.Location = new System.Drawing.Point(244, 204);
 			this.chkbx_B2C.Name = "chkbx_B2C";
 			this.chkbx_B2C.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_B2C.TabIndex = 17;
