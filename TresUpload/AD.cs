@@ -142,6 +142,10 @@ namespace TresUpload
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AzureSecurityCenter/");
 					}
 					
+					if(chbx_ERM.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-ERM/");
+					}
 				}
 				
 			}
@@ -181,6 +185,10 @@ namespace TresUpload
 					if(chbx_Rome.Checked)
 					{
 						Rome();
+					}
+					if(chbx_ERM.Checked)
+					{
+						ERM();
 					}
 					
 				}
@@ -465,6 +473,30 @@ namespace TresUpload
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
 	            	}
+					
+					
+				}
+		}
+		
+		public void ERM()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-ERM\OnGoing\master\AccessReviewsExtension\lba\cs\AccessReviewsExtension\lcl\Client\
+					string srcpath = src_files + @"/AD-ERM/OnGoing/master/AccessReviewsExtension/lba/"+ src_lcode2_17[i] + "/AccessReviewsExtension/lcl/Client/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-ERM/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+		            	// Copy the files and overwrite destination files if they already exist.
+		            	foreach (string s in files)
+		            	{
+		                	// Use static Path methods to extract only the file name from the path.
+		                	fileName = System.IO.Path.GetFileName(s);
+		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+		                	System.IO.File.Copy(s, destFile, true);
+		            	}
 					
 					
 				}

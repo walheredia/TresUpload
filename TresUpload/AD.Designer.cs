@@ -56,6 +56,7 @@ namespace TresUpload
 		private System.Windows.Forms.Label lbl_copyfiles;
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.Label lbl_event;
+		private System.Windows.Forms.CheckBox chbx_ERM;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -121,6 +122,7 @@ namespace TresUpload
 			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
+			this.chbx_ERM = new System.Windows.Forms.CheckBox();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -181,6 +183,7 @@ namespace TresUpload
 			// 
 			// GrBox_Select_Components
 			// 
+			this.GrBox_Select_Components.Controls.Add(this.chbx_ERM);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAWinPhone);
 			this.GrBox_Select_Components.Controls.Add(this.checkBox1);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAiPhone25);
@@ -291,7 +294,7 @@ namespace TresUpload
 			// chbx_Rome
 			// 
 			this.chbx_Rome.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_Rome.Location = new System.Drawing.Point(6, 204);
+			this.chbx_Rome.Location = new System.Drawing.Point(6, 234);
 			this.chbx_Rome.Name = "chbx_Rome";
 			this.chbx_Rome.Size = new System.Drawing.Size(179, 24);
 			this.chbx_Rome.TabIndex = 30;
@@ -598,6 +601,19 @@ namespace TresUpload
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
+			// 
+			// chbx_ERM
+			// 
+			this.chbx_ERM.Checked = true;
+			this.chbx_ERM.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chbx_ERM.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chbx_ERM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chbx_ERM.Location = new System.Drawing.Point(6, 204);
+			this.chbx_ERM.Name = "chbx_ERM";
+			this.chbx_ERM.Size = new System.Drawing.Size(181, 24);
+			this.chbx_ERM.TabIndex = 38;
+			this.chbx_ERM.Text = "ERM (17)";
+			this.chbx_ERM.UseVisualStyleBackColor = true;
 			// 
 			// AD
 			// 
