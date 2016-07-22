@@ -215,7 +215,7 @@ namespace TresUpload
 					
 						//c:\Eliseo\TRES\AD-Billing\Ongoing\stage\Accounts.Resources\lba\da-dk\Accounts.Resources\lcl\
 						string srcpath = src_files + @"/AD-Billing/Ongoing/stage/Accounts.Resources/lba/"+ src_lcode_16[i] + "/Accounts.Resources/lcl/";
-						string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/AD Billing/";		        	
+						string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/Billing/";		        	
 						string fileName;
 						string destFile;				
 			            
@@ -241,7 +241,7 @@ namespace TresUpload
 					
 					//c:\Eliseo\TRES\AD-BillingExt\OnGoing\stage\AzureBillingExtension\lba\cs\AzureBillingExtension\lcl\
 					string srcpath = src_files + @"/AD-BillingExt/Ongoing/stage/AzureBillingExtension/lba/"+ src_lcode2_17[i] + "/AzureBillingExtension/lcl/";
-					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Billing Extension/";		        	
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/BillingExt/";		        	
 					string fileName;
 					string destFile;				
 			        string[] files = System.IO.Directory.GetFiles(srcpath);
