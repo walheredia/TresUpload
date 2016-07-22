@@ -288,6 +288,9 @@ namespace TresUpload
 					if (chkbx_B2C.Checked) {
 						B2C();
 					}
+					if (chkbx_HisConnectors.Checked){
+						HISConnectors();
+					}
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;

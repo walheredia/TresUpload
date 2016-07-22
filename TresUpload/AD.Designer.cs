@@ -86,6 +86,7 @@ namespace TresUpload
 			this.mtb_yearmonth = new System.Windows.Forms.MaskedTextBox();
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
+			this.chbx_ERM = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAWinPhone = new System.Windows.Forms.CheckBox();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAiPhone25 = new System.Windows.Forms.CheckBox();
@@ -122,7 +123,6 @@ namespace TresUpload
 			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
-			this.chbx_ERM = new System.Windows.Forms.CheckBox();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -220,6 +220,19 @@ namespace TresUpload
 			this.GrBox_Select_Components.TabIndex = 5;
 			this.GrBox_Select_Components.TabStop = false;
 			this.GrBox_Select_Components.Text = "Check components";
+			// 
+			// chbx_ERM
+			// 
+			this.chbx_ERM.Checked = true;
+			this.chbx_ERM.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chbx_ERM.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chbx_ERM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chbx_ERM.Location = new System.Drawing.Point(6, 204);
+			this.chbx_ERM.Name = "chbx_ERM";
+			this.chbx_ERM.Size = new System.Drawing.Size(181, 24);
+			this.chbx_ERM.TabIndex = 38;
+			this.chbx_ERM.Text = "ERM (17)";
+			this.chbx_ERM.UseVisualStyleBackColor = true;
 			// 
 			// chbx_MFAWinPhone
 			// 
@@ -466,7 +479,7 @@ namespace TresUpload
 			this.chbx_MSA.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_MSA.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA.Location = new System.Drawing.Point(377, 165);
+			this.chbx_MSA.Location = new System.Drawing.Point(374, 174);
 			this.chbx_MSA.Name = "chbx_MSA";
 			this.chbx_MSA.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA.TabIndex = 4;
@@ -601,19 +614,6 @@ namespace TresUpload
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
-			// 
-			// chbx_ERM
-			// 
-			this.chbx_ERM.Checked = true;
-			this.chbx_ERM.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chbx_ERM.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.chbx_ERM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ERM.Location = new System.Drawing.Point(6, 204);
-			this.chbx_ERM.Name = "chbx_ERM";
-			this.chbx_ERM.Size = new System.Drawing.Size(181, 24);
-			this.chbx_ERM.TabIndex = 38;
-			this.chbx_ERM.Text = "ERM (17)";
-			this.chbx_ERM.UseVisualStyleBackColor = true;
 			// 
 			// AD
 			// 
