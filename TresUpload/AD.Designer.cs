@@ -291,7 +291,7 @@ namespace TresUpload
 			// chbx_Rome
 			// 
 			this.chbx_Rome.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_Rome.Location = new System.Drawing.Point(7, 234);
+			this.chbx_Rome.Location = new System.Drawing.Point(6, 204);
 			this.chbx_Rome.Name = "chbx_Rome";
 			this.chbx_Rome.Size = new System.Drawing.Size(179, 24);
 			this.chbx_Rome.TabIndex = 30;
@@ -398,7 +398,7 @@ namespace TresUpload
 			this.chbx_PIM.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_PIM.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_PIM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_PIM.Location = new System.Drawing.Point(8, 205);
+			this.chbx_PIM.Location = new System.Drawing.Point(6, 174);
 			this.chbx_PIM.Name = "chbx_PIM";
 			this.chbx_PIM.Size = new System.Drawing.Size(181, 24);
 			this.chbx_PIM.TabIndex = 9;
@@ -411,7 +411,7 @@ namespace TresUpload
 			this.chbx_MIM.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MIM.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_MIM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MIM.Location = new System.Drawing.Point(8, 175);
+			this.chbx_MIM.Location = new System.Drawing.Point(8, 356);
 			this.chbx_MIM.Name = "chbx_MIM";
 			this.chbx_MIM.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MIM.TabIndex = 8;
@@ -424,7 +424,7 @@ namespace TresUpload
 			this.chbx_Atlanta.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_Atlanta.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_Atlanta.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_Atlanta.Location = new System.Drawing.Point(8, 145);
+			this.chbx_Atlanta.Location = new System.Drawing.Point(6, 24);
 			this.chbx_Atlanta.Name = "chbx_Atlanta";
 			this.chbx_Atlanta.Size = new System.Drawing.Size(181, 24);
 			this.chbx_Atlanta.TabIndex = 7;
@@ -470,14 +470,14 @@ namespace TresUpload
 			this.chbx_MSA.Text = "MSA";
 			this.chbx_MSA.UseVisualStyleBackColor = true;
 			// 
-			// chbxADConnectHealth
+			// chbx_ADConnectHealth
 			// 
 			this.chbx_ADConnectHealth.Checked = true;
 			this.chbx_ADConnectHealth.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADConnectHealth.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_ADConnectHealth.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADConnectHealth.Location = new System.Drawing.Point(8, 55);
-			this.chbx_ADConnectHealth.Name = "chbxADConnectHealth";
+			this.chbx_ADConnectHealth.Location = new System.Drawing.Point(6, 144);
+			this.chbx_ADConnectHealth.Name = "chbx_ADConnectHealth";
 			this.chbx_ADConnectHealth.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADConnectHealth.TabIndex = 3;
 			this.chbx_ADConnectHealth.Text = "AD Connect Health (17)";
@@ -488,7 +488,7 @@ namespace TresUpload
 			this.chbx_ADConnect.Checked = true;
 			this.chbx_ADConnect.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADConnect.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADConnect.Location = new System.Drawing.Point(8, 25);
+			this.chbx_ADConnect.Location = new System.Drawing.Point(6, 114);
 			this.chbx_ADConnect.Name = "chbx_ADConnect";
 			this.chbx_ADConnect.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADConnect.TabIndex = 2;
@@ -501,7 +501,7 @@ namespace TresUpload
 			this.chbx_ADBillingExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADBillingExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_ADBillingExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADBillingExtension.Location = new System.Drawing.Point(8, 115);
+			this.chbx_ADBillingExtension.Location = new System.Drawing.Point(6, 84);
 			this.chbx_ADBillingExtension.Name = "chbx_ADBillingExtension";
 			this.chbx_ADBillingExtension.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADBillingExtension.TabIndex = 1;
@@ -514,7 +514,7 @@ namespace TresUpload
 			this.chkbx_ADBilling.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ADBilling.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ADBilling.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ADBilling.Location = new System.Drawing.Point(7, 85);
+			this.chkbx_ADBilling.Location = new System.Drawing.Point(6, 54);
 			this.chkbx_ADBilling.Name = "chkbx_ADBilling";
 			this.chkbx_ADBilling.Size = new System.Drawing.Size(180, 24);
 			this.chkbx_ADBilling.TabIndex = 0;

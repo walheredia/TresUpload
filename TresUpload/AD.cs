@@ -137,6 +137,11 @@ namespace TresUpload
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-PIM/API/");
 					}
 					
+					if(chbx_Rome.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AzureSecurityCenter/");
+					}
+					
 				}
 				
 			}
@@ -171,7 +176,11 @@ namespace TresUpload
 					}
 					if(chbx_ADConnectHealth.Checked)
 					{
-						
+						AADConnectHealth();
+					}
+					if(chbx_Rome.Checked)
+					{
+						Rome();
 					}
 					
 				}
@@ -436,6 +445,28 @@ namespace TresUpload
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
 	            	}
+				}
+		}
+		
+		public void Rome()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AzureSecurityCenter\OnGoing\master\SecurityDashboardExtension\lba\cs\SecurityDashboardExtension\lcl\Client\
+					string srcpath = src_files + @"/AzureSecurityCenter/OnGoing/master/SecurityDashboardExtension/lba/"+ src_lcode2_17[i] + "/SecurityDashboardExtension/lcl/Client/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AzureSecurityCenter/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+					
 				}
 		}
 		
