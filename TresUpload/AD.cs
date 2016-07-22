@@ -127,7 +127,7 @@ namespace TresUpload
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnect/Microsoft.Online.Deployment.PSModule/");
 					}
 					
-					if (chbxADConnectHealth.Checked) 
+					if (chbx_ADConnectHealth.Checked) 
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/");
 					}
@@ -168,6 +168,10 @@ namespace TresUpload
 					if(chbx_ADConnect.Checked)
 					{
 						AADConnect();
+					}
+					if(chbx_ADConnectHealth.Checked)
+					{
+						
 					}
 					
 				}
@@ -368,6 +372,73 @@ namespace TresUpload
 	            	}
 				}
 		}
+		
+		public void AADConnectHealth()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\AdHealthAdfsAgentSetupBundle\lba\cs\AdHealthAdfsAgentSetupBundle\lcl\theme\
+					string srcpath = src_files + @"/AD-OneADHealth-Main/OnGoing/develop/AdHealthAdfsAgentSetupBundle/lba/"+ src_lcode2_17[i] + "/AdHealthAdfsAgentSetupBundle/lcl/theme/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+	            	//c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\AdHealthAgentConfigurationPowerShell\lba\cs\AdHealthAgentConfigurationPowerShell\lcl\
+					srcpath = src_files + @"/AD-OneADHealth-Main/OnGoing/develop/AdHealthAgentConfigurationPowerShell/lba/"+ src_lcode2_17[i] + "/AdHealthAgentConfigurationPowerShell/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+		            //c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\ADHealthExtension\lba\cs\ADHealthExtension\lcl\Client\
+		            srcpath = src_files + @"/AD-OneADHealth-Main/OnGoing/develop/ADHealthExtension/lba/"+ src_lcode2_17[i] + "/ADHealthExtension/lcl/Client/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+		            	// Copy the files and overwrite destination files if they already exist.
+		            	foreach (string s in files)
+		            	{
+		                	// Use static Path methods to extract only the file name from the path.
+		                	fileName = System.IO.Path.GetFileName(s);
+		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+		                	System.IO.File.Copy(s, destFile, true);
+		            	}
+		            	
+		            //c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\ADHealthMarketplacePackage\lba\cs\AdHealthMarketplacePackage\lcl\GalleryPackages\Strings
+					srcpath = src_files + @"/AD-OneADHealth-Main/OnGoing/develop/ADHealthMarketplacePackage/lba/"+ src_lcode2_17[i] + "/AdHealthMarketplacePackage/lcl/GalleryPackages/Strings/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\Microsoft.Identity.Health.Common.DataAccess\lba\cs\Microsoft.Identity.Health.Common.DataAccess\lcl\TableData\
+	            	srcpath = src_files + @"/AD-OneADHealth-Main/OnGoing/develop/Microsoft.Identity.Health.Common.DataAccess/lba/"+ src_lcode2_17[i] + "/Microsoft.Identity.Health.Common.DataAccess/lcl/TableData/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AADConnectHealth/";		        					
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+				}
+		}
+		
 		void Mtb_yearmonthMaskInputRejected(object sender, MaskInputRejectedEventArgs e)
 		{
 	

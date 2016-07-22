@@ -32,7 +32,7 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chbx_Adallom;
 		private System.Windows.Forms.CheckBox chbx_ESTS;
 		private System.Windows.Forms.CheckBox chbx_MSA;
-		private System.Windows.Forms.CheckBox chbxADConnectHealth;
+		private System.Windows.Forms.CheckBox chbx_ADConnectHealth;
 		private System.Windows.Forms.CheckBox chbx_ADConnect;
 		private System.Windows.Forms.CheckBox chbx_ADBillingExtension;
 		private System.Windows.Forms.CheckBox chkbx_ADBilling;
@@ -107,7 +107,7 @@ namespace TresUpload
 			this.chbx_Adallom = new System.Windows.Forms.CheckBox();
 			this.chbx_ESTS = new System.Windows.Forms.CheckBox();
 			this.chbx_MSA = new System.Windows.Forms.CheckBox();
-			this.chbxADConnectHealth = new System.Windows.Forms.CheckBox();
+			this.chbx_ADConnectHealth = new System.Windows.Forms.CheckBox();
 			this.chbx_ADConnect = new System.Windows.Forms.CheckBox();
 			this.chbx_ADBillingExtension = new System.Windows.Forms.CheckBox();
 			this.chkbx_ADBilling = new System.Windows.Forms.CheckBox();
@@ -203,7 +203,7 @@ namespace TresUpload
 			this.GrBox_Select_Components.Controls.Add(this.chbx_Adallom);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ESTS);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MSA);
-			this.GrBox_Select_Components.Controls.Add(this.chbxADConnectHealth);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_ADConnectHealth);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ADConnect);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ADBillingExtension);
 			this.GrBox_Select_Components.Controls.Add(this.chkbx_ADBilling);
@@ -472,16 +472,16 @@ namespace TresUpload
 			// 
 			// chbxADConnectHealth
 			// 
-			this.chbxADConnectHealth.Checked = true;
-			this.chbxADConnectHealth.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chbxADConnectHealth.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.chbxADConnectHealth.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbxADConnectHealth.Location = new System.Drawing.Point(8, 55);
-			this.chbxADConnectHealth.Name = "chbxADConnectHealth";
-			this.chbxADConnectHealth.Size = new System.Drawing.Size(181, 24);
-			this.chbxADConnectHealth.TabIndex = 3;
-			this.chbxADConnectHealth.Text = "AD Connect Health (17)";
-			this.chbxADConnectHealth.UseVisualStyleBackColor = true;
+			this.chbx_ADConnectHealth.Checked = true;
+			this.chbx_ADConnectHealth.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chbx_ADConnectHealth.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chbx_ADConnectHealth.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chbx_ADConnectHealth.Location = new System.Drawing.Point(8, 55);
+			this.chbx_ADConnectHealth.Name = "chbxADConnectHealth";
+			this.chbx_ADConnectHealth.Size = new System.Drawing.Size(181, 24);
+			this.chbx_ADConnectHealth.TabIndex = 3;
+			this.chbx_ADConnectHealth.Text = "AD Connect Health (17)";
+			this.chbx_ADConnectHealth.UseVisualStyleBackColor = true;
 			// 
 			// chbx_ADConnect
 			// 
