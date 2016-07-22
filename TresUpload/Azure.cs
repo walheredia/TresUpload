@@ -825,6 +825,23 @@ namespace TresUpload
 			}
 			listView1.Items.Add("AD B2C - (247 files copied in total)");
 		}
+		//EOL=43
+		public void HISConnectors(){
+			for (int i = 0; i < src_lcode_43.Length; i++) {
+				string srcpath = src_files + @"/Windows Server OOBs/HIS_CONNECTORS/Semi Quarterly/Alternative/"+ src_lcode_43[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/HIS Connectors/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("HIS Connectors - (9 lcl file per locate, 387 in total)");
+		}
 		
 	}
 }
