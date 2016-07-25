@@ -24,6 +24,7 @@ namespace TresUpload
 		string[] tgt_lcode_13 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pl-PL", "pt-BR", "ru-RU", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_41 = {"bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		
 		string[] src_lcode_8 = {"DE", "ES", "FR", "IT", "JA", "KO", "CN", "TW"};
@@ -33,9 +34,13 @@ namespace TresUpload
 		string[] src_lcode_28 = {"ar-SA","cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "fi-FI", "fr-FR", "he-IL", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sv-SE", "th-TH", "tr-TR", "zh-CN", "zh-TW"};
 		string[] src_lcode_43 = {"ar-SA", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
 		
+		string[] src_lcode_8_long = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "zh-CN", "zh-TW"};
+		
+		string[] src_lcode_10_short = {"de", "es", "fr", "it", "ja", "ko", "pt-BR", "ru", "zh-HANS", "zh-HANT"};
 		string[] src_lcode_17_short = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_17_short_pt = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt", "ru", "sv", "tr", "zh-hans", "zh-hant"};
-		string[] src_lcode_10_short = {"de", "es", "fr", "it", "ja", "ko", "pt-BR", "ru", "zh-HANS", "zh-HANT"};
+		string[] src_lcode_41_short = {"bg", "ca", "cs", "da", "de", "el", "es", "et", "eu", "fi", "fr", "gl", "hi", "hr", "hu", "id", "it", "ja", "kk", "ko", "lt", "lv", "ml", "nl", "no", "pl", "pt-br", "pt-PT", "ro", "ru", "sk", "sl", "sr-Cyrl", "sr-Latn", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"};
+		
 	
 		public static string tgt_files = "";
 		public static string src_files = "";
@@ -122,6 +127,9 @@ namespace TresUpload
 					if (chkbx_ESSO.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/Microsoft Enterprise Single Sign On/");
 					}
+					if (chkbx_BizTalk.Checked) {
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/BizTalk Server 2016/");
+					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
 				for (int i=0; i<tgt_lcode_10.Length; i++) {
@@ -180,6 +188,12 @@ namespace TresUpload
 					if (chkbx_SQLDB.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure SQLDB/");
 					}
+					if (chkbx_LogicAppsBPM.Checked) {
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPM/");
+					}
+					if (chkbx_LogicAppsBPMUX.Checked) {
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPMUX/");
+					}
 					if (chkbx_RBAC.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Role Based Access Control/");
 					}
@@ -200,6 +214,12 @@ namespace TresUpload
 					}
 					pb_structure.Value = pb_structure.Value + 1;
 				}
+				for (int i=0; i<tgt_lcode_41.Length; i++) {
+					if (chkbx_MicrosoftFlow.Checked) {
+						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/Microsoft Flow/");
+					}
+					//pb_structure.Value = pb_structure.Value + 1;
+				}				
 				for (int i=0; i<tgt_lcode_43.Length; i++) {
 					if (chkbx_HisConnectors.Checked) {
 						Directory.CreateDirectory("Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/HIS Connectors/");
@@ -231,6 +251,9 @@ namespace TresUpload
 				src_files = fbd_copyfiles.SelectedPath.ToString();
 				
 				try {
+					if (chkbx_BizTalk.Checked) {
+						BizTalk();
+					}
 					if (chkbx_ESSO.Checked) {
 						ESSO();
 					}
@@ -267,6 +290,12 @@ namespace TresUpload
 					if (chkbx_AzureSearch.Checked) {
 						DataInsightAzureSearch();
 					}
+					if (chkbx_LogicAppsBPM.Checked) {
+						LogicAppsBPM();
+					}
+					if (chkbx_LogicAppsBPMUX.Checked) {
+						LogicAppsBPMUX();
+					}
 					if (chkbx_RBAC.Checked) {
 						RBAC();
 					}
@@ -288,9 +317,13 @@ namespace TresUpload
 					if (chkbx_B2C.Checked) {
 						B2C();
 					}
+					if (chkbx_MicrosoftFlow.Checked) {
+						MicrosoftFlow();
+					}
 					if (chkbx_HisConnectors.Checked){
 						HISConnectors();
 					}
+					
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
@@ -318,6 +351,23 @@ namespace TresUpload
 		    pb_copyfiles.Value = pb_copyfiles.Value + 1;        
 			}
 			listView1.Items.Add("Microsoft Enterprise Single Sign On - Success - (56 lcl files per locate, 448 in total)");
+		}
+		//EOL=8
+		public void BizTalk(){
+			for (int i = 0; i < src_lcode_8_long.Length; i++) {
+				string srcpath = src_files + @"/azure/BizTalk/2016/Main/localization/LCL/"+ src_lcode_8_long[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/BizTalk Server 2016/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("BizTalk Server 2016 - Success - (53 lcl files per locate, 424 in total)");
 		}
 		//EOL=10
 		public void PortalClassic(){
@@ -676,6 +726,40 @@ namespace TresUpload
 			listView1.Items.Add("DataInsight Azure Search - Success - (2 lcl files per locate, 34 in total)");
 		}
 		//EOL=17
+		public void LogicAppsBPM(){
+			for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/LogicApps/Monthly/BPM/Flow.Common.Localization/lba/"+ src_lcode_17_short[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPM/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("LogicApps BPM - Success - (3 lcl files per locate, 51 in total)");
+		}
+		//EOL=17
+		public void LogicAppsBPMUX(){
+			for (int i = 0; i < src_lcode_17_short.Length; i++) {
+				string srcpath = src_files + @"/azure/LogicApps/Monthly/BPMUX/LogicAppsDesigner/lba/"+ src_lcode_17_short[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPMUX/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("LogicApps BPMUX - Success - (3 lcl files per locate, 51 in total)");
+		}
+		//EOL=17
 		public void RBAC(){
 			for (int i = 0; i < src_lcode_17_short_pt.Length; i++) {
 				string srcpath = src_files + @"/Active Directory/IAM-Services-ADIUX/OnGoing/master/PortalExtension/Lba/"+ src_lcode_17_short_pt[i] + "/PortalExtension/lcl/";
@@ -827,6 +911,23 @@ namespace TresUpload
 		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
 			}
 			listView1.Items.Add("AD B2C - (247 files copied in total)");
+		}
+		//EOL=41
+		public void MicrosoftFlow(){
+			for (int i = 0; i < src_lcode_41_short.Length; i++) {
+				string srcpath = src_files + @"/AAPT/Microsoft Flow/Monthly/App Platform/Microsoft.Flow.Portal.Web/lba/"+ src_lcode_41_short[i] + "/";
+				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/Microsoft Flow/";		        	
+				string fileName;
+				string destFile;				
+		        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+	            foreach (string s in files){
+	                fileName = System.IO.Path.GetFileName(s);
+	                destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                System.IO.File.Copy(s, destFile, true);
+	            }
+		    pb_copyfiles.Value = pb_copyfiles.Value + 1;   
+			}
+			listView1.Items.Add("Microsoft Flow - (2 lcl file per locate, 82 in total)");
 		}
 		//EOL=43
 		public void HISConnectors(){

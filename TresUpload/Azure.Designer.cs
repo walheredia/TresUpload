@@ -53,6 +53,10 @@ namespace TresUpload
 		private System.Windows.Forms.Label lbl_eventlog;
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.FolderBrowserDialog fbd_copyfiles;
+		private System.Windows.Forms.CheckBox chkbx_LogicAppsBPMUX;
+		private System.Windows.Forms.CheckBox chkbx_LogicAppsBPM;
+		private System.Windows.Forms.CheckBox chkbx_BizTalk;
+		private System.Windows.Forms.CheckBox chkbx_MicrosoftFlow;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -84,6 +88,9 @@ namespace TresUpload
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.pb_structure = new System.Windows.Forms.ProgressBar();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
+			this.chkbx_LogicAppsBPMUX = new System.Windows.Forms.CheckBox();
+			this.chkbx_LogicAppsBPM = new System.Windows.Forms.CheckBox();
+			this.chkbx_BizTalk = new System.Windows.Forms.CheckBox();
 			this.chkbx_HisConnectors = new System.Windows.Forms.CheckBox();
 			this.chkbx_DBOLEDB = new System.Windows.Forms.CheckBox();
 			this.chkbx_ESSO = new System.Windows.Forms.CheckBox();
@@ -115,6 +122,7 @@ namespace TresUpload
 			this.label1 = new System.Windows.Forms.Label();
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
+			this.chkbx_MicrosoftFlow = new System.Windows.Forms.CheckBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -209,6 +217,10 @@ namespace TresUpload
 			// 
 			// GrBox_Select_Components
 			// 
+			this.GrBox_Select_Components.Controls.Add(this.chkbx_MicrosoftFlow);
+			this.GrBox_Select_Components.Controls.Add(this.chkbx_LogicAppsBPMUX);
+			this.GrBox_Select_Components.Controls.Add(this.chkbx_LogicAppsBPM);
+			this.GrBox_Select_Components.Controls.Add(this.chkbx_BizTalk);
 			this.GrBox_Select_Components.Controls.Add(this.chkbx_HisConnectors);
 			this.GrBox_Select_Components.Controls.Add(this.chkbx_DBOLEDB);
 			this.GrBox_Select_Components.Controls.Add(this.chkbx_ESSO);
@@ -243,15 +255,54 @@ namespace TresUpload
 			this.GrBox_Select_Components.TabStop = false;
 			this.GrBox_Select_Components.Text = "Check components";
 			// 
+			// chkbx_LogicAppsBPMUX
+			// 
+			this.chkbx_LogicAppsBPMUX.Checked = true;
+			this.chkbx_LogicAppsBPMUX.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chkbx_LogicAppsBPMUX.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chkbx_LogicAppsBPMUX.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chkbx_LogicAppsBPMUX.Location = new System.Drawing.Point(255, 84);
+			this.chkbx_LogicAppsBPMUX.Name = "chkbx_LogicAppsBPMUX";
+			this.chkbx_LogicAppsBPMUX.Size = new System.Drawing.Size(181, 24);
+			this.chkbx_LogicAppsBPMUX.TabIndex = 35;
+			this.chkbx_LogicAppsBPMUX.Text = "LogicApps BPMUX (17)";
+			this.chkbx_LogicAppsBPMUX.UseVisualStyleBackColor = true;
+			// 
+			// chkbx_LogicAppsBPM
+			// 
+			this.chkbx_LogicAppsBPM.Checked = true;
+			this.chkbx_LogicAppsBPM.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chkbx_LogicAppsBPM.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chkbx_LogicAppsBPM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chkbx_LogicAppsBPM.Location = new System.Drawing.Point(255, 54);
+			this.chkbx_LogicAppsBPM.Name = "chkbx_LogicAppsBPM";
+			this.chkbx_LogicAppsBPM.Size = new System.Drawing.Size(181, 24);
+			this.chkbx_LogicAppsBPM.TabIndex = 34;
+			this.chkbx_LogicAppsBPM.Text = "LogicApps BPM (17)";
+			this.chkbx_LogicAppsBPM.UseVisualStyleBackColor = true;
+			// 
+			// chkbx_BizTalk
+			// 
+			this.chkbx_BizTalk.Checked = true;
+			this.chkbx_BizTalk.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chkbx_BizTalk.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chkbx_BizTalk.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chkbx_BizTalk.Location = new System.Drawing.Point(6, 24);
+			this.chkbx_BizTalk.Name = "chkbx_BizTalk";
+			this.chkbx_BizTalk.Size = new System.Drawing.Size(181, 24);
+			this.chkbx_BizTalk.TabIndex = 33;
+			this.chkbx_BizTalk.Text = "BizTalk Server 2016 (8)";
+			this.chkbx_BizTalk.UseVisualStyleBackColor = true;
+			// 
 			// chkbx_HisConnectors
 			// 
 			this.chkbx_HisConnectors.Checked = true;
 			this.chkbx_HisConnectors.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_HisConnectors.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_HisConnectors.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_HisConnectors.Location = new System.Drawing.Point(244, 234);
+			this.chkbx_HisConnectors.Location = new System.Drawing.Point(255, 354);
 			this.chkbx_HisConnectors.Name = "chkbx_HisConnectors";
-			this.chkbx_HisConnectors.Size = new System.Drawing.Size(164, 24);
+			this.chkbx_HisConnectors.Size = new System.Drawing.Size(130, 24);
 			this.chkbx_HisConnectors.TabIndex = 32;
 			this.chkbx_HisConnectors.Text = "HIS Connectors (43)";
 			this.chkbx_HisConnectors.UseVisualStyleBackColor = true;
@@ -262,7 +313,7 @@ namespace TresUpload
 			this.chkbx_DBOLEDB.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_DBOLEDB.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_DBOLEDB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_DBOLEDB.Location = new System.Drawing.Point(6, 114);
+			this.chkbx_DBOLEDB.Location = new System.Drawing.Point(6, 144);
 			this.chkbx_DBOLEDB.Name = "chkbx_DBOLEDB";
 			this.chkbx_DBOLEDB.Size = new System.Drawing.Size(224, 24);
 			this.chkbx_DBOLEDB.TabIndex = 31;
@@ -275,7 +326,7 @@ namespace TresUpload
 			this.chkbx_ESSO.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ESSO.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ESSO.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ESSO.Location = new System.Drawing.Point(6, 24);
+			this.chkbx_ESSO.Location = new System.Drawing.Point(6, 54);
 			this.chkbx_ESSO.Name = "chkbx_ESSO";
 			this.chkbx_ESSO.Size = new System.Drawing.Size(224, 24);
 			this.chkbx_ESSO.TabIndex = 30;
@@ -324,7 +375,7 @@ namespace TresUpload
 			this.chkbx_CloudAppDiscovery.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_CloudAppDiscovery.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_CloudAppDiscovery.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_CloudAppDiscovery.Location = new System.Drawing.Point(244, 114);
+			this.chkbx_CloudAppDiscovery.Location = new System.Drawing.Point(255, 204);
 			this.chkbx_CloudAppDiscovery.Name = "chkbx_CloudAppDiscovery";
 			this.chkbx_CloudAppDiscovery.Size = new System.Drawing.Size(164, 24);
 			this.chkbx_CloudAppDiscovery.TabIndex = 25;
@@ -337,7 +388,7 @@ namespace TresUpload
 			this.chkbx_ADProtectionCenter.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ADProtectionCenter.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ADProtectionCenter.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ADProtectionCenter.Location = new System.Drawing.Point(244, 84);
+			this.chkbx_ADProtectionCenter.Location = new System.Drawing.Point(255, 174);
 			this.chkbx_ADProtectionCenter.Name = "chkbx_ADProtectionCenter";
 			this.chkbx_ADProtectionCenter.Size = new System.Drawing.Size(150, 24);
 			this.chkbx_ADProtectionCenter.TabIndex = 24;
@@ -350,7 +401,7 @@ namespace TresUpload
 			this.chkbx_ADIAM.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ADIAM.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ADIAM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ADIAM.Location = new System.Drawing.Point(244, 54);
+			this.chkbx_ADIAM.Location = new System.Drawing.Point(255, 144);
 			this.chkbx_ADIAM.Name = "chkbx_ADIAM";
 			this.chkbx_ADIAM.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_ADIAM.TabIndex = 23;
@@ -363,7 +414,7 @@ namespace TresUpload
 			this.chkbx_RBAC.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_RBAC.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_RBAC.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_RBAC.Location = new System.Drawing.Point(244, 24);
+			this.chkbx_RBAC.Location = new System.Drawing.Point(255, 114);
 			this.chkbx_RBAC.Name = "chkbx_RBAC";
 			this.chkbx_RBAC.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_RBAC.TabIndex = 22;
@@ -376,7 +427,7 @@ namespace TresUpload
 			this.chkbx_SQLDB.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SQLDB.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SQLDB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SQLDB.Location = new System.Drawing.Point(6, 294);
+			this.chkbx_SQLDB.Location = new System.Drawing.Point(6, 324);
 			this.chkbx_SQLDB.Name = "chkbx_SQLDB";
 			this.chkbx_SQLDB.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_SQLDB.TabIndex = 21;
@@ -389,7 +440,7 @@ namespace TresUpload
 			this.chkbx_AzureSearch.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_AzureSearch.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_AzureSearch.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_AzureSearch.Location = new System.Drawing.Point(5, 354);
+			this.chkbx_AzureSearch.Location = new System.Drawing.Point(255, 24);
 			this.chkbx_AzureSearch.Name = "chkbx_AzureSearch";
 			this.chkbx_AzureSearch.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_AzureSearch.TabIndex = 20;
@@ -402,7 +453,7 @@ namespace TresUpload
 			this.chkbx_DocDB.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_DocDB.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_DocDB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_DocDB.Location = new System.Drawing.Point(5, 324);
+			this.chkbx_DocDB.Location = new System.Drawing.Point(5, 354);
 			this.chkbx_DocDB.Name = "chkbx_DocDB";
 			this.chkbx_DocDB.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_DocDB.TabIndex = 19;
@@ -415,7 +466,7 @@ namespace TresUpload
 			this.chkbx_IntuneMAMExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_IntuneMAMExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_IntuneMAMExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_IntuneMAMExtension.Location = new System.Drawing.Point(6, 264);
+			this.chkbx_IntuneMAMExtension.Location = new System.Drawing.Point(6, 294);
 			this.chkbx_IntuneMAMExtension.Name = "chkbx_IntuneMAMExtension";
 			this.chkbx_IntuneMAMExtension.Size = new System.Drawing.Size(205, 24);
 			this.chkbx_IntuneMAMExtension.TabIndex = 18;
@@ -428,7 +479,7 @@ namespace TresUpload
 			this.chkbx_B2C.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_B2C.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_B2C.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_B2C.Location = new System.Drawing.Point(244, 204);
+			this.chkbx_B2C.Location = new System.Drawing.Point(255, 294);
 			this.chkbx_B2C.Name = "chkbx_B2C";
 			this.chkbx_B2C.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_B2C.TabIndex = 17;
@@ -441,7 +492,7 @@ namespace TresUpload
 			this.chkbx_B2B.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_B2B.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_B2B.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_B2B.Location = new System.Drawing.Point(6, 84);
+			this.chkbx_B2B.Location = new System.Drawing.Point(6, 114);
 			this.chkbx_B2B.Name = "chkbx_B2B";
 			this.chkbx_B2B.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_B2B.TabIndex = 16;
@@ -454,7 +505,7 @@ namespace TresUpload
 			this.chkbx_InsightExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_InsightExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_InsightExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_InsightExtension.Location = new System.Drawing.Point(6, 234);
+			this.chkbx_InsightExtension.Location = new System.Drawing.Point(6, 264);
 			this.chkbx_InsightExtension.Name = "chkbx_InsightExtension";
 			this.chkbx_InsightExtension.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_InsightExtension.TabIndex = 14;
@@ -467,7 +518,7 @@ namespace TresUpload
 			this.chkbx_PortalClassic.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_PortalClassic.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_PortalClassic.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_PortalClassic.Location = new System.Drawing.Point(6, 54);
+			this.chkbx_PortalClassic.Location = new System.Drawing.Point(6, 84);
 			this.chkbx_PortalClassic.Name = "chkbx_PortalClassic";
 			this.chkbx_PortalClassic.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_PortalClassic.TabIndex = 13;
@@ -480,7 +531,7 @@ namespace TresUpload
 			this.chkbx_StoreExperience.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_StoreExperience.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_StoreExperience.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_StoreExperience.Location = new System.Drawing.Point(6, 174);
+			this.chkbx_StoreExperience.Location = new System.Drawing.Point(6, 204);
 			this.chkbx_StoreExperience.Name = "chkbx_StoreExperience";
 			this.chkbx_StoreExperience.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_StoreExperience.TabIndex = 12;
@@ -493,7 +544,7 @@ namespace TresUpload
 			this.chkbx_StoreMarketplace.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_StoreMarketplace.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_StoreMarketplace.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_StoreMarketplace.Location = new System.Drawing.Point(6, 144);
+			this.chkbx_StoreMarketplace.Location = new System.Drawing.Point(6, 174);
 			this.chkbx_StoreMarketplace.Name = "chkbx_StoreMarketplace";
 			this.chkbx_StoreMarketplace.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_StoreMarketplace.TabIndex = 11;
@@ -506,7 +557,7 @@ namespace TresUpload
 			this.chkbx_PortalFX.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_PortalFX.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_PortalFX.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_PortalFX.Location = new System.Drawing.Point(6, 204);
+			this.chkbx_PortalFX.Location = new System.Drawing.Point(6, 234);
 			this.chkbx_PortalFX.Name = "chkbx_PortalFX";
 			this.chkbx_PortalFX.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_PortalFX.TabIndex = 6;
@@ -519,7 +570,7 @@ namespace TresUpload
 			this.chkbx_SchedulerRP.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SchedulerRP.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SchedulerRP.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SchedulerRP.Location = new System.Drawing.Point(244, 144);
+			this.chkbx_SchedulerRP.Location = new System.Drawing.Point(255, 234);
 			this.chkbx_SchedulerRP.Name = "chkbx_SchedulerRP";
 			this.chkbx_SchedulerRP.Size = new System.Drawing.Size(181, 24);
 			this.chkbx_SchedulerRP.TabIndex = 1;
@@ -532,7 +583,7 @@ namespace TresUpload
 			this.chkbx_SchedulerExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_SchedulerExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_SchedulerExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_SchedulerExtension.Location = new System.Drawing.Point(244, 174);
+			this.chkbx_SchedulerExtension.Location = new System.Drawing.Point(255, 264);
 			this.chkbx_SchedulerExtension.Name = "chkbx_SchedulerExtension";
 			this.chkbx_SchedulerExtension.Size = new System.Drawing.Size(180, 24);
 			this.chkbx_SchedulerExtension.TabIndex = 0;
@@ -599,6 +650,19 @@ namespace TresUpload
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Copy Files Menu";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// chkbx_MicrosoftFlow
+			// 
+			this.chkbx_MicrosoftFlow.Checked = true;
+			this.chkbx_MicrosoftFlow.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chkbx_MicrosoftFlow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chkbx_MicrosoftFlow.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chkbx_MicrosoftFlow.Location = new System.Drawing.Point(255, 324);
+			this.chkbx_MicrosoftFlow.Name = "chkbx_MicrosoftFlow";
+			this.chkbx_MicrosoftFlow.Size = new System.Drawing.Size(130, 24);
+			this.chkbx_MicrosoftFlow.TabIndex = 36;
+			this.chkbx_MicrosoftFlow.Text = "Microsoft Flow (41)";
+			this.chkbx_MicrosoftFlow.UseVisualStyleBackColor = true;
 			// 
 			// Azure
 			// 
