@@ -19,6 +19,8 @@ namespace TresUpload
 	/// </summary>
 	public partial class AD : Form
 	{
+		string[] src_lcode_2 = {"es", "ko"};
+		string[] tgt_lcode_2 = {"es-ES", "ko-KR"};
 		string[] src_lcode_4 = {"de-DE", "es-ES", "fr-FR", "ja-JP"};
 		string[] tgt_lcode_4 = {"de-DE", "es-ES", "fr-FR", "ja-JP"};
 		string[] src_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
@@ -26,11 +28,20 @@ namespace TresUpload
 		string[] src_lcode2_17 = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-BT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
+		string[] src_lcode_21 = {"da", "de", "en-gb", "es", "es-mx", "fi", "fr", "fr-ca", "it", "ja", "ko", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ru", "sv", "tr", "zh-hans", "zh-hant"};
+		string[] tgt_lcode_21 = {"da-DK", "de-DE", "en-gb", "es-ES", "es-mx", "fi-FI", "fr-FR", "fr-ca", "it-IT", "ja-JP", "ko-KR", "nb-no", "nl-NL", "pl-PL", "pt-br", "pt-pt", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		//"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"
 		string[] src_lcode_35 = {"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_35 = {"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"};
+		//"ar", "bg", "ca", "cs", "da", "de", "el", "en-gb", "es", "fi", "fil-ph", "fr", "he", "hi", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sr-cyrl-rs", "sv", "th", "tr", "uk", "vi", "zh-hans", "zh-hant"
+		string[] src_lcode_39 = {"ar", "bg", "ca", "cs", "da", "de", "el", "en-gb", "es", "fi", "fil-ph", "fr", "he", "hi", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sr-cyrl-rs", "sv", "th", "tr", "uk", "vi", "zh-hans", "zh-hant"};
+		string[] tgt_lcode_39 = {"ar-sa", "bg-bg", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "chr-cher", "es-es", "fil-ph", "fr-fr", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "it-it", "ja-jp", "ko-kr", "lt-lt", "lv-lv", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sr-cyrl-rs", "sv-se", "sr-latn-rs", "th-th", "tr-tr", "uk-ua", "zh-cn", "zh-tw"};
 		string[] src_lcode_41 = {"bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-Hans", "zh-Hant"};
 		string[] tgt_lcode_41 = {"bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
+		//"af", "am-ET", "ar", "az-latn-az", "be", "bg", "bn-IN", "ca", "chr-cher", "cs", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sq", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-hans", "zh-hant"
+		//"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-in", "ca-es", "chr-cher", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"
+		string[] src_lcode_65 = {"af", "am-ET", "ar", "az-latn-az", "be", "bg", "bn-IN", "ca", "cs", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sq", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-hans", "zh-hant"};
+		string[] tgt_lcode_65 = {"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-in", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"};
 		string[] src_lcode_108 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "kok-IN", "ko-KR", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "nb-NO", "ne-NP", "nl-NL", "nn-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-br", "pt-PT", "quc-Latn-GT", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
 		string[] src_lcode2_108 = {"af", "am", "ar-SA", "as", "az", "be", "bg", "bn", "bn-IN", "bs", "ca", "ca-ES-valencia", "cs", "cy", "da", "de", "el", "en-GB", "es", "es-MX", "et", "eu", "fa", "fi", "fil", "fr-CA", "fr", "ga", "gd", "gl", "gu", "ha", "he", "hi", "hr", "hu", "hy", "id", "ig", "is", "it", "ja", "ka", "kk", "km", "kn", "kok", "ko", "ku-Arab", "ky", "lb", "lo", "lt", "lv", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "no", "ne", "nl", "nn-NO", "nso", "or", "pa-Arab-PK", "pa-IN", "pl", "prs", "pt-BR", "pt", "quc", "quz", "ro", "ru", "rw", "sd", "si", "sk", "sl", "sq", "sr-cyrl-BA", "sr-cyrl-RS", "sr-Latn-RS", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tn", "tr", "tt", "ug", "uk", "ur", "uz", "vi", "wo", "xh", "yo", "zh-HANS", "zh-HANT", "zu"};
 		string[] tgt_lcode_108 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "kok-IN", "ko-KR", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "nb-NO", "ne-NP", "nl-NL", "nn-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-br", "pt-PT", "quc-Latn-GT", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
@@ -115,6 +126,27 @@ namespace TresUpload
 				Directory.SetCurrentDirectory(fbd_createStructure.SelectedPath.ToString());
 				tgt_files=fbd_createStructure.SelectedPath.ToString();
 				
+				
+				for (int i=0; i<tgt_lcode_2.Length; i++)
+				{
+					if (chbx_MSA_AccountKC.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_4[i] + "/MSA/AccountKC/");
+					}
+					
+					
+				}
+				
+				for (int i=0; i<tgt_lcode_65.Length; i++)
+				{
+					if (chbx_MSA_AccountWPWiz.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_4[i] + "/MSA/AccountWPWiz/");
+					}
+					
+					
+				}
+				
 				for (int i=0; i<tgt_lcode_4.Length; i++)
 				{
 					if (chbx_Atlanta.Checked)
@@ -171,6 +203,19 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD-ERM/");
 					}
+					if (chbx_MSA_AppRegPortal.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/MSA/AppRegPortal/");
+					}
+					
+				}
+				
+				for (int i=0; i<tgt_lcode_21.Length; i++) 
+				{
+					if (chbx_MSA_AccountXbox.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/MSA/AccountXBox/");
+					}
 				}
 				
 				for (int i=0; i<tgt_lcode_35.Length; i++) 
@@ -178,6 +223,14 @@ namespace TresUpload
 					if (chbx_MIM.Checked) 
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/MIM/");
+					}
+				}
+				
+				for (int i=0; i<tgt_lcode_39.Length; i++) 
+				{
+					if (chbx_MSA_AuthAndroid.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/MSA/AuthenticatorAndroid/");
 					}
 				}
 				
@@ -267,6 +320,27 @@ namespace TresUpload
 					{
 						IAMUX();
 					}
+					if(chbx_MSA_AccountKC.Checked)
+					{
+						MSAAccountKC();
+					}
+					if(chbx_MSA_AccountWPWiz.Checked)
+					{
+						MSAAccountWPWiz();
+					}
+					if(chbx_MSA_AccountXbox.Checked)
+					{
+						MSAAccountXBox();
+					}
+					if(chbx_MSA_AppRegPortal.Checked)
+					{
+						MSAAppRegPortal();
+					}
+					if(chbx_MSA_AuthAndroid.Checked)
+					{
+						MSAAuthAndroid();
+					}
+					
 					
 				}
 				catch(Exception ex)
@@ -680,6 +754,113 @@ namespace TresUpload
 					//c:\Eliseo\TRES\AD-IAM-Services-AADUX\Weekly\master\AzurePortalWebsite\lba\de\AzurePortalWebsite\lcl\
 					string srcpath = src_files + @"/AD-IAM-Services-AADUX/Weekly/master/AzurePortalWebsite/lba/"+ src_lcode2_108[i] + "/AzurePortalWebsite/lcl/";
 					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/IAMUX/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		public void MSAAccountKC()
+		{
+			for (int i = 0; i < src_lcode_2.Length; i++) 
+				{
+					
+					//cc:\Eliseo\TRES\AD-MSA-Loc\OnGoing\master\AccountKC\lba\es\AccountKC\lcl\
+					string srcpath = src_files + @"/AD-MSA-Loc/OnGoing/master/AccountK/lba/"+ src_lcode_2[i] + "/AccountKC/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_2[i] + "/MSA/AccountKC/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		//MSAAccountWPWiz
+		public void MSAAccountWPWiz()
+		{
+			for (int i = 0; i < src_lcode_65.Length; i++) 
+				{
+					
+					//ccEliseo\TRES\AD-MSA-Loc\OnGoing\master\AccountWPWiz\lba\af\AccountWPWiz\lcl\
+					string srcpath = src_files + @"/AD-MSA-Loc/OnGoing/master/AccountWPWiz/lba/"+ src_lcode_65[i] + "/AccountWPWiz/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_65[i] + "/MSA/AccountWPWiz/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		public void MSAAccountXBox()
+		{
+			for (int i = 0; i < src_lcode_21.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-MSA-Loc\OnGoing\master\AccountXBox\lba\da\AccountXBox\lcl\
+					string srcpath = src_files + @"/AD-MSA-Loc/OnGoing/master/AccountXBox/lba/"+ src_lcode_21[i] + "/AccountXBox/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_21[i] + "/MSA/AccountXBox/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		public void MSAAppRegPortal()
+		{
+			for (int i = 0; i < src_lcode2_17.Length; i++) 
+				{
+					
+					//cc:\Eliseo\TRES\AD-MSA-Loc\OnGoing\master\AppRegPortal\lba\cs\AppRegPortal\lcl\
+					string srcpath = src_files + @"/AD-MSA-Loc/OnGoing/master/AppRegPortal/lba/"+ src_lcode2_17[i] + "/AppRegPortal/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/MSA/AppRegPortal/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		//MSAAuthAndroid
+		public void MSAAuthAndroid()
+		{
+			for (int i = 0; i < src_lcode_39.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-MSA-Loc\OnGoing\master\Authenticator_Android\lba\ar\Authenticator_Android\lcl\
+					string srcpath = src_files + @"/AD-MSA-Loc/OnGoing/master/Authenticator_Android/lba/"+ src_lcode_39[i] + "/Authenticator_Android/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_39[i] + "/MSA/AuthenticatorAndroid//";		        	
 					string fileName;
 					string destFile;				
 			        string[] files = System.IO.Directory.GetFiles(srcpath);
