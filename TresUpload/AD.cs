@@ -23,6 +23,10 @@ namespace TresUpload
 		string[] tgt_lcode_2 = {"es-ES", "ko-KR"};
 		string[] src_lcode_4 = {"de-DE", "es-ES", "fr-FR", "ja-JP"};
 		string[] tgt_lcode_4 = {"de-DE", "es-ES", "fr-FR", "ja-JP"};
+		string[] src_lcode_6 = {"es", "fr", "it", "ja", "zh-HANS", "zh-HANT"};
+		string[] tgt_lcode_6 = {"es-ES", "fr-FR", "it-IT", "ja-JP", "zh-CN", "zh-TW"};
+		string[] src_lcode_7 = {"de", "es", "fr", "it", "ja", "zh-HANS", "zh-HANT"};
+		string[] tgt_lcode_7 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "zh-CN", "zh-TW"};
 		string[] src_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_16 = {"da-DK","de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR","nb-NO", "nl-NL", "pl-PL", "pt-BR", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] src_lcode2_17 = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt-PT", "ru", "sv", "tr", "zh-hans", "zh-hant"};
@@ -30,7 +34,10 @@ namespace TresUpload
 		string[] tgt_lcode_17 = {"cs-CZ", "de-DE", "es-ES", "fr-FR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
 		string[] src_lcode_21 = {"da", "de", "en-gb", "es", "es-mx", "fi", "fr", "fr-ca", "it", "ja", "ko", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] tgt_lcode_21 = {"da-DK", "de-DE", "en-gb", "es-ES", "es-mx", "fi-FI", "fr-FR", "fr-ca", "it-IT", "ja-JP", "ko-KR", "nb-no", "nl-NL", "pl-PL", "pt-br", "pt-pt", "ru-RU", "sv-SE", "tr-TR", "zh-CN", "zh-TW"};
-		//"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"
+		
+		string[] src_lcode_33 = {"bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "hr", "hu", "it", "ja", "kk", "ko", "lt", "lv", "nl", "no", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sr-latn-rs", "sv", "th", "tr", "uk", "zh-hans", "zh-hant"};
+		string[] tgt_lcode_33 = {"bg-bg", "cs-cz", "da-dk", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hr-hr", "hu-hu", "it-it", "ja-jp", "kk-kz", "ko-kr", "lt-lt", "lv-lv", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sr-latn-rs", "sv-se", "th-th", "tr-tr", "uk-ua", "zh-cn", "zh-tw"};
+		
 		string[] src_lcode_35 = {"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"};
 		string[] tgt_lcode_35 = {"bg-BG", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "hi-IN", "hr-HR", "hu-HU", "it-IT", "ja-JP", "ko-KR", "lt-LT", "lv-LV", "nb", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-latn-CS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "zh-CN", "zh-TW"};
 		//"ar", "bg", "ca", "cs", "da", "de", "el", "en-gb", "es", "fi", "fil-ph", "fr", "he", "hi", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sr-cyrl-rs", "sv", "th", "tr", "uk", "vi", "zh-hans", "zh-hant"
@@ -151,6 +158,16 @@ namespace TresUpload
 					
 				}
 				
+				for (int i=0; i<tgt_lcode_7.Length; i++)
+				{
+					if (chbx_PowerShell7.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/");
+					}
+					
+					
+				}
+				
 				for (int i=0; i<tgt_lcode_16.Length; i++)
 				{
 					if (chkbx_ADBilling.Checked) 
@@ -201,6 +218,10 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/MSA/AppRegPortal/");
 					}
+					if (chbx_KeyVault.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/KeyVault/");
+					}
 					
 				}
 				
@@ -212,13 +233,13 @@ namespace TresUpload
 					}
 				}
 				
-				/*for (int i=0; i<tgt_lcode_35.Length; i++) 
+				for (int i=0; i<tgt_lcode_33.Length; i++) 
 				{
-					if (chbx_MIM.Checked) 
+					if (chbx_PowerShell33.Checked) 
 					{
-						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/MIM/");
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/PowerShell/AdminConfig");
 					}
-				}*/
+				}
 				
 				for (int i=0; i<tgt_lcode_39.Length; i++) 
 				{
@@ -379,9 +400,23 @@ namespace TresUpload
 					}
 					if(chbx_SSPR.Checked)
 					{
-						SSPR();
-						
+						SSPR();						
 					}
+					if(chbx_KeyVault.Checked)
+					{
+						KeyVault();						
+					}
+					
+					if(chbx_PowerShell33.Checked)
+					{
+						PowerShell33();						
+					}
+					if(chbx_PowerShell7.Checked)
+					{
+						PowerShell6();
+						PowerShell7();
+					}
+					
 					
 				}
 				catch(Exception ex)
@@ -991,6 +1026,207 @@ namespace TresUpload
 				}
 		}
 		
+		public void KeyVault()
+		{
+			for (int i = 0; i < src_lcode_17.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\KeyVault\OnGoing\develop\KeyVaultExtension\lba\cs\KeyVaultExtension\lcl\Client\
+					string srcpath = src_files + @"/KeyVault/OnGoing/develop/KeyVaultExtension/lba/"+ src_lcode2_17[i] + "/KeyVaultExtension/lcl/Client/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/KeyVault/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath, "*.*", SearchOption.AllDirectories);
+		            	// Copy the files and overwrite destination files if they already exist.
+		            	foreach (string s in files)
+		            	{
+		                	// Use static Path methods to extract only the file name from the path.
+		                	fileName = System.IO.Path.GetFileName(s);
+		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+		                	System.IO.File.Copy(s, destFile, true);
+		            	}
+					
+				}
+		}
+		
+		public void PowerShell33()
+		{
+			for (int i = 0; i < src_lcode_33.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\adminconfig\lba\bg\adminconfig\lcl\
+					string srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/adminconfig/lba/"+ src_lcode_33[i] + "/adminconfig/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/PowerShell/AdminConfig";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+					
+				}
+		}
+		
+		public void PowerShell6()
+		{
+			for (int i = 0; i < src_lcode_6.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\AzureAD.PowerShell.AutoGen\lba\de\AzureAD.PowerShell.AutoGen\lcl\
+					string srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/AzureAD16.PowerShell.AutoGen/lba/"+ src_lcode_6[i] + "/AzureAD16.PowerShell.AutoGen/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_6[i] + "/PowerShell/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\AzureAD16.PowerShell.AutoGen\lba\es\AzureAD16.PowerShell.AutoGen\lcl\
+					
+				}
+		}
+		
+		public void PowerShell7()
+		{
+			for (int i = 0; i < src_lcode_7.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\AzureAD.PowerShell.AutoGen\lba\de\AzureAD.PowerShell.AutoGen\lcl\
+					string srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/AzureAD.PowerShell.AutoGen/lba/"+ src_lcode_7[i] + "/AzureAD.PowerShell.AutoGen/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\AzureAD16.PowerShell.Custom\lba\de\AzureAD16.PowerShell.Custom\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/AzureAD16.PowerShell.Custom/lba/"+ src_lcode_7[i] + "/AzureAD16.PowerShell.Custom/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\CommonLibrary\lba\de\CommonLibrary\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/CommonLibrary/lba/"+ src_lcode_7[i] + "/CommonLibrary/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\commonLibrary_resources\lba\de\commonLibrary_resources\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/commonLibrary_resources/lba/"+ src_lcode_7[i] + "/commonLibrary_resources/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\MSGraph.PowerShell.AutoGen\lba\de\MSGraph.PowerShell.AutoGen\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/MSGraph.PowerShell.AutoGen/lba/"+ src_lcode_7[i] + "/MSGraph.PowerShell.AutoGen/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\MSGraphBeta.PowerShell.AutoGen\lba\de\MSGraphBeta.PowerShell.AutoGen\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/MSGraphBeta.PowerShell.AutoGen/lba/"+ src_lcode_7[i] + "/MSGraphBeta.PowerShell.AutoGen/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+					
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\psmodule\lba\de\psmodule\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/psmodule/lba/"+ src_lcode_7[i] + "/psmodule/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\psmodule_resources\lba\de\psmodule_resources\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/psmodule_resources/lba/"+ src_lcode_7[i] + "/psmodule_resources/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\PSSnapin\lba\de\PSSnapin\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/PSSnapin/lba/"+ src_lcode_7[i] + "/PSSnapin/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\pssnapin_resources\lba\de\pssnapin_resources\lcl\
+	            	srcpath = src_files + @"/AD_PowerShell/OnGoing/develop/pssnapin_resources/lba/"+ src_lcode_7[i] + "/pssnapin_resources/lcl/";
+					tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/";		        	
+									
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+				}
+		}
 		
 		void Mtb_yearmonthMaskInputRejected(object sender, MaskInputRejectedEventArgs e)
 		{
