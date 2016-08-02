@@ -45,8 +45,10 @@ namespace TresUpload
 		string[] tgt_lcode_39 = {"ar-sa", "bg-bg", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "fil-ph", "fr-fr", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "it-it", "ja-jp", "ko-kr", "lt-lt", "lv-lv", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sr-cyrl-rs", "sv-se", "sr-latn-rs", "th-th", "tr-tr", "uk-ua", "zh-cn", "zh-tw"};
 		string[] src_lcode_41 = {"bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-Hans", "zh-Hant"};
 		string[] tgt_lcode_41 = {"bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "eu-ES", "fi-FI", "fr-FR", "gl-ES", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-JP", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-Cyrl-RS", "sr-Latn-RS", "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
-		//"af", "am-ET", "ar", "az-latn-az", "be", "bg", "bn-IN", "ca", "chr-cher", "cs", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sq", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-hans", "zh-hant"
-		//"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-in", "ca-es", "chr-cher", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"
+		//"AR-SA", "BG", "CA", "CS", "DA", "DE", "EL", "ES", "ET", "EU", "FI", "FR", "GL", "HE", "HI", "HR", "HU", "ID", "IT", "JA", "KK", "KO", "LT", "LV", "MS", "NL", "NO", "PL", "PT", "PT-BR", "RO", "RU", "SK", "SL", "SR-CYRL-CS", "SR-LATN-CS", "SV", "TH", "TR", "UK", "VI", "ZH-HANS", "ZH-HANT"
+		//"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE"
+		string[] src_lcode_43 = {"AR-SA", "BG", "CA", "CS", "DA", "DE", "EL", "ES", "ET", "EU", "FI", "FR", "GL", "HE", "HI", "HR", "HU", "ID", "IT", "JA", "KK", "KO", "LT", "LV", "MS", "NL", "NO", "PL", "PT", "PT-BR", "RO", "RU", "SK", "SL", "SR-CYRL-RS", "SR-LATN-RS", "SV", "TH", "TR", "UK", "VI", "ZH-HANS", "ZH-HANT"};
+		string[] tgt_lcode_43 = {"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE"};
 		string[] src_lcode_65 = {"af", "am-ET", "ar", "az-latn-az", "be", "bg", "bn-IN", "ca", "cs", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sq", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-hans", "zh-hant"};
 		string[] tgt_lcode_65 = {"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-in", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"};
 		string[] src_lcode_107 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "kok-IN", "ko-KR", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "nb-NO", "ne-NP", "nl-NL", "nn-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-br", "pt-PT", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
@@ -158,6 +160,16 @@ namespace TresUpload
 					
 				}
 				
+				for (int i=0; i<tgt_lcode_6.Length; i++)
+				{
+					if (chbx_PowerShell6.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_6[i] + "/PowerShell/");
+					}
+					
+					
+				}
+				
 				for (int i=0; i<tgt_lcode_7.Length; i++)
 				{
 					if (chbx_PowerShell7.Checked)
@@ -239,6 +251,10 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/PowerShell/AdminConfig");
 					}
+					if (chbx_MSODS33.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/MSODS");
+					}
 				}
 				
 				for (int i=0; i<tgt_lcode_39.Length; i++) 
@@ -255,6 +271,16 @@ namespace TresUpload
 					if (chbx_Adallom.Checked) 
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/Adallom/");
+					}
+					
+					
+				}
+				for (int i=0; i<tgt_lcode_43.Length; i++) 
+				{
+					
+					if (chbx_ADRS.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/ADRS/");
 					}
 					
 					
@@ -303,6 +329,10 @@ namespace TresUpload
 					if (chbx_MSA_Login.Checked)
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/MSA/Login");
+					}
+					if (chbx_MSODS108.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/MSODS");
 					}
 				}
 				
@@ -416,7 +446,18 @@ namespace TresUpload
 						PowerShell6();
 						PowerShell7();
 					}
-					
+					if(chbx_MSODS33.Checked)
+					{
+						MSODS33();
+					}
+					if(chbx_MSODS108.Checked)
+					{
+						MSODS108();
+					}
+					if(chbx_ADRS.Checked)
+					{
+						ADRS();
+					}
 					
 				}
 				catch(Exception ex)
@@ -1225,6 +1266,70 @@ namespace TresUpload
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
 	            	}
+				}
+		}
+		
+		public void MSODS33()
+		{
+			for (int i = 0; i < src_lcode_33.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-MSODS-Core\OnGoing\master\awslibrary\lba\bg\awslibrary\lcl\
+					string srcpath = src_files + @"/AD-MSODS-Core/OnGoing/master/awslibrary/lba/"+ src_lcode_33[i] + "/awslibrary/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/MSODS/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}
+		public void MSODS108()
+		{
+			for (int i = 0; i < src_lcode_108.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-MSODS-Core\OnGoing\master\AppPermissionContent\lba\af\AppPermissionContent\lcl\
+					string srcpath = src_files + @"/AD-MSODS-Core/OnGoing/master/AppPermissionContent/lba/"+ src_lcode_108[i] + "/AppPermissionContent/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/MSODS/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}
+		public void ADRS()
+		{
+			for (int i = 0; i < src_lcode_43.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD-DRS-ADRS\DeviceRegistration\Lba\AR-SA\DeviceRegistration\lcl\
+					string srcpath = src_files + @"/AD-DRS-ADRS/DeviceRegistration/Lba/"+ src_lcode_43[i] + "/DeviceRegistration/lcl/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/ADRS/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
 				}
 		}
 		
