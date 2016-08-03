@@ -44,7 +44,6 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chbx_MFAiPhone;
 		private System.Windows.Forms.CheckBox chbx_MFAAndroid;
 		private System.Windows.Forms.CheckBox chbx_MFAiPhone25;
-		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.CheckBox chbx_MFAWinPhone;
 		private System.Windows.Forms.FolderBrowserDialog fbd_createStructure;
 		private System.Windows.Forms.MaskedTextBox mtb_yearmonth;
@@ -106,7 +105,10 @@ namespace TresUpload
 			this.mtb_yearmonth = new System.Windows.Forms.MaskedTextBox();
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
+			this.chbx_ADRS = new System.Windows.Forms.CheckBox();
 			this.chbx_MSODS108 = new System.Windows.Forms.CheckBox();
+			this.chbx_MFA = new System.Windows.Forms.CheckBox();
+			this.chbx_MIM = new System.Windows.Forms.CheckBox();
 			this.chbx_MSODS33 = new System.Windows.Forms.CheckBox();
 			this.chbx_PowerShell6 = new System.Windows.Forms.CheckBox();
 			this.chbx_PowerShell7 = new System.Windows.Forms.CheckBox();
@@ -121,11 +123,9 @@ namespace TresUpload
 			this.chbx_MSA_AccountWPWiz = new System.Windows.Forms.CheckBox();
 			this.chbx_ERM = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAWinPhone = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAiPhone25 = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAiPhone = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAAndroid = new System.Windows.Forms.CheckBox();
-			this.chbx_MFA = new System.Windows.Forms.CheckBox();
 			this.chbx_MFAAgent = new System.Windows.Forms.CheckBox();
 			this.chbx_Rome = new System.Windows.Forms.CheckBox();
 			this.button3 = new System.Windows.Forms.Button();
@@ -137,7 +137,6 @@ namespace TresUpload
 			this.checkBox25 = new System.Windows.Forms.CheckBox();
 			this.chbx_IAMUX = new System.Windows.Forms.CheckBox();
 			this.chbx_PIM = new System.Windows.Forms.CheckBox();
-			this.chbx_MIM = new System.Windows.Forms.CheckBox();
 			this.chbx_Atlanta = new System.Windows.Forms.CheckBox();
 			this.chbx_Adallom = new System.Windows.Forms.CheckBox();
 			this.chbx_ESTS = new System.Windows.Forms.CheckBox();
@@ -156,7 +155,6 @@ namespace TresUpload
 			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
-			this.chbx_ADRS = new System.Windows.Forms.CheckBox();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -219,6 +217,8 @@ namespace TresUpload
 			// 
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ADRS);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MSODS108);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MFA);
+			this.GrBox_Select_Components.Controls.Add(this.chbx_MIM);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MSODS33);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_PowerShell6);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_PowerShell7);
@@ -233,11 +233,9 @@ namespace TresUpload
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MSA_AccountWPWiz);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ERM);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAWinPhone);
-			this.GrBox_Select_Components.Controls.Add(this.checkBox1);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAiPhone25);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAiPhone);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAAndroid);
-			this.GrBox_Select_Components.Controls.Add(this.chbx_MFA);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_MFAAgent);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_Rome);
 			this.GrBox_Select_Components.Controls.Add(this.button3);
@@ -249,7 +247,6 @@ namespace TresUpload
 			this.GrBox_Select_Components.Controls.Add(this.checkBox25);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_IAMUX);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_PIM);
-			this.GrBox_Select_Components.Controls.Add(this.chbx_MIM);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_Atlanta);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_Adallom);
 			this.GrBox_Select_Components.Controls.Add(this.chbx_ESTS);
@@ -269,20 +266,58 @@ namespace TresUpload
 			this.GrBox_Select_Components.TabStop = false;
 			this.GrBox_Select_Components.Text = "Check components";
 			// 
+			// chbx_ADRS
+			// 
+			this.chbx_ADRS.Checked = true;
+			this.chbx_ADRS.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chbx_ADRS.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_ADRS.Location = new System.Drawing.Point(6, 234);
+			this.chbx_ADRS.Name = "chbx_ADRS";
+			this.chbx_ADRS.Size = new System.Drawing.Size(104, 24);
+			this.chbx_ADRS.TabIndex = 52;
+			this.chbx_ADRS.Text = "ADRS (43)";
+			this.chbx_ADRS.UseVisualStyleBackColor = true;
+			// 
 			// chbx_MSODS108
 			// 
+			this.chbx_MSODS108.Checked = true;
+			this.chbx_MSODS108.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSODS108.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MSODS108.Location = new System.Drawing.Point(187, 54);
+			this.chbx_MSODS108.Location = new System.Drawing.Point(6, 386);
 			this.chbx_MSODS108.Name = "chbx_MSODS108";
 			this.chbx_MSODS108.Size = new System.Drawing.Size(104, 24);
 			this.chbx_MSODS108.TabIndex = 51;
 			this.chbx_MSODS108.Text = "MSODS (108)";
 			this.chbx_MSODS108.UseVisualStyleBackColor = true;
 			// 
+			// chbx_MFA
+			// 
+			this.chbx_MFA.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+			this.chbx_MFA.Location = new System.Drawing.Point(374, 204);
+			this.chbx_MFA.Name = "chbx_MFA";
+			this.chbx_MFA.Size = new System.Drawing.Size(104, 24);
+			this.chbx_MFA.TabIndex = 32;
+			this.chbx_MFA.Text = "MFA (43)";
+			this.chbx_MFA.UseVisualStyleBackColor = true;
+			this.chbx_MFA.CheckedChanged += new System.EventHandler(this.Chbx_MFACheckedChanged);
+			// 
+			// chbx_MIM
+			// 
+			this.chbx_MIM.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chbx_MIM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chbx_MIM.Location = new System.Drawing.Point(374, 290);
+			this.chbx_MIM.Name = "chbx_MIM";
+			this.chbx_MIM.Size = new System.Drawing.Size(181, 24);
+			this.chbx_MIM.TabIndex = 8;
+			this.chbx_MIM.Text = "MIM (33)";
+			this.chbx_MIM.UseVisualStyleBackColor = true;
+			// 
 			// chbx_MSODS33
 			// 
+			this.chbx_MSODS33.Checked = true;
+			this.chbx_MSODS33.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSODS33.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MSODS33.Location = new System.Drawing.Point(187, 84);
+			this.chbx_MSODS33.Location = new System.Drawing.Point(6, 356);
 			this.chbx_MSODS33.Name = "chbx_MSODS33";
 			this.chbx_MSODS33.Size = new System.Drawing.Size(104, 24);
 			this.chbx_MSODS33.TabIndex = 50;
@@ -294,7 +329,7 @@ namespace TresUpload
 			this.chbx_PowerShell6.Checked = true;
 			this.chbx_PowerShell6.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_PowerShell6.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_PowerShell6.Location = new System.Drawing.Point(6, 84);
+			this.chbx_PowerShell6.Location = new System.Drawing.Point(187, 24);
 			this.chbx_PowerShell6.Name = "chbx_PowerShell6";
 			this.chbx_PowerShell6.Size = new System.Drawing.Size(104, 24);
 			this.chbx_PowerShell6.TabIndex = 49;
@@ -306,7 +341,7 @@ namespace TresUpload
 			this.chbx_PowerShell7.Checked = true;
 			this.chbx_PowerShell7.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_PowerShell7.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_PowerShell7.Location = new System.Drawing.Point(6, 114);
+			this.chbx_PowerShell7.Location = new System.Drawing.Point(187, 54);
 			this.chbx_PowerShell7.Name = "chbx_PowerShell7";
 			this.chbx_PowerShell7.Size = new System.Drawing.Size(104, 24);
 			this.chbx_PowerShell7.TabIndex = 48;
@@ -318,7 +353,7 @@ namespace TresUpload
 			this.chbx_PowerShell33.Checked = true;
 			this.chbx_PowerShell33.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_PowerShell33.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_PowerShell33.Location = new System.Drawing.Point(187, 206);
+			this.chbx_PowerShell33.Location = new System.Drawing.Point(187, 84);
 			this.chbx_PowerShell33.Name = "chbx_PowerShell33";
 			this.chbx_PowerShell33.Size = new System.Drawing.Size(104, 24);
 			this.chbx_PowerShell33.TabIndex = 47;
@@ -331,7 +366,7 @@ namespace TresUpload
 			this.chbx_KeyVault.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_KeyVault.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_KeyVault.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_KeyVault.Location = new System.Drawing.Point(6, 354);
+			this.chbx_KeyVault.Location = new System.Drawing.Point(6, 326);
 			this.chbx_KeyVault.Name = "chbx_KeyVault";
 			this.chbx_KeyVault.Size = new System.Drawing.Size(181, 24);
 			this.chbx_KeyVault.TabIndex = 46;
@@ -344,7 +379,7 @@ namespace TresUpload
 			this.chbx_SSPR.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_SSPR.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_SSPR.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_SSPR.Location = new System.Drawing.Point(374, 234);
+			this.chbx_SSPR.Location = new System.Drawing.Point(187, 384);
 			this.chbx_SSPR.Name = "chbx_SSPR";
 			this.chbx_SSPR.Size = new System.Drawing.Size(181, 24);
 			this.chbx_SSPR.TabIndex = 45;
@@ -356,7 +391,7 @@ namespace TresUpload
 			this.chbx_MSA_Login.Checked = true;
 			this.chbx_MSA_Login.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_Login.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_Login.Location = new System.Drawing.Point(187, 326);
+			this.chbx_MSA_Login.Location = new System.Drawing.Point(187, 264);
 			this.chbx_MSA_Login.Name = "chbx_MSA_Login";
 			this.chbx_MSA_Login.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_Login.TabIndex = 44;
@@ -368,7 +403,7 @@ namespace TresUpload
 			this.chbx_MSA_Account.Checked = true;
 			this.chbx_MSA_Account.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_Account.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_Account.Location = new System.Drawing.Point(187, 296);
+			this.chbx_MSA_Account.Location = new System.Drawing.Point(187, 234);
 			this.chbx_MSA_Account.Name = "chbx_MSA_Account";
 			this.chbx_MSA_Account.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_Account.TabIndex = 43;
@@ -380,7 +415,7 @@ namespace TresUpload
 			this.chbx_MSA_AuthAndroid.Checked = true;
 			this.chbx_MSA_AuthAndroid.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_AuthAndroid.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_AuthAndroid.Location = new System.Drawing.Point(187, 116);
+			this.chbx_MSA_AuthAndroid.Location = new System.Drawing.Point(187, 174);
 			this.chbx_MSA_AuthAndroid.Name = "chbx_MSA_AuthAndroid";
 			this.chbx_MSA_AuthAndroid.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_AuthAndroid.TabIndex = 42;
@@ -392,7 +427,7 @@ namespace TresUpload
 			this.chbx_MSA_AppRegPortal.Checked = true;
 			this.chbx_MSA_AppRegPortal.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_AppRegPortal.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_AppRegPortal.Location = new System.Drawing.Point(6, 384);
+			this.chbx_MSA_AppRegPortal.Location = new System.Drawing.Point(187, 294);
 			this.chbx_MSA_AppRegPortal.Name = "chbx_MSA_AppRegPortal";
 			this.chbx_MSA_AppRegPortal.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_AppRegPortal.TabIndex = 41;
@@ -404,7 +439,7 @@ namespace TresUpload
 			this.chbx_MSA_AccountXbox.Checked = true;
 			this.chbx_MSA_AccountXbox.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_AccountXbox.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_AccountXbox.Location = new System.Drawing.Point(187, 176);
+			this.chbx_MSA_AccountXbox.Location = new System.Drawing.Point(187, 144);
 			this.chbx_MSA_AccountXbox.Name = "chbx_MSA_AccountXbox";
 			this.chbx_MSA_AccountXbox.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_AccountXbox.TabIndex = 40;
@@ -417,7 +452,7 @@ namespace TresUpload
 			this.chbx_MSA_AccountWPWiz.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_AccountWPWiz.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_MSA_AccountWPWiz.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_AccountWPWiz.Location = new System.Drawing.Point(187, 266);
+			this.chbx_MSA_AccountWPWiz.Location = new System.Drawing.Point(187, 204);
 			this.chbx_MSA_AccountWPWiz.Name = "chbx_MSA_AccountWPWiz";
 			this.chbx_MSA_AccountWPWiz.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_AccountWPWiz.TabIndex = 39;
@@ -439,28 +474,20 @@ namespace TresUpload
 			// 
 			// chbx_MFAWinPhone
 			// 
+			this.chbx_MFAWinPhone.Checked = true;
+			this.chbx_MFAWinPhone.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MFAWinPhone.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MFAWinPhone.Location = new System.Drawing.Point(374, 145);
+			this.chbx_MFAWinPhone.Location = new System.Drawing.Point(374, 85);
 			this.chbx_MFAWinPhone.Name = "chbx_MFAWinPhone";
 			this.chbx_MFAWinPhone.Size = new System.Drawing.Size(125, 24);
 			this.chbx_MFAWinPhone.TabIndex = 37;
 			this.chbx_MFAWinPhone.Text = "MFA WinPhone (61)";
 			this.chbx_MFAWinPhone.UseVisualStyleBackColor = true;
 			// 
-			// checkBox1
-			// 
-			this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.checkBox1.Location = new System.Drawing.Point(374, 115);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(125, 24);
-			this.checkBox1.TabIndex = 36;
-			this.checkBox1.Text = "MFA iPhone (25)";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
 			// chbx_MFAiPhone25
 			// 
 			this.chbx_MFAiPhone25.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MFAiPhone25.Location = new System.Drawing.Point(374, 85);
+			this.chbx_MFAiPhone25.Location = new System.Drawing.Point(374, 174);
 			this.chbx_MFAiPhone25.Name = "chbx_MFAiPhone25";
 			this.chbx_MFAiPhone25.Size = new System.Drawing.Size(125, 24);
 			this.chbx_MFAiPhone25.TabIndex = 35;
@@ -469,6 +496,8 @@ namespace TresUpload
 			// 
 			// chbx_MFAiPhone
 			// 
+			this.chbx_MFAiPhone.Checked = true;
+			this.chbx_MFAiPhone.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MFAiPhone.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
 			this.chbx_MFAiPhone.Location = new System.Drawing.Point(374, 55);
 			this.chbx_MFAiPhone.Name = "chbx_MFAiPhone";
@@ -479,28 +508,20 @@ namespace TresUpload
 			// 
 			// chbx_MFAAndroid
 			// 
+			this.chbx_MFAAndroid.Checked = true;
+			this.chbx_MFAAndroid.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MFAAndroid.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MFAAndroid.Location = new System.Drawing.Point(374, 24);
+			this.chbx_MFAAndroid.Location = new System.Drawing.Point(374, 26);
 			this.chbx_MFAAndroid.Name = "chbx_MFAAndroid";
 			this.chbx_MFAAndroid.Size = new System.Drawing.Size(145, 24);
 			this.chbx_MFAAndroid.TabIndex = 33;
 			this.chbx_MFAAndroid.Text = "MFA Android (43)";
 			this.chbx_MFAAndroid.UseVisualStyleBackColor = true;
 			// 
-			// chbx_MFA
-			// 
-			this.chbx_MFA.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MFA.Location = new System.Drawing.Point(374, 175);
-			this.chbx_MFA.Name = "chbx_MFA";
-			this.chbx_MFA.Size = new System.Drawing.Size(104, 24);
-			this.chbx_MFA.TabIndex = 32;
-			this.chbx_MFA.Text = "MFA (43)";
-			this.chbx_MFA.UseVisualStyleBackColor = true;
-			// 
 			// chbx_MFAAgent
 			// 
 			this.chbx_MFAAgent.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_MFAAgent.Location = new System.Drawing.Point(374, 204);
+			this.chbx_MFAAgent.Location = new System.Drawing.Point(374, 234);
 			this.chbx_MFAAgent.Name = "chbx_MFAAgent";
 			this.chbx_MFAAgent.Size = new System.Drawing.Size(141, 24);
 			this.chbx_MFAAgent.TabIndex = 31;
@@ -512,7 +533,7 @@ namespace TresUpload
 			this.chbx_Rome.Checked = true;
 			this.chbx_Rome.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_Rome.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_Rome.Location = new System.Drawing.Point(6, 324);
+			this.chbx_Rome.Location = new System.Drawing.Point(6, 204);
 			this.chbx_Rome.Name = "chbx_Rome";
 			this.chbx_Rome.Size = new System.Drawing.Size(179, 24);
 			this.chbx_Rome.TabIndex = 30;
@@ -604,7 +625,7 @@ namespace TresUpload
 			this.chbx_IAMUX.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_IAMUX.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_IAMUX.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_IAMUX.Location = new System.Drawing.Point(187, 356);
+			this.chbx_IAMUX.Location = new System.Drawing.Point(187, 324);
 			this.chbx_IAMUX.Name = "chbx_IAMUX";
 			this.chbx_IAMUX.Size = new System.Drawing.Size(181, 24);
 			this.chbx_IAMUX.TabIndex = 11;
@@ -623,17 +644,6 @@ namespace TresUpload
 			this.chbx_PIM.TabIndex = 9;
 			this.chbx_PIM.Text = "PIM (17)";
 			this.chbx_PIM.UseVisualStyleBackColor = true;
-			// 
-			// chbx_MIM
-			// 
-			this.chbx_MIM.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.chbx_MIM.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MIM.Location = new System.Drawing.Point(187, 234);
-			this.chbx_MIM.Name = "chbx_MIM";
-			this.chbx_MIM.Size = new System.Drawing.Size(181, 24);
-			this.chbx_MIM.TabIndex = 8;
-			this.chbx_MIM.Text = "MIM (33)";
-			this.chbx_MIM.UseVisualStyleBackColor = true;
 			// 
 			// chbx_Atlanta
 			// 
@@ -654,7 +664,7 @@ namespace TresUpload
 			this.chbx_Adallom.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_Adallom.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_Adallom.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_Adallom.Location = new System.Drawing.Point(187, 144);
+			this.chbx_Adallom.Location = new System.Drawing.Point(6, 26);
 			this.chbx_Adallom.Name = "chbx_Adallom";
 			this.chbx_Adallom.Size = new System.Drawing.Size(181, 24);
 			this.chbx_Adallom.TabIndex = 6;
@@ -667,7 +677,7 @@ namespace TresUpload
 			this.chbx_ESTS.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ESTS.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_ESTS.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ESTS.Location = new System.Drawing.Point(374, 290);
+			this.chbx_ESTS.Location = new System.Drawing.Point(187, 354);
 			this.chbx_ESTS.Name = "chbx_ESTS";
 			this.chbx_ESTS.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ESTS.TabIndex = 5;
@@ -680,7 +690,7 @@ namespace TresUpload
 			this.chbx_MSA_AccountKC.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_MSA_AccountKC.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_MSA_AccountKC.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_MSA_AccountKC.Location = new System.Drawing.Point(6, 24);
+			this.chbx_MSA_AccountKC.Location = new System.Drawing.Point(187, 114);
 			this.chbx_MSA_AccountKC.Name = "chbx_MSA_AccountKC";
 			this.chbx_MSA_AccountKC.Size = new System.Drawing.Size(181, 24);
 			this.chbx_MSA_AccountKC.TabIndex = 4;
@@ -693,7 +703,7 @@ namespace TresUpload
 			this.chbx_ADConnectHealth.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADConnectHealth.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_ADConnectHealth.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADConnectHealth.Location = new System.Drawing.Point(6, 234);
+			this.chbx_ADConnectHealth.Location = new System.Drawing.Point(6, 175);
 			this.chbx_ADConnectHealth.Name = "chbx_ADConnectHealth";
 			this.chbx_ADConnectHealth.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADConnectHealth.TabIndex = 3;
@@ -705,7 +715,7 @@ namespace TresUpload
 			this.chbx_ADConnect.Checked = true;
 			this.chbx_ADConnect.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADConnect.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADConnect.Location = new System.Drawing.Point(6, 204);
+			this.chbx_ADConnect.Location = new System.Drawing.Point(6, 145);
 			this.chbx_ADConnect.Name = "chbx_ADConnect";
 			this.chbx_ADConnect.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADConnect.TabIndex = 2;
@@ -718,7 +728,7 @@ namespace TresUpload
 			this.chbx_ADBillingExtension.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chbx_ADBillingExtension.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chbx_ADBillingExtension.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbx_ADBillingExtension.Location = new System.Drawing.Point(6, 174);
+			this.chbx_ADBillingExtension.Location = new System.Drawing.Point(6, 115);
 			this.chbx_ADBillingExtension.Name = "chbx_ADBillingExtension";
 			this.chbx_ADBillingExtension.Size = new System.Drawing.Size(181, 24);
 			this.chbx_ADBillingExtension.TabIndex = 1;
@@ -731,7 +741,7 @@ namespace TresUpload
 			this.chkbx_ADBilling.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkbx_ADBilling.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.chkbx_ADBilling.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_ADBilling.Location = new System.Drawing.Point(6, 144);
+			this.chkbx_ADBilling.Location = new System.Drawing.Point(6, 84);
 			this.chkbx_ADBilling.Name = "chkbx_ADBilling";
 			this.chkbx_ADBilling.Size = new System.Drawing.Size(180, 24);
 			this.chkbx_ADBilling.TabIndex = 0;
@@ -815,16 +825,6 @@ namespace TresUpload
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
-			// 
-			// chbx_ADRS
-			// 
-			this.chbx_ADRS.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-			this.chbx_ADRS.Location = new System.Drawing.Point(187, 24);
-			this.chbx_ADRS.Name = "chbx_ADRS";
-			this.chbx_ADRS.Size = new System.Drawing.Size(104, 24);
-			this.chbx_ADRS.TabIndex = 52;
-			this.chbx_ADRS.Text = "ADRS (43)";
-			this.chbx_ADRS.UseVisualStyleBackColor = true;
 			// 
 			// AD
 			// 

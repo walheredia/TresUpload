@@ -48,15 +48,18 @@ namespace TresUpload
 		//"AR-SA", "BG", "CA", "CS", "DA", "DE", "EL", "ES", "ET", "EU", "FI", "FR", "GL", "HE", "HI", "HR", "HU", "ID", "IT", "JA", "KK", "KO", "LT", "LV", "MS", "NL", "NO", "PL", "PT", "PT-BR", "RO", "RU", "SK", "SL", "SR-CYRL-CS", "SR-LATN-CS", "SV", "TH", "TR", "UK", "VI", "ZH-HANS", "ZH-HANT"
 		//"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE"
 		string[] src_lcode_43 = {"AR-SA", "BG", "CA", "CS", "DA", "DE", "EL", "ES", "ET", "EU", "FI", "FR", "GL", "HE", "HI", "HR", "HU", "ID", "IT", "JA", "KK", "KO", "LT", "LV", "MS", "NL", "NO", "PL", "PT", "PT-BR", "RO", "RU", "SK", "SL", "SR-CYRL-RS", "SR-LATN-RS", "SV", "TH", "TR", "UK", "VI", "ZH-HANS", "ZH-HANT"};
-		string[] tgt_lcode_43 = {"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE"};
+		string[] src_lcode2_43 = {"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE","th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
+		string[] tgt_lcode_43 = {"ar-sa", "bg-BG", "ca-ES", "cs-CZ", "da-DK", "de-DE", "el-GR", "es-ES", "et-EE", "fi-FI", "fr-FR", "gl-ES", "he-IL", "hi-IN", "hr-HR", "hu-HU", "id-ID", "it-IT", "ja-jp", "kk-KZ", "ko-KR", "lt-LT", "lv-LV", "ms-MY", "nb-NO", "nl-NL", "pl-PL", "pt-br", "pt-PT", "ro-RO", "ru-RU", "sk-SK", "sl-SI", "sr-cyrl-RS", "sr-latn-RS", "sv-SE","th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN", "zh-TW"};
+		string[] src_lcode_61 = {"af", "am-et", "ar", "az-latn-az", "be", "bg", "bn-bd", "ca", "cs", "da", "de", "el", "es", "et", "eu", "fa", "fi", "fil-ph", "fr", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-NO", "nl", "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sl", "sq", "sr-Latn-RS", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-HANS", "zh-HANT"};
+		string[] tgt_lcode_61 = {"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-bd", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "es-es", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-NO", "nl-nl", "pl-pl", "pt-BR", "pt-PT", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-Latn-RS", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"};
 		string[] src_lcode_65 = {"af", "am-ET", "ar", "az-latn-az", "be", "bg", "bn-IN", "ca", "cs", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "gl", "ha-latn-ng", "he", "hi", "hr", "hu", "id", "is", "it", "ja", "kk", "km-kh", "kn", "ko", "lo", "lt", "lv", "mk", "ml", "ms", "nb-no", "nl", "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sl", "sq", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "th", "tr", "uk", "uz-latn-uz", "vi", "zh-hans", "zh-hant"};
 		string[] tgt_lcode_65 = {"af-za", "am-et", "ar-sa", "az-latn-az", "be-by", "bg-bg", "bn-in", "ca-es", "cs-cz", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "gl-es", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "id-id", "is-is", "it-it", "ja-jp", "kk-kz", "km-kh", "kn-in", "ko-kr", "lo-la", "lt-lt", "lv-lv", "mk-mk", "ml-in", "ms-my", "nb-no", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ro-ro", "ru-ru", "sk-sk", "sl-si", "sq-al", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "th-th", "tr-tr", "uk-ua", "uz-latn-uz", "vi-vn", "zh-cn", "zh-tw"};
 		string[] src_lcode_107 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "kok-IN", "ko-KR", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "nb-NO", "ne-NP", "nl-NL", "nn-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-br", "pt-PT", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
-		string[] src_lcode2_107 = {"af", "am", "ar-SA", "as", "az", "be", "bg", "bn", "bn-IN", "bs", "ca", "ca-ES-valencia", "cs", "cy", "da", "de", "el", "en-GB", "es", "es-MX", "et", "eu", "fa", "fi", "fil", "fr-CA", "fr", "ga", "gd", "gl", "gu", "ha", "he", "hi", "hr", "hu", "hy", "id", "ig", "is", "it", "ja", "ka", "kk", "km", "kn", "kok", "ko", "ku-Arab", "ky", "lb", "lo", "lt", "lv", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "no", "ne", "nl", "nn-NO", "nso", "or", "pa-Arab-PK", "pa-IN", "pl", "prs", "pt-BR", "pt", "quz", "ro", "ru", "rw", "sd", "si", "sk", "sl", "sq", "sr-cyrl-BA", "sr-cyrl-RS", "sr-Latn-RS", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tn", "tr", "tt", "ug", "uk", "ur", "uz", "vi", "wo", "xh", "yo", "zh-HANS", "zh-HANT", "zu"};
-		string[] tgt_lcode_107 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "kok-IN", "ko-KR", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "nb-NO", "ne-NP", "nl-NL", "nn-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-br", "pt-PT", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
+		string[] src_lcode2_107 = {"af", "am", "ar-SA", "as", "az", "be", "bg", "bn", "bn-IN", "bs", "ca", "ca-ES-valencia", "cs", "cy", "da", "de", "el", "en-GB", "es", "es-MX", "et", "eu", "fa", "fi", "fil", "fr", "fr-CA", "ga", "gd", "gl", "gu", "ha", "he", "hi", "hr", "hu", "hy", "id", "ig", "is", "it", "ja", "ka", "kk", "km", "kn","ko", "kok", "ku-Arab", "ky", "lb", "lo", "lt", "lv", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "ne", "nl", "nn-NO", "no", "nso", "or", "pa-Arab-PK", "pa-IN", "pl", "prs", "pt", "pt-BR", "quz", "ro", "ru", "rw", "sd", "si", "sk", "sl", "sq", "sr-cyrl-BA", "sr-cyrl-RS", "sr-Latn-RS", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tn", "tr", "tt", "ug", "uk", "ur", "uz", "vi", "wo", "xh", "yo", "zh-HANS", "zh-HANT", "zu"};
+		string[] tgt_lcode_107 = {"af-ZA", "am-ET", "ar-SA", "as-IN", "az-latn-AZ", "be-BY", "bg-BG", "bn-BD", "bn-IN", "bs-Latn-BA", "ca-es", "ca-ES-valencia", "cs-CZ", "cy-gb", "da-DK", "de-DE", "el-GR", "en-GB", "es-ES", "es-MX", "et-EE", "eu-es", "fa-IR", "fi-FI", "fil-PH", "fr-FR", "fr-CA", "ga-IE", "gd-GB", "gl-ES", "gu-in", "ha-latn-NG", "he-IL", "hi-in", "hr-HR", "hu-HU", "hy-AM", "id-id", "ig-NG", "is-IS", "it-IT", "ja-JP", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "ko-KR", "kok-IN", "ku-ARAB-IQ", "ky-KG", "lb-LU", "lo-LA", "lt-LT", "lv-LV", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-in", "ms-my", "mt-MT", "ne-NP", "nl-NL", "nn-NO", "nb-NO", "nso-ZA", "or-IN", "pa-Arab-PK", "pa-IN", "pl-PL", "prs-AF", "pt-PT", "pt-br", "quz-PE", "ro-RO", "ru-RU", "rw-RW", "sd-Arab-PK", "si-LK", "sk-SK", "sl-SI", "sq-AL", "sr-Cyrl-BA", "sr-cyrl-RS", "sr-latn-RS", "sv-SE", "sw-KE", "ta-IN", "te-IN", "tg-Cyrl-TJ", "th-TH", "ti-ET", "tk-TM", "tn-ZA", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "ur-PK", "uz-latn-UZ", "vi-vn", "wo-SN", "xh-ZA", "yo-NG", "zh-cn", "zh-tw", "zu-ZA"};
 		
-		string[] src_lcode_108 = {"af", "am-et", "ar", "as-in", "az-latn-az", "be", "bg", "bn-bd", "bn-in", "bs-latn-ba", "ca", "ca-es-valencia", "cs", "cy-gb", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil-ph", "fr", "fr-ca", "ga-ie", "gd", "gl", "gu", "ha-latn-ng", "he", "hi", "hr", "hu", "hy", "id", "ig-ng", "is", "it", "ja", "ka", "kk", "km-kh", "kn", "ko", "kok", "ku-arab", "ky", "lb-lu", "lo", "lt", "lv", "mi-nz", "mk", "ml", "mn", "mr", "ms", "mt-mt", "nb-no", "ne-np", "nl", "nn-no", "nso-za", "or-in", "pa", "pa-arab", "pl", "prs-af", "pt-br", "pt-pt", "quc", "quz-pe", "ro", "ru", "rw", "sd-arab", "si-lk", "sk", "sl", "sq", "sr-cyrl-ba", "sr-cyrl-rs", "sr-latn", "sv", "sw", "ta", "te", "tg-cyrl", "th", "ti", "tk-tm", "tn-za", "tr", "tt", "ug-arab", "uk", "ur", "uz-latn-uz", "vi", "wo", "xh-za", "yo-ng", "zh-hans", "zh-hant", "zu-za"};
-		string[] tgt_lcode_108 = {"af-za", "am-et", "ar-sa", "as-in", "az-latn-az", "be-by", "bg-bg", "bn-bd", "bn-in", "bs-latn-ba", "ca-es", "ca-es-valencia", "cs-cz", "cy-gb", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "ga-ie", "gd-gb", "gl-es", "gu-in", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "hy-am", "id-id", "ig-ng", "is-is", "it-it", "ja-jp", "ka-ge", "kk-kz", "km-kh", "kn-in", "ko-kr", "kok-in", "ku-arab-iq", "ky-kg", "lb-lu", "lo-la", "lt-lt", "lv-lv", "mi-nz", "mk-mk", "ml-in", "mn-mn", "mr-in", "ms-my", "mt-mt", "nb-no", "ne-np", "nl-nl", "nn-no", "nso-za", "or-in", "pa-in", "pa-arab-pk", "pl-pl", "prs-af", "pt-br", "pt-pt", "quc-latn-gt", "quz-pe", "ro-ro", "ru-ru", "rw-rw", "sd-arab-pk", "si-lk", "sk-sk", "sl-si", "sq-al", "sr-cyrl-ba", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "tg-cyrl-tj", "th-th", "ti-et", "tk-tm", "tn-za", "tr-tr", "tt-ru", "ug-arab", "uk-ua", "ur-pk", "uz-latn-uz", "vi-vn", "wo-sn", "xh-za", "yo-ng", "zh-cn", "zh-tw", "zu-za"};
+		string[] src_lcode_108 = {"af", "am", "ar-SA", "as", "az", "be", "bg", "bn", "bn-IN", "bs", "ca", "ca-es-valencia", "cs", "cy", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil", "fr", "fr-ca", "ga", "gd", "gl", "gu", "ha", "he", "hi", "hr", "hu", "hy", "id", "ig", "is", "it", "ja", "ka", "kk", "km", "kn", "ko", "kok", "ku-arab", "ky", "lb", "lo", "lt", "lv", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "ne", "nl", "nn-NO", "no", "nso", "or", "pa-arab-pk", "pa-IN", "pl", "prs", "pt", "pt-br", "quc", "quz", "ro", "ru", "rw", "sd", "si", "sk", "sl", "sq", "sr-cyrl-ba", "sr-cyrl-rs", "sr-latn-RS", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tn", "tr", "tt", "ug", "uk", "ur", "uz", "vi", "wo", "xh", "yo", "zh-hans", "zh-hant", "zu"};
+		string[] tgt_lcode_108 = {"af-za", "am-et", "ar-sa", "as-in", "az-latn-az", "be-by", "bg-bg", "bn-bd", "bn-in", "bs-latn-ba", "ca-es", "ca-es-valencia", "cs-cz", "cy-gb", "da-dk", "de-de", "el-gr", "en-gb", "es-es", "es-mx", "et-ee", "eu-es", "fa-ir", "fi-fi", "fil-ph", "fr-fr", "fr-ca", "ga-ie", "gd-gb", "gl-es", "gu-in", "ha-latn-ng", "he-il", "hi-in", "hr-hr", "hu-hu", "hy-am", "id-id", "ig-ng", "is-is", "it-it", "ja-jp", "ka-ge", "kk-kz", "km-kh", "kn-in", "ko-kr", "kok-in", "ku-arab-iq", "ky-kg", "lb-lu", "lo-la", "lt-lt", "lv-lv", "mi-nz", "mk-mk", "ml-in", "mn-mn", "mr-in", "ms-my", "mt-mt", "ne-np", "nl-nl", "nn-no", "nb-no", "nso-za", "or-in", "pa-arab-pk", "pa-in", "pl-pl", "prs-af", "pt-pt", "pt-br", "quc-latn-gt", "quz-pe", "ro-ro", "ru-ru", "rw-rw", "sd-arab-pk", "si-lk", "sk-sk", "sl-si", "sq-al", "sr-cyrl-ba", "sr-cyrl-rs", "sr-latn-rs", "sv-se", "sw-ke", "ta-in", "te-in", "tg-cyrl-tj", "th-th", "ti-et", "tk-tm", "tn-za", "tr-tr", "tt-ru", "ug-CN", "uk-ua", "ur-pk", "uz-latn-uz", "vi-vn", "wo-sn", "xh-za", "yo-ng", "zh-cn", "zh-tw", "zu-za"};
 		public static string tgt_files = "";
 		public static string src_files = "";
 		
@@ -282,8 +285,31 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/ADRS/");
 					}
+					if(chbx_MFA.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFA/");
+					}
+					if(chbx_MFAAndroid.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppAndroid/");
+					}
+					//MFAPhoneAppiPhone
+					if(chbx_MFAiPhone.Checked)
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppiPhone/");
+					}
 					
 					
+				}
+				
+				for (int i=0; i<tgt_lcode_61.Length; i++) 
+				{
+					
+					
+					if (chbx_MFAWinPhone.Checked) 
+					{
+						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_61[i] + "/MFAPhoneAppWinPhone/");
+					}
 				}
 				
 				for (int i=0; i<tgt_lcode_65.Length; i++)
@@ -294,13 +320,11 @@ namespace TresUpload
 					}
 					
 					
+					
 				}
 				
 				for (int i=0; i<tgt_lcode_107.Length; i++) 
 				{
-					
-					
-					
 					
 					if (chbx_SSPR.Checked) 
 					{
@@ -457,6 +481,22 @@ namespace TresUpload
 					if(chbx_ADRS.Checked)
 					{
 						ADRS();
+					}
+					/*if(chbx_MFA.Checked)
+					{
+						MFA();
+					}*/
+					if(chbx_MFAAndroid.Checked)
+					{
+						MFAAndroid();
+					}
+					if(chbx_MFAiPhone.Checked)
+					{
+						MFAiPhone();
+					}
+					if(chbx_MFAWinPhone.Checked)
+					{
+						MFAWinPhone();
 					}
 					
 				}
@@ -822,7 +862,7 @@ namespace TresUpload
 				{
 					
 					//c:\Eliseo\TRES\AD-EvoSTS\OnGoing\SLVSO\Projects\ESTS\Localization\LCL\af-ZA\LocProject\lcl\private\Product\
-					string srcpath = src_files + @"/AD-EvoSTS/OnGoing/SLVSO/Projects/ESTS/Localization/LCL/"+ src_lcode_108[i] + "/LocProject/lcl/private/Product/";
+					string srcpath = src_files + @"/AD-EvoSTS/OnGoing/SLVSO/Projects/ESTS/Localization/LCL/"+ tgt_lcode_108[i] + "/LocProject/lcl/private/Product/";
 					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/EvoSTS/";		        	
 					string fileName;
 					string destFile;				
@@ -1333,6 +1373,94 @@ namespace TresUpload
 				}
 		}
 		
+		public void MFAAndroid()
+		{
+			for (int i = 0; i < src_lcode_43.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_MFAApp_Android\OnGoing\SLVso\Projects\AD_MFAApp_Android\Localization\LCL\ar-SA\LocProject\lcl\PhoneFactor\app\src\main\res\values\
+					string srcpath = src_files + @"/AD_MFAApp_Android/OnGoing/SLVso/Projects/AD_MFAApp_Android/Localization/LCL/"+ src_lcode2_43[i] + "/LocProject/lcl/PhoneFactor/app/src/main/res/values/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppAndroid/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}
+		
+		public void MFAiPhone()
+		{
+			for (int i = 0; i < src_lcode_43.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_MFAApp_iPhone\OnGoing\SLVso\Projects\AD_MFAApp_iPhone\Localization\LCL\ar-SA\LocProject\lcl\PhoneFactor\en.lproj\
+					string srcpath = src_files + @"/AD_MFAApp_iPhone/OnGoing/SLVso/Projects/AD_MFAApp_iPhone/Localization/LCL/"+ src_lcode2_43[i] + "/LocProject/lcl/PhoneFactor/en.lproj/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneiPhone/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}
+		
+		public void MFAWinPhone()
+		{
+			for (int i = 0; i < src_lcode_61.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_MFAApp_WinPhone\OnGoing\master\app\lba\af\app\lcl\Strings\en-US\
+					string srcpath = src_files + @"/AD_MFAApp_WinPhone/OnGoing/master/app/lba/"+ src_lcode_61[i] + "/app/lcl/Strings/en-US/";
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_61[i] + "/MFAPhoneAppWinPhone/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}
+		
+		/*public void MFA()
+		{
+			for (int i = 0; i < src_lcode2_43.Length; i++) 
+				{
+					
+					//c:\Eliseo\TRES\AD_MFA\OnGoing\PhoneFactor_LocHolder\private\lba\ar-SA\
+					string srcpath = src_files + @"/AD_MFA/OnGoing/PhoneFactor_LocHolder/private/lba/"+ src_lcode2_43[i];
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFA/";		        	
+					string fileName;
+					string destFile;				
+			        string[] files = System.IO.Directory.get
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}
+	            	
+					
+				}
+		}*/
+		
 		void Mtb_yearmonthMaskInputRejected(object sender, MaskInputRejectedEventArgs e)
 		{
 	
@@ -1353,6 +1481,10 @@ namespace TresUpload
 			}
 			
 			
+		}
+		void Chbx_MFACheckedChanged(object sender, EventArgs e)
+		{
+	
 		}
 	
 		}
