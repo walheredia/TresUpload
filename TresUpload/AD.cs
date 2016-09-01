@@ -1379,7 +1379,7 @@ namespace TresUpload
 		
 		public void MFAAndroid()
 		{
-			for (int i = 0; i < src_lcode_43.Length; i++) 
+			for (int i = 0; i < src_lcode2_43.Length; i++) 
 				{
 					
 					//c:\Eliseo\TRES\AD_MFAApp_Android\OnGoing\SLVso\Projects\AD_MFAApp_Android\Localization\LCL\ar-SA\LocProject\lcl\PhoneFactor\app\src\main\res\values\
@@ -1395,18 +1395,29 @@ namespace TresUpload
 	                	System.IO.File.Copy(s, destFile, true);
 	            	}
 	            	
+	            	//c:\LegoSD\Active Directory\AD_MFAApp_Android\OnGoing\SLVso\Projects\AD_MFAApp_Android\Localization\LCL\bg-BG\LocProject\lcl\
+	            	//srcpath = src_files + @"/AD_MFAApp_Android/OnGoing/SLVso/Projects/AD_MFAApp_Android/Localization/LCL/"+ src_lcode2_43[i] + "/LocProject/lcl/PhoneFactor/";
+					/*tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppAndroid/";		        	
+				
+			        files = System.IO.Directory.GetFiles(srcpath);
+	            	foreach (string s in files)
+	            	{
+	                	fileName = System.IO.Path.GetFileName(s);
+	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
+	                	System.IO.File.Copy(s, destFile, true);
+	            	}*/
 					
 				}
 		}
 		
 		public void MFAiPhone()
 		{
-			for (int i = 0; i < src_lcode_43.Length; i++) 
+			for (int i = 0; i < src_lcode2_43.Length; i++) 
 				{
-					
+					//MFAPhoneAppiPhone
 					//c:\Eliseo\TRES\AD_MFAApp_iPhone\OnGoing\SLVso\Projects\AD_MFAApp_iPhone\Localization\LCL\ar-SA\LocProject\lcl\PhoneFactor\en.lproj\
 					string srcpath = src_files + @"/AD_MFAApp_iPhone/OnGoing/SLVso/Projects/AD_MFAApp_iPhone/Localization/LCL/"+ src_lcode2_43[i] + "/LocProject/lcl/PhoneFactor/en.lproj/";
-					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneiPhone/";		        	
+					string tgtpath = tgt_files + @"/ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppiPhone/";		        	
 					string fileName;
 					string destFile;				
 			        string[] files = System.IO.Directory.GetFiles(srcpath);
