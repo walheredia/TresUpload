@@ -57,6 +57,12 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chkbx_LogicAppsBPM;
 		private System.Windows.Forms.CheckBox chkbx_BizTalk;
 		private System.Windows.Forms.CheckBox chkbx_MicrosoftFlow;
+		private System.Windows.Forms.Label bar;
+		private System.Windows.Forms.Label lbl_component;
+		private System.Windows.Forms.Label lbl_component_title;
+		private System.Windows.Forms.Label lbl_file;
+		private System.Windows.Forms.Label lbl_file_title;
+		private System.Windows.Forms.Button btn_export;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -88,6 +94,7 @@ namespace TresUpload
 			this.btn_CreateStructure = new System.Windows.Forms.Button();
 			this.pb_structure = new System.Windows.Forms.ProgressBar();
 			this.GrBox_Select_Components = new System.Windows.Forms.GroupBox();
+			this.chkbx_MicrosoftFlow = new System.Windows.Forms.CheckBox();
 			this.chkbx_LogicAppsBPMUX = new System.Windows.Forms.CheckBox();
 			this.chkbx_LogicAppsBPM = new System.Windows.Forms.CheckBox();
 			this.chkbx_BizTalk = new System.Windows.Forms.CheckBox();
@@ -115,6 +122,12 @@ namespace TresUpload
 			this.chkbx_SchedulerRP = new System.Windows.Forms.CheckBox();
 			this.chkbx_SchedulerExtension = new System.Windows.Forms.CheckBox();
 			this.LblTitle_Panel1 = new System.Windows.Forms.Label();
+			this.btn_export = new System.Windows.Forms.Button();
+			this.bar = new System.Windows.Forms.Label();
+			this.lbl_component = new System.Windows.Forms.Label();
+			this.lbl_component_title = new System.Windows.Forms.Label();
+			this.lbl_file = new System.Windows.Forms.Label();
+			this.lbl_file_title = new System.Windows.Forms.Label();
 			this.lbl_eventlog = new System.Windows.Forms.Label();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
@@ -122,7 +135,6 @@ namespace TresUpload
 			this.label1 = new System.Windows.Forms.Label();
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
-			this.chkbx_MicrosoftFlow = new System.Windows.Forms.CheckBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -159,6 +171,12 @@ namespace TresUpload
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.btn_export);
+			this.splitContainer1.Panel2.Controls.Add(this.bar);
+			this.splitContainer1.Panel2.Controls.Add(this.lbl_component);
+			this.splitContainer1.Panel2.Controls.Add(this.lbl_component_title);
+			this.splitContainer1.Panel2.Controls.Add(this.lbl_file);
+			this.splitContainer1.Panel2.Controls.Add(this.lbl_file_title);
 			this.splitContainer1.Panel2.Controls.Add(this.lbl_eventlog);
 			this.splitContainer1.Panel2.Controls.Add(this.listView1);
 			this.splitContainer1.Panel2.Controls.Add(this.btn_copyfiles);
@@ -254,6 +272,19 @@ namespace TresUpload
 			this.GrBox_Select_Components.TabIndex = 1;
 			this.GrBox_Select_Components.TabStop = false;
 			this.GrBox_Select_Components.Text = "Check components";
+			// 
+			// chkbx_MicrosoftFlow
+			// 
+			this.chkbx_MicrosoftFlow.Checked = true;
+			this.chkbx_MicrosoftFlow.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.chkbx_MicrosoftFlow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chkbx_MicrosoftFlow.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chkbx_MicrosoftFlow.Location = new System.Drawing.Point(255, 324);
+			this.chkbx_MicrosoftFlow.Name = "chkbx_MicrosoftFlow";
+			this.chkbx_MicrosoftFlow.Size = new System.Drawing.Size(130, 24);
+			this.chkbx_MicrosoftFlow.TabIndex = 36;
+			this.chkbx_MicrosoftFlow.Text = "Microsoft Flow (41)";
+			this.chkbx_MicrosoftFlow.UseVisualStyleBackColor = true;
 			// 
 			// chkbx_LogicAppsBPMUX
 			// 
@@ -603,6 +634,68 @@ namespace TresUpload
 			this.LblTitle_Panel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.LblTitle_Panel1.Click += new System.EventHandler(this.LblTitle_Panel1Click);
 			// 
+			// btn_export
+			// 
+			this.btn_export.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_export.ForeColor = System.Drawing.Color.SlateBlue;
+			this.btn_export.Location = new System.Drawing.Point(489, 429);
+			this.btn_export.Name = "btn_export";
+			this.btn_export.Size = new System.Drawing.Size(82, 30);
+			this.btn_export.TabIndex = 37;
+			this.btn_export.Text = "Export to TXT";
+			this.btn_export.UseVisualStyleBackColor = true;
+			this.btn_export.Click += new System.EventHandler(this.Btn_exportClick);
+			// 
+			// bar
+			// 
+			this.bar.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.bar.ForeColor = System.Drawing.Color.Red;
+			this.bar.Location = new System.Drawing.Point(471, 546);
+			this.bar.Name = "bar";
+			this.bar.Size = new System.Drawing.Size(100, 23);
+			this.bar.TabIndex = 12;
+			this.bar.Text = "*/* Components";
+			// 
+			// lbl_component
+			// 
+			this.lbl_component.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_component.ForeColor = System.Drawing.Color.Red;
+			this.lbl_component.Location = new System.Drawing.Point(170, 546);
+			this.lbl_component.Name = "lbl_component";
+			this.lbl_component.Size = new System.Drawing.Size(401, 23);
+			this.lbl_component.TabIndex = 11;
+			this.lbl_component.Text = "...";
+			// 
+			// lbl_component_title
+			// 
+			this.lbl_component_title.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_component_title.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_component_title.Location = new System.Drawing.Point(10, 546);
+			this.lbl_component_title.Name = "lbl_component_title";
+			this.lbl_component_title.Size = new System.Drawing.Size(221, 23);
+			this.lbl_component_title.TabIndex = 10;
+			this.lbl_component_title.Text = "Processing the component: ";
+			// 
+			// lbl_file
+			// 
+			this.lbl_file.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_file.ForeColor = System.Drawing.Color.Red;
+			this.lbl_file.Location = new System.Drawing.Point(130, 569);
+			this.lbl_file.Name = "lbl_file";
+			this.lbl_file.Size = new System.Drawing.Size(441, 23);
+			this.lbl_file.TabIndex = 9;
+			this.lbl_file.Text = "...";
+			// 
+			// lbl_file_title
+			// 
+			this.lbl_file_title.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_file_title.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_file_title.Location = new System.Drawing.Point(10, 569);
+			this.lbl_file_title.Name = "lbl_file_title";
+			this.lbl_file_title.Size = new System.Drawing.Size(114, 23);
+			this.lbl_file_title.TabIndex = 8;
+			this.lbl_file_title.Text = "Processing the file: ";
+			// 
 			// lbl_eventlog
 			// 
 			this.lbl_eventlog.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
@@ -650,19 +743,6 @@ namespace TresUpload
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Copy Files Menu";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
-			// chkbx_MicrosoftFlow
-			// 
-			this.chkbx_MicrosoftFlow.Checked = true;
-			this.chkbx_MicrosoftFlow.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkbx_MicrosoftFlow.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.chkbx_MicrosoftFlow.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkbx_MicrosoftFlow.Location = new System.Drawing.Point(255, 324);
-			this.chkbx_MicrosoftFlow.Name = "chkbx_MicrosoftFlow";
-			this.chkbx_MicrosoftFlow.Size = new System.Drawing.Size(130, 24);
-			this.chkbx_MicrosoftFlow.TabIndex = 36;
-			this.chkbx_MicrosoftFlow.Text = "Microsoft Flow (41)";
-			this.chkbx_MicrosoftFlow.UseVisualStyleBackColor = true;
 			// 
 			// Azure
 			// 

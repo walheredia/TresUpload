@@ -11,12 +11,15 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace TresUpload
 {
 	/// <summary>
 	/// Description of Azure.
 	/// </summary>
+	/// 
+	
 	public partial class Azure : Form
 	{
 		string[] tgt_lcode_8 = {"de-DE", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "zh-CN", "zh-TW"};
@@ -41,6 +44,7 @@ namespace TresUpload
 		string[] src_lcode_17_short_pt = {"cs", "de", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt-BR", "pt", "ru", "sv", "tr", "zh-hans", "zh-hant"};
 		string[] src_lcode_41_short = {"bg", "ca", "cs", "da", "de", "el", "es", "et", "eu", "fi", "fr", "gl", "hi", "hr", "hu", "id", "it", "ja", "kk", "ko", "lt", "lv", "ml", "nl", "no", "pl", "pt-br", "pt-PT", "ro", "ru", "sk", "sl", "sr-Cyrl", "sr-Latn", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"};
 		
+		int total = 0;
 	
 		public static string tgt_files = "";
 		public static string src_files = "";
@@ -116,6 +120,7 @@ namespace TresUpload
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e) {
 			disable();
+			listView1.Items.Clear();
 			pb_structure.Maximum = tgt_lcode_8.Length + tgt_lcode_10.Length + tgt_lcode_13.Length + tgt_lcode_17.Length + tgt_lcode_28.Length + tgt_lcode_43.Length;
 			pb_structure.Value = 0;
 			fbd_createStructure.SelectedPath = "C:/Users/v-wahere/Desktop/TresUpload";
@@ -252,126 +257,209 @@ namespace TresUpload
                     }                    
                 }
             }
-			
+			total = contador;
 			pb_copyfiles.Maximum = contador;
-			pb_copyfiles.Value = 0;
-			fbd_copyfiles.SelectedPath="C:\\sd_enlist";
-			fbd_copyfiles.Description="Please select the directory of the Source Files (Enlistment from SDW)";
+			pb_copyfiles.Value = 0;			
 			
+			//Creando Delegado
+			ThreadStart delegado = new ThreadStart(RunProcess);
+			//Creando instancia del hilo
+		
+			Thread hilo = new Thread(delegado);
+			hilo.SetApartmentState(ApartmentState.STA);
+			//Se inicia el hilo
+			hilo.Start();
+		}
+		private void RunProcess()
+		{
+			int flag = 0;
+			fbd_copyfiles.SelectedPath="C:\\sd_enlist";
+			fbd_copyfiles.Description="Please select the directory of the Source Files (Enlistment from SDB)";			
 			if (fbd_copyfiles.ShowDialog() == DialogResult.OK) {
-				src_files = fbd_copyfiles.SelectedPath.ToString();
-				
+				src_files = fbd_copyfiles.SelectedPath.ToString();				
 				try {
 					if (chkbx_BizTalk.Checked) {
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
+						lbl_component.Text = "BizTalk Server 2016";
 						BizTalk();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";						
 					}
 					if (chkbx_ESSO.Checked) {
+						lbl_component.Text = "Microsoft Enterprise Single Sign On";
 						ESSO();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_PortalClassic.Checked) {
+						lbl_component.Text = "Azure Portal (Classic)";
 						PortalClassic();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_B2B.Checked) {
+						lbl_component.Text = "AD B2B";
 						B2B();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_DBOLEDB.Checked) {
+						lbl_component.Text = "Microsoft OLE DB Provider for DB2";
 						OLEDB();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_StoreMarketplace.Checked) {
+						lbl_component.Text = "Azure Store Marketplace";
 						StoreMarketPlace();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_StoreExperience.Checked) {
+						lbl_component.Text = "Azure Store Experience";
 						StoreExperience();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_PortalFX.Checked) {
+						lbl_component.Text = "Azure Portal FX";
 						PortalFX();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_InsightExtension.Checked) {
+						lbl_component.Text = "Azure Insight Extension";
 						InsightExtension();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_IntuneMAMExtension.Checked) {
+						lbl_component.Text = "Microsoft Intune MAM Extension";
 						IntuneMAMExtension();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_SQLDB.Checked) {
+						lbl_component.Text = "DataInsight Azure SQLDB";
 						DataInsightSQLDB();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_DocDB.Checked) {
+						lbl_component.Text = "DataInsight Azure DocDB";
 						DataInsightDocDB();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_AzureSearch.Checked) {
+						lbl_component.Text = "DataInsight Azure Search";
 						DataInsightAzureSearch();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_LogicAppsBPM.Checked) {
+						lbl_component.Text = "LogicApps BPM";
 						LogicAppsBPM();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_LogicAppsBPMUX.Checked) {
+						lbl_component.Text = "LogicApps BPMUX";
 						LogicAppsBPMUX();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_RBAC.Checked) {
+						lbl_component.Text = "Role Based Access Control";
 						RBAC();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_ADIAM.Checked) {
+						lbl_component.Text = "AD IAM";
 						ADIAM();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_ADProtectionCenter.Checked) {
+						lbl_component.Text = "AD Protection Center";
 						ProtectionCenter();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_CloudAppDiscovery.Checked) {
+						lbl_component.Text = "Cloud App Discovery";
 						CloudAppDiscovery();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_SchedulerRP.Checked) {
+						lbl_component.Text = "Azure Scheduler RP";
 						SchedulerRP();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_SchedulerExtension.Checked) {
+						lbl_component.Text = "Azure Scheduler Extension";
 						SchedulerExtension();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_B2C.Checked) {
+						lbl_component.Text = "AD B2C";
 						B2C();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_MicrosoftFlow.Checked) {
+						lbl_component.Text = "Microsoft Flow";
 						MicrosoftFlow();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if (chkbx_HisConnectors.Checked){
+						lbl_component.Text = "HIS Connectors";
 						HISConnectors();
 						pb_copyfiles.Value = pb_copyfiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
-					
+					MessageBox.Show("Succesfully Done!");
 				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 					throw;
-				}				
-				
-				
+				}
 				pb_copyfiles.Value = 0;
-				MessageBox.Show("Succesfully Done!");
-
-			}					
-		}
+				lbl_component.Text = "...";
+				lbl_file.Text = "...";
+				bar.Text = "*/* Components";
+			}
+		}		
 		//EOL=8
-		public void ESSO(){
+		private void ESSO(){
 		    for (int i = 0; i < src_lcode_8.Length; i++) {
 				string srcpath = src_files + @"/Windows Server OOBs/ESSO/V10/Alternative/"+ src_lcode_8[i] + "/tgt/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/Microsoft Enterprise Single Sign On/";		        	
@@ -382,13 +470,14 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		        
 			}
 			listView1.Items.Add("Microsoft Enterprise Single Sign On - Success - (56 lcl files per locate, 448 in total)");
 		}
 		//EOL=8
-		public void BizTalk(){
+		private void BizTalk(){
 			for (int i = 0; i < src_lcode_8_long.Length; i++) {
 				string srcpath = src_files + @"/azure/BizTalk/2016/Main/localization/LCL/"+ src_lcode_8_long[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_8[i] + "/BizTalk Server 2016/";		        	
@@ -399,13 +488,14 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		       
 			}
 			listView1.Items.Add("BizTalk Server 2016 - Success - (53 lcl files per locate, 424 in total)");
 		}
 		//EOL=10
-		public void PortalClassic(){
+		private void PortalClassic(){
 			for (int i = 0; i < src_lcode_10.Length; i++) {
 				string srcpath = src_files + @"/azure/Azure_Portal_vCurrent/OnGoing/AuxPortal_n_f5/auxportal/Localization/LCL/"+ src_lcode_10[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/Azure Portal (Classic)/";		        	
@@ -416,13 +506,14 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		       
 			}
 			listView1.Items.Add("Azure Portal (Classic) - Success - (92 lcl files per locate, 920 in total)");
 		}
 		//EOL=10
-		public void B2B(){
+		private void B2B(){
 			for (int i = 0; i < src_lcode_10_short.Length; i++) {
 				string srcpath = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocCommon/lba/"+ src_lcode_10_short[i] + "/B2BLocCommon/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_10[i] + "/AD B2B/";		        	
@@ -433,6 +524,7 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		        
 		        string srcpath1 = src_files + @"/Active Directory/AD-B2B/OnGoing/master/B2BLocEmailWorker/lba/"+ src_lcode_10_short[i] + "/B2BLocEmailWorker/lcl/";
@@ -456,12 +548,13 @@ namespace TresUpload
 	                fileName3 = System.IO.Path.GetFileName(s);
 	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
 	                System.IO.File.Copy(s, destFile3, true);
+	                lbl_file.Text = fileName3;
 	            }
 			}
 			listView1.Items.Add("AD B2B - Success - (8 lcl files per locate, 80 in total)");
 		}
 		//EOL=13
-		public void OLEDB(){
+		private void OLEDB(){
 		    for (int i = 0; i < src_lcode_13.Length; i++) {
 				string srcpath = src_files + @"/Windows Server OOBs/DB2OLEDB/V10/Alternative/"+ src_lcode_13[i] + "/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_13[i] + "/Microsoft OLE DB Provider for DB2/";		        	
@@ -472,12 +565,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 			}
 			listView1.Items.Add("Microsoft OLE DB Provider for DB2 - Success - (31 lcl files per locate, 403 in total)");
 		}
 		//EOL=17
-		public void StoreMarketPlace(){
+		private void StoreMarketPlace(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX-Store/Ongoing/dev/GalleryService.Client/lba/"+ src_lcode_17_short[i] + "/GalleryService.Client/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Marketplace/";		        	
@@ -488,12 +582,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }    
 			}
 			listView1.Items.Add("Azure Store Marketplace - Success - (1 lcl file per locate, 17 in total)");
 		}
 		//EOL=17
-		public void StoreExperience(){
+		private void StoreExperience(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX-StoreExperience/Ongoing/dev/GalleryService.Client/lba/"+ src_lcode_17_short[i] + "/GalleryService.Client/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Store Experience/";		        	
@@ -504,12 +599,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }      
 			}
 			listView1.Items.Add("Azure Store Experience - Success - (3 lcl file per locate, 51 in total)");
 		}
 		//EOL=17
-		public void PortalFX(){
+		private void PortalFX(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/AzureHubsExtension/lba/"+ src_lcode_17_short[i] + "/AzureHubsExtension/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Portal FX/";		        	
@@ -520,6 +616,7 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;	                
 	            }
 		        
 		        string srcpath1 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/CreateFromTemplate/lba/"+ src_lcode_17_short[i] + "/CreateFromTemplate/lcl/";
@@ -531,6 +628,7 @@ namespace TresUpload
 	                fileName1 = System.IO.Path.GetFileName(s);
 	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
 	                System.IO.File.Copy(s, destFile1, true);
+	                lbl_file.Text = fileName1;
 	            }
 		        
 		        string srcpath2 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Framework/lba/"+ src_lcode_17_short[i] + "/Framework/lcl/";
@@ -542,6 +640,7 @@ namespace TresUpload
 	                fileName2 = System.IO.Path.GetFileName(s);
 	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
 	                System.IO.File.Copy(s, destFile2, true);
+	                lbl_file.Text = fileName2;
 	            }
 		        
 		        string srcpath3 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/HubsExtension/lba/"+ src_lcode_17_short[i] + "/HubsExtension/lcl/";
@@ -553,6 +652,7 @@ namespace TresUpload
 	                fileName3 = System.IO.Path.GetFileName(s);
 	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
 	                System.IO.File.Copy(s, destFile3, true);
+	                lbl_file.Text = fileName3;
 	            }
 		        
 		        string srcpath4 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/ResourceGroup/lba/"+ src_lcode_17_short[i] + "/ResourceGroup/lcl/";
@@ -564,6 +664,7 @@ namespace TresUpload
 	                fileName4 = System.IO.Path.GetFileName(s);
 	                destFile4 = System.IO.Path.Combine(tgtpath4, fileName4);
 	                System.IO.File.Copy(s, destFile4, true);
+	                lbl_file.Text = fileName4;
 	            }
 		        
 		        string srcpath5 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/SecurityAadPortal/lba/"+ src_lcode_17_short[i] + "/SecurityAadPortal/lcl/";
@@ -575,6 +676,7 @@ namespace TresUpload
 	                fileName5 = System.IO.Path.GetFileName(s);
 	                destFile5 = System.IO.Path.Combine(tgtpath5, fileName5);
 	                System.IO.File.Copy(s, destFile5, true);
+	                lbl_file.Text = fileName5;
 	            }
 		        
 		        string srcpath6 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/CoBrand/";
@@ -586,6 +688,7 @@ namespace TresUpload
 	                fileName6 = System.IO.Path.GetFileName(s);
 	                destFile6 = System.IO.Path.Combine(tgtpath6, fileName6);
 	                System.IO.File.Copy(s, destFile6, true);
+	                lbl_file.Text = fileName6;
 	            }
 		        
 		        string srcpath7 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/SignIn/";
@@ -597,6 +700,7 @@ namespace TresUpload
 	                fileName7 = System.IO.Path.GetFileName(s);
 	                destFile7 = System.IO.Path.Combine(tgtpath7, fileName7);
 	                System.IO.File.Copy(s, destFile7, true);
+	                lbl_file.Text = fileName7;
 	            }
 		        
 		        string srcpath8 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/Resources/TokenAuthorize/";
@@ -608,6 +712,7 @@ namespace TresUpload
 	                fileName8 = System.IO.Path.GetFileName(s);
 	                destFile8 = System.IO.Path.Combine(tgtpath8, fileName8);
 	                System.IO.File.Copy(s, destFile8, true);
+	                lbl_file.Text = fileName8;
 	            }
 		        
 		        string srcpath9 = src_files + @"/azure/AzureUX_PortalFX/OnGoing/dev/Website/lba/"+ src_lcode_17_short[i] + "/Website/lcl/TypeScript/";
@@ -619,12 +724,13 @@ namespace TresUpload
 	                fileName9 = System.IO.Path.GetFileName(s);
 	                destFile9 = System.IO.Path.Combine(tgtpath9, fileName9);
 	                System.IO.File.Copy(s, destFile9, true);
+	                lbl_file.Text = fileName9;
 	            }    
 			}
 			listView1.Items.Add("Azure Portal FX - Success - (39 lcl file per locate, 663 in total)");
 		}
 		//EOL=17
-		public void InsightExtension(){
+		private void InsightExtension(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/EMA/lba/"+ src_lcode_17_short[i] + "/EMA/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Insight Extension/";		        	
@@ -635,6 +741,7 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		        
 		        string srcpath1 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/ExtensionCore/lba/"+ src_lcode_17_short[i] + "/ExtensionCore/lcl/";
@@ -646,6 +753,7 @@ namespace TresUpload
 	                fileName1 = System.IO.Path.GetFileName(s);
 	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
 	                System.IO.File.Copy(s, destFile1, true);
+	                lbl_file.Text = fileName1;
 	            }
 		        
 		        string srcpath2 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/GalleryTemplates/lba/"+ src_lcode_17_short[i] + "/GalleryTemplates/lcl/";
@@ -657,6 +765,7 @@ namespace TresUpload
 	                fileName2 = System.IO.Path.GetFileName(s);
 	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
 	                System.IO.File.Copy(s, destFile2, true);
+	                lbl_file.Text = fileName2;
 	            }
 		        
 		        string srcpath3 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/Insights/lba/"+ src_lcode_17_short[i] + "/Insights/lcl/Client";
@@ -668,6 +777,7 @@ namespace TresUpload
 	                fileName3 = System.IO.Path.GetFileName(s);
 	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
 	                System.IO.File.Copy(s, destFile3, true);
+	                lbl_file.Text = fileName3;
 	            }
 		        
 		        string srcpath4 = src_files + @"/azure/AzureUX-PortalExp/OnGoing/dev/Insights/lba/"+ src_lcode_17_short[i] + "/Insights/lcl/ServerResources/";
@@ -679,12 +789,13 @@ namespace TresUpload
 	                fileName4 = System.IO.Path.GetFileName(s);
 	                destFile4 = System.IO.Path.Combine(tgtpath4, fileName4);
 	                System.IO.File.Copy(s, destFile4, true);
+	                lbl_file.Text = fileName4;
 	            }      
 			}
 			listView1.Items.Add("Azure Insight Extension - Success - (18 lcl file per locate, 306 in total)");
 		}
 		//EOL=17
-		public void IntuneMAMExtension(){
+		private void IntuneMAMExtension(){
 			for (int i = 0; i < src_lcode_17.Length; i++) {
 				string srcpath = src_files + @"/Windows Intune/AzureUIExtension/Monthly/AzureUIExtension_CnE_TFS/Loc/LBA/"+ src_lcode_17[i] + "/AzureUIExtension/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Microsoft Intune MAM Extension/";		        	
@@ -695,12 +806,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 			}
 			listView1.Items.Add("Microsoft Intune MAM Extension - Success - (2 lcl files per locate, 34 in total)");
 		}
 		//EOL=17
-		public void DataInsightSQLDB(){
+		private void DataInsightSQLDB(){
 			for (int i = 0; i < src_lcode_17.Length; i++) {
 				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/SQLAzureDB/Source/LOC/LCL/"+ src_lcode_17[i] + "/LCL/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure SQLDB/";		        	
@@ -711,12 +823,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 			}
 			listView1.Items.Add("DataInsight Azure SQLDB - Success - (2 lcl files per locate, 34 in total)");
 		}
 		//EOL=17
-		public void DataInsightDocDB(){
+		private void DataInsightDocDB(){
 			for (int i = 0; i < src_lcode_17.Length; i++) {
 				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/DocDB_IbizaProd/Product/Loc/LCL/"+ src_lcode_17[i] + "/LCL/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure DocDB/";		        	
@@ -727,12 +840,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("DataInsight Azure DocDB - Success - (4 lcl files per locate, 68 in total)");
 		}
 		//EOL=17
-		public void DataInsightAzureSearch(){
+		private void DataInsightAzureSearch(){
 			for (int i = 0; i < src_lcode_17.Length; i++) {
 				string srcpath = src_files + @"/DataInsight_Azure/DataInsight_Azure/RTW/AzureSearch/Product/Loc/LCL/"+ src_lcode_17[i] + "/LCL/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/DataInsight Azure Search/";		        	
@@ -743,12 +857,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("DataInsight Azure Search - Success - (2 lcl files per locate, 34 in total)");
 		}
 		//EOL=17
-		public void LogicAppsBPM(){
+		private void LogicAppsBPM(){
 			for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/LogicApps/Monthly/BPM/Flow.Common.Localization/lba/"+ src_lcode_17_short[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPM/";		        	
@@ -759,12 +874,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("LogicApps BPM - Success - (3 lcl files per locate, 51 in total)");
 		}
 		//EOL=17
-		public void LogicAppsBPMUX(){
+		private void LogicAppsBPMUX(){
 			for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/LogicApps/Monthly/BPMUX/LogicAppsDesigner/lba/"+ src_lcode_17_short[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/LogicApps BPMUX/";		        	
@@ -775,12 +891,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("LogicApps BPMUX - Success - (3 lcl files per locate, 51 in total)");
 		}
 		//EOL=17
-		public void RBAC(){
+		private void RBAC(){
 			for (int i = 0; i < src_lcode_17_short_pt.Length; i++) {
 				string srcpath = src_files + @"/Active Directory/IAM-Services-ADIUX/OnGoing/master/PortalExtension/Lba/"+ src_lcode_17_short_pt[i] + "/PortalExtension/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Role Based Access Control/";		        	
@@ -791,12 +908,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }  
 			}
 			listView1.Items.Add("Role Based Access Control - Success - (1 lcl files per locate, 17 in total)");
 		}
 		//EOL=17
-		public void ADIAM(){
+		private void ADIAM(){
 			for (int i = 0; i < src_lcode_17_short_pt.Length; i++) {
 				string srcpath = src_files + @"/AAPT/Microsoft_AAD_IAM/ongoing/AzExt_Microsoft_AAD_IAM/ADExtension/lba/"+ src_lcode_17_short_pt[i] + "/ADExtension/lcl/Client/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD IAM/";		        	
@@ -807,12 +925,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }  
 			}
 			listView1.Items.Add("AD IAM - Success - (10 lcl files per locate, 170 in total)");
 		}
 		//EOL=17
-		public void ProtectionCenter(){
+		private void ProtectionCenter(){
 			for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/AAPT/AD_Serres_Protection center_cloudapp discovery/Ongoing/master/ProtectionCenter/lba/"+ src_lcode_17_short[i] + "/ProtectionCenter/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/AD Protection Center/";		        	
@@ -823,12 +942,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("AD Protection Center - (9 lcl files per locate, 153 in total)");
 		}
 		//EOL=17
-		public void CloudAppDiscovery(){
+		private void CloudAppDiscovery(){
 			for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/AAPT/AD_Serres_Protection center_cloudapp discovery/Ongoing/master/CloudAppDiscovery/lba/"+ src_lcode_17_short[i] + "/CloudAppDiscovery/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Cloud App Discovery/";		        	
@@ -839,12 +959,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            } 
 			}
 			listView1.Items.Add("Cloud App Discovery - (3 lcl files per locate, 51 in total)");
 		}
 		//EOL=17
-		public void SchedulerRP(){
+		private void SchedulerRP(){
 		    for (int i = 0; i < src_lcode_17_short.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Common/lba/"+ src_lcode_17_short[i] + "/Scheduler.Common/lcl/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler RP/Scheduler.Common/";		        	
@@ -855,6 +976,7 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 		        
 		        string srcpath1 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Data/lba/"+ src_lcode_17_short[i] + "/Scheduler.Data/lcl/";
@@ -866,6 +988,7 @@ namespace TresUpload
 	                fileName1 = System.IO.Path.GetFileName(s);
 	                destFile1 = System.IO.Path.Combine(tgtpath1, fileName1);
 	                System.IO.File.Copy(s, destFile1, true);
+	                lbl_file.Text = fileName1;
 	            }
 		        
 		        string srcpath2 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Web/lba/"+ src_lcode_17_short[i] + "/Scheduler.Web/lcl/";
@@ -877,6 +1000,7 @@ namespace TresUpload
 	                fileName2 = System.IO.Path.GetFileName(s);
 	                destFile2 = System.IO.Path.Combine(tgtpath2, fileName2);
 	                System.IO.File.Copy(s, destFile2, true);
+	                lbl_file.Text = fileName2;
 	            }
 		        
 		        string srcpath3 = src_files + @"/azure/AzureUX_Scheduler/OnGoing/master/Scheduler.Worker/lba/"+ src_lcode_17_short[i] + "/Scheduler.Worker/lcl/";
@@ -888,12 +1012,13 @@ namespace TresUpload
 	                fileName3 = System.IO.Path.GetFileName(s);
 	                destFile3 = System.IO.Path.Combine(tgtpath3, fileName3);
 	                System.IO.File.Copy(s, destFile3, true);
+	                lbl_file.Text = fileName3;
 	            }     
 			}
 			listView1.Items.Add("Azure Scheduler RP - Success - (4 lcl file per locate, 68 in total)");
 		}
 		//EOL=17
-		public void SchedulerExtension(){
+		private void SchedulerExtension(){
 			for (int i = 0; i < src_lcode_17.Length; i++) {
 				string srcpath = src_files + @"/azure/AzureUX-SchedulerUX-FE/OnGoing/SLVso/Projects/AzureUX-SchedulerUX-FE/Localization/LCL/"+ src_lcode_17[i] + "/LocProject/lcl/src/SchedulerExtension/Client/Resources/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/Azure Scheduler Extension/";		        	
@@ -904,12 +1029,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }
 			}
 			listView1.Items.Add("Azure Scheduler Extension - (1 lcl file per locate, 17 in total)");
 		}
 		//EOL=28
-		public void B2C(){
+		private void B2C(){
 			for (int i = 0; i < src_lcode_28.Length; i++) {
 				string srcpath = src_files + @"/AAPT/B2C_CPIM/Ongoing/B2C_CPIM/LBA/"+ src_lcode_28[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_28[i] + "/AD B2C/";		        	
@@ -920,12 +1046,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }  
 			}
 			listView1.Items.Add("AD B2C - (247 files copied in total)");
 		}
 		//EOL=41
-		public void MicrosoftFlow(){
+		private void MicrosoftFlow(){
 			for (int i = 0; i < src_lcode_41_short.Length; i++) {
 				string srcpath = src_files + @"/AAPT/Microsoft Flow/Monthly/App Platform/Microsoft.Flow.Portal.Web/lba/"+ src_lcode_41_short[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/Microsoft Flow/";		        	
@@ -936,12 +1063,13 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }  
 			}
 			listView1.Items.Add("Microsoft Flow - (2 lcl file per locate, 82 in total)");
 		}
 		//EOL=43
-		public void HISConnectors(){
+		private void HISConnectors(){
 			for (int i = 0; i < src_lcode_43.Length; i++) {
 				string srcpath = src_files + @"/Windows Server OOBs/HIS_CONNECTORS/Semi Quarterly/Alternative/"+ src_lcode_43[i] + "/";
 				string tgtpath = tgt_files + @"/Azure/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/HIS Connectors/";		        	
@@ -952,9 +1080,40 @@ namespace TresUpload
 	                fileName = System.IO.Path.GetFileName(s);
 	                destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                System.IO.File.Copy(s, destFile, true);
+	                lbl_file.Text = fileName;
 	            }   
 			}
 			listView1.Items.Add("HIS Connectors - (9 lcl file per locate, 387 in total)");
+		}
+		void Btn_exportClick(object sender, EventArgs e)
+		{
+			string filename = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (listView1.Items.Count==0) {
+            	MessageBox.Show("We have nothing to export :) ");
+            }else{
+            	sfd.Title = "Event Log Export";
+	            sfd.Filter = "Text File (.txt) | *.txt";
+	
+	            if (sfd.ShowDialog() == DialogResult.OK)
+	            {
+	                filename = sfd.FileName.ToString();
+	                if (filename != "")
+	                {
+	                    using (StreamWriter sw = new StreamWriter(filename))
+	                    {
+	                        foreach (ListViewItem item in listView1.Items)
+	                        {
+	                            sw.WriteLine(item.Text);
+				                for (int i = 1; i < item.SubItems.Count; i++)
+				                {
+				                    sw.WriteLine(item.SubItems[i].Text);
+				                }
+	                        }
+	                    }
+	                }
+	            }	
+            }
 		}
 		
 	}
