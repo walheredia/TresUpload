@@ -47,6 +47,14 @@ namespace TresUpload
 			form.WindowState = FormWindowState.Maximized;			
 			form.Show();
 		}
+		void FabricEnlistmentToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			FabricEnlistment form = new FabricEnlistment();
+			// show the newly created instance
+			form.MdiParent = this;
+			form.WindowState = FormWindowState.Maximized;			
+			form.Show();	
+		}
 		void CloseToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			this.Close();

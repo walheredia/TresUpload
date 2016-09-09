@@ -19,6 +19,7 @@ namespace TresUpload
 		private System.Windows.Forms.ToolStripMenuItem activeDirectoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem azureToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem fabricEnlistmentToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -46,6 +47,7 @@ namespace TresUpload
 			this.activeDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.azureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fabricEnlistmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -64,6 +66,7 @@ namespace TresUpload
 			this.teamToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.activeDirectoryToolStripMenuItem,
 			this.azureToolStripMenuItem,
+			this.fabricEnlistmentToolStripMenuItem,
 			this.closeToolStripMenuItem});
 			this.teamToolStripMenuItem.Name = "teamToolStripMenuItem";
 			this.teamToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -72,23 +75,30 @@ namespace TresUpload
 			// activeDirectoryToolStripMenuItem
 			// 
 			this.activeDirectoryToolStripMenuItem.Name = "activeDirectoryToolStripMenuItem";
-			this.activeDirectoryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.activeDirectoryToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
 			this.activeDirectoryToolStripMenuItem.Text = "Active Directory";
 			this.activeDirectoryToolStripMenuItem.Click += new System.EventHandler(this.ActiveDirectoryToolStripMenuItemClick);
 			// 
 			// azureToolStripMenuItem
 			// 
 			this.azureToolStripMenuItem.Name = "azureToolStripMenuItem";
-			this.azureToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.azureToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
 			this.azureToolStripMenuItem.Text = "Azure";
 			this.azureToolStripMenuItem.Click += new System.EventHandler(this.AzureToolStripMenuItemClick);
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
 			this.closeToolStripMenuItem.Text = "Close";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
+			// 
+			// fabricEnlistmentToolStripMenuItem
+			// 
+			this.fabricEnlistmentToolStripMenuItem.Name = "fabricEnlistmentToolStripMenuItem";
+			this.fabricEnlistmentToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+			this.fabricEnlistmentToolStripMenuItem.Text = "Fabric Enlistment";
+			this.fabricEnlistmentToolStripMenuItem.Click += new System.EventHandler(this.FabricEnlistmentToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 

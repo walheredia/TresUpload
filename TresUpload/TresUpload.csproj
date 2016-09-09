@@ -58,6 +58,10 @@
     <Compile Include="Azure.Designer.cs">
       <DependentUpon>Azure.cs</DependentUpon>
     </Compile>
+    <Compile Include="FabricEnlistment.cs" />
+    <Compile Include="FabricEnlistment.Designer.cs">
+      <DependentUpon>FabricEnlistment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -74,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Azure.resx">
       <DependentUpon>Azure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FabricEnlistment.resx">
+      <DependentUpon>FabricEnlistment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
