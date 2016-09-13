@@ -135,8 +135,9 @@ namespace TresUpload
 		void Btn_CreateStructureClick(object sender, EventArgs e)
 		{
 			fbd_createStructure.SelectedPath = "C:/Eliseo/TRES/Upload";
-			MessageBox.Show(fbd_createStructure.SelectedPath.ToString());
-			
+			//MessageBox.Show(fbd_createStructure.SelectedPath.ToString());
+			pb_structure.Maximum = tgt_lcode_2.Length + tgt_lcode_4.Length + tgt_lcode_6.Length + tgt_lcode_7.Length + tgt_lcode_16.Length + tgt_lcode_17.Length;
+			pb_structure.Value = 0;
 			fbd_createStructure.Description="Please select the directory where you want to create the new structure";
 			
 			if (fbd_createStructure.ShowDialog()==DialogResult.OK)

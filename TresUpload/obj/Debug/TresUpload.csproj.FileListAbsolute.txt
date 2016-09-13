@@ -25,3 +25,4 @@ C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.Azu
 C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.AD.resources
 C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.Azure.resources
 C:\Users\walterh\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.FabricEnlistment.resources
+C:\Users\eliseoc\Documents\GitHub\TresUpload\TresUpload\obj\Debug\TresUpload.FabricEnlistment.resources
