@@ -71,6 +71,12 @@ namespace TresUpload
 		private System.Windows.Forms.CheckBox chbx_MSODS33;
 		private System.Windows.Forms.CheckBox chbx_MSODS108;
 		private System.Windows.Forms.CheckBox chbx_ADRS;
+		private System.Windows.Forms.Label lbl_component_title;
+		private System.Windows.Forms.Label lbl_file_title;
+		private System.Windows.Forms.Label lbl_component;
+		private System.Windows.Forms.Label lbl_file;
+		private System.Windows.Forms.Label bar;
+		private System.Windows.Forms.Button btn_export;
 		//private System.Windows.Forms.CheckBox chbx_PowerShell6;
 		//private System.Windows.Forms.CheckBox chbx_KeyVault;
 		//private System.Windows.Forms.CheckBox chbx_SSPR;
@@ -150,11 +156,17 @@ namespace TresUpload
 			this.fbd_createStructure = new System.Windows.Forms.FolderBrowserDialog();
 			this.fbd_copyfiles = new System.Windows.Forms.FolderBrowserDialog();
 			this.PanelRight = new System.Windows.Forms.Panel();
+			this.bar = new System.Windows.Forms.Label();
+			this.lbl_file = new System.Windows.Forms.Label();
+			this.lbl_component = new System.Windows.Forms.Label();
+			this.lbl_file_title = new System.Windows.Forms.Label();
+			this.lbl_component_title = new System.Windows.Forms.Label();
 			this.lbl_event = new System.Windows.Forms.Label();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.lbl_copyfiles = new System.Windows.Forms.Label();
 			this.pbr_CopyFiles = new System.Windows.Forms.ProgressBar();
 			this.btn_copyfiles = new System.Windows.Forms.Button();
+			this.btn_export = new System.Windows.Forms.Button();
 			this.PanelLeft.SuspendLayout();
 			this.GrBox_Select_Components.SuspendLayout();
 			this.PanelRight.SuspendLayout();
@@ -770,6 +782,12 @@ namespace TresUpload
 			// PanelRight
 			// 
 			this.PanelRight.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.PanelRight.Controls.Add(this.btn_export);
+			this.PanelRight.Controls.Add(this.bar);
+			this.PanelRight.Controls.Add(this.lbl_file);
+			this.PanelRight.Controls.Add(this.lbl_component);
+			this.PanelRight.Controls.Add(this.lbl_file_title);
+			this.PanelRight.Controls.Add(this.lbl_component_title);
 			this.PanelRight.Controls.Add(this.lbl_event);
 			this.PanelRight.Controls.Add(this.listView1);
 			this.PanelRight.Controls.Add(this.lbl_copyfiles);
@@ -780,11 +798,61 @@ namespace TresUpload
 			this.PanelRight.Size = new System.Drawing.Size(580, 663);
 			this.PanelRight.TabIndex = 1;
 			// 
+			// bar
+			// 
+			this.bar.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.bar.ForeColor = System.Drawing.Color.Red;
+			this.bar.Location = new System.Drawing.Point(459, 482);
+			this.bar.Name = "bar";
+			this.bar.Size = new System.Drawing.Size(100, 23);
+			this.bar.TabIndex = 15;
+			this.bar.Text = "*/* Components";
+			// 
+			// lbl_file
+			// 
+			this.lbl_file.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_file.ForeColor = System.Drawing.Color.Red;
+			this.lbl_file.Location = new System.Drawing.Point(139, 505);
+			this.lbl_file.Name = "lbl_file";
+			this.lbl_file.Size = new System.Drawing.Size(421, 23);
+			this.lbl_file.TabIndex = 14;
+			this.lbl_file.Text = "...";
+			// 
+			// lbl_component
+			// 
+			this.lbl_component.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_component.ForeColor = System.Drawing.Color.Red;
+			this.lbl_component.Location = new System.Drawing.Point(185, 482);
+			this.lbl_component.Name = "lbl_component";
+			this.lbl_component.Size = new System.Drawing.Size(374, 23);
+			this.lbl_component.TabIndex = 13;
+			this.lbl_component.Text = "...";
+			// 
+			// lbl_file_title
+			// 
+			this.lbl_file_title.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_file_title.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_file_title.Location = new System.Drawing.Point(31, 505);
+			this.lbl_file_title.Name = "lbl_file_title";
+			this.lbl_file_title.Size = new System.Drawing.Size(114, 23);
+			this.lbl_file_title.TabIndex = 12;
+			this.lbl_file_title.Text = "Processing the file: ";
+			// 
+			// lbl_component_title
+			// 
+			this.lbl_component_title.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+			this.lbl_component_title.ForeColor = System.Drawing.Color.SlateBlue;
+			this.lbl_component_title.Location = new System.Drawing.Point(31, 482);
+			this.lbl_component_title.Name = "lbl_component_title";
+			this.lbl_component_title.Size = new System.Drawing.Size(221, 23);
+			this.lbl_component_title.TabIndex = 11;
+			this.lbl_component_title.Text = "Processing the component: ";
+			// 
 			// lbl_event
 			// 
 			this.lbl_event.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
 			this.lbl_event.ForeColor = System.Drawing.Color.SlateBlue;
-			this.lbl_event.Location = new System.Drawing.Point(31, 57);
+			this.lbl_event.Location = new System.Drawing.Point(31, 31);
 			this.lbl_event.Name = "lbl_event";
 			this.lbl_event.Size = new System.Drawing.Size(100, 23);
 			this.lbl_event.TabIndex = 4;
@@ -792,17 +860,18 @@ namespace TresUpload
 			// 
 			// listView1
 			// 
-			this.listView1.Location = new System.Drawing.Point(31, 86);
+			this.listView1.Location = new System.Drawing.Point(31, 57);
 			this.listView1.Name = "listView1";
 			this.listView1.Size = new System.Drawing.Size(537, 331);
 			this.listView1.TabIndex = 3;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.View = System.Windows.Forms.View.List;
 			// 
 			// lbl_copyfiles
 			// 
 			this.lbl_copyfiles.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
 			this.lbl_copyfiles.ForeColor = System.Drawing.Color.SlateBlue;
-			this.lbl_copyfiles.Location = new System.Drawing.Point(232, 9);
+			this.lbl_copyfiles.Location = new System.Drawing.Point(231, 0);
 			this.lbl_copyfiles.Name = "lbl_copyfiles";
 			this.lbl_copyfiles.Size = new System.Drawing.Size(138, 23);
 			this.lbl_copyfiles.TabIndex = 2;
@@ -811,20 +880,31 @@ namespace TresUpload
 			// 
 			// pbr_CopyFiles
 			// 
-			this.pbr_CopyFiles.Location = new System.Drawing.Point(10, 535);
+			this.pbr_CopyFiles.Location = new System.Drawing.Point(31, 535);
 			this.pbr_CopyFiles.Name = "pbr_CopyFiles";
-			this.pbr_CopyFiles.Size = new System.Drawing.Size(496, 23);
+			this.pbr_CopyFiles.Size = new System.Drawing.Size(528, 23);
 			this.pbr_CopyFiles.TabIndex = 1;
 			// 
 			// btn_copyfiles
 			// 
-			this.btn_copyfiles.Location = new System.Drawing.Point(343, 564);
+			this.btn_copyfiles.Location = new System.Drawing.Point(378, 564);
 			this.btn_copyfiles.Name = "btn_copyfiles";
-			this.btn_copyfiles.Size = new System.Drawing.Size(163, 23);
+			this.btn_copyfiles.Size = new System.Drawing.Size(181, 23);
 			this.btn_copyfiles.TabIndex = 0;
 			this.btn_copyfiles.Text = "Copy Files";
 			this.btn_copyfiles.UseVisualStyleBackColor = true;
 			this.btn_copyfiles.Click += new System.EventHandler(this.Btn_copyfilesClick);
+			// 
+			// btn_export
+			// 
+			this.btn_export.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_export.ForeColor = System.Drawing.Color.SlateBlue;
+			this.btn_export.Location = new System.Drawing.Point(486, 394);
+			this.btn_export.Name = "btn_export";
+			this.btn_export.Size = new System.Drawing.Size(82, 30);
+			this.btn_export.TabIndex = 38;
+			this.btn_export.Text = "Export to TXT";
+			this.btn_export.UseVisualStyleBackColor = true;
 			// 
 			// AD
 			// 

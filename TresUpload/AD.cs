@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace TresUpload
 {
@@ -63,6 +64,7 @@ namespace TresUpload
 		
 		string[] src_lcode2_108 = {"af", "am", "ar-SA", "as", "az", "be", "bg", "bn", "bn-IN", "bs", "ca", "ca-es-valencia", "cs", "cy", "da", "de", "el", "en-gb", "es", "es-mx", "et", "eu", "fa", "fi", "fil", "fr", "fr-ca", "ga", "gd", "gl", "gu", "ha", "he", "hi", "hr", "hu", "hy", "id", "ig", "is", "it", "ja", "ka", "kk", "km", "kn", "ko", "kok", "ku-arab", "ky", "lb", "lo", "lt", "lv", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "ne", "nl", "nn-NO", "no", "nso", "or", "pa-arab-pk", "pa-IN", "pl", "prs", "pt", "pt-br", "quc", "quz", "ro", "ru", "rw", "sd", "si", "sk", "sl", "sq", "sr-cyrl-ba", "sr-cyrl-rs", "sr-latn-RS", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tn", "tr", "tt", "ug", "uk", "ur", "uz", "vi", "wo", "xh", "yo", "zh-hans", "zh-hant", "zu"};
 		
+		int total = 0;
 		
 		public static string tgt_files = "";
 		public static string src_files = "";
@@ -134,10 +136,12 @@ namespace TresUpload
 		
 		void Btn_CreateStructureClick(object sender, EventArgs e)
 		{
+			disable();
+			listView1.Items.Clear();
 			fbd_createStructure.SelectedPath = "C:/Eliseo/TRES/Upload";
 			//MessageBox.Show(fbd_createStructure.SelectedPath.ToString());
-			pb_structure.Maximum = tgt_lcode_2.Length + tgt_lcode_4.Length + tgt_lcode_6.Length + tgt_lcode_7.Length + tgt_lcode_16.Length + tgt_lcode_17.Length;
-			pb_structure.Value = 0;
+			pbr_structure.Maximum = 20;//tgt_lcode_2.Length + tgt_lcode_4.Length + tgt_lcode_6.Length + tgt_lcode_7.Length + tgt_lcode_16.Length + tgt_lcode_17.Length + tgt_lcode_21.Length + tgt_lcode_33.Length + tgt_lcode_35.Length + tgt_lcode_39.Length + tgt_lcode_41.Length + tgt_lcode_43.Length + tgt_lcode_61.Length + tgt_lcode_65.Length + tgt_lcode_107.Length + tgt_lcode_108.Length ;
+			pbr_structure.Value = 0;
 			fbd_createStructure.Description="Please select the directory where you want to create the new structure";
 			
 			if (fbd_createStructure.ShowDialog()==DialogResult.OK)
@@ -152,7 +156,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_2[i] + "/MSA/AccountKC/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -164,7 +168,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_4[i] + "/Atlanta/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -174,7 +178,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_6[i] + "/PowerShell/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -184,7 +188,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_7[i] + "/PowerShell/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -194,7 +198,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_16[i] + "/Billing/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -242,7 +246,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_17[i] + "/KeyVault/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_21.Length; i++) 
@@ -251,6 +255,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_21[i] + "/MSA/AccountXBox/");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_33.Length; i++) 
@@ -263,6 +268,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_33[i] + "/MSODS");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_39.Length; i++) 
@@ -271,6 +277,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_39[i] + "/MSA/AuthenticatorAndroid/");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_41.Length; i++) 
@@ -280,6 +287,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_41[i] + "/Adallom/");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 					
 				}
@@ -303,7 +311,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_43[i] + "/MFAPhoneAppiPhone/");
 					}
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -315,6 +323,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_61[i] + "/MFAPhoneAppWinPhone/");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_65.Length; i++)
@@ -323,8 +332,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_65[i] + "/MSA/AccountWPWiz/");
 					}
-					
-					
+					pbr_structure.Value = pb_structure.Value + 1;
 					
 				}
 				
@@ -335,6 +343,7 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_107[i] + "/SSPR/");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 				for (int i=0; i<tgt_lcode_108.Length; i++) 
@@ -363,12 +372,43 @@ namespace TresUpload
 					{
 						Directory.CreateDirectory("ActiveDirectory/" + mtb_yearmonth.Text + "/" + tgt_lcode_108[i] + "/MSODS");
 					}
+					pbr_structure.Value = pb_structure.Value + 1;
 				}
 				
 			}
+			enable();
+			
 		}
 		void Btn_copyfilesClick(object sender, EventArgs e)
 		{
+			int contador = 0;
+			foreach (Control c in this.GrBox_Select_Components.Controls) {
+                if(c is CheckBox) {
+                    CheckBox chk;
+                    chk = (CheckBox)c;
+                    if (chk.Checked == true) {
+                    	contador = contador + 1;
+                    }                    
+                }
+            }
+			total = contador;
+			pbr_CopyFiles.Maximum = contador;
+			pbr_CopyFiles.Value = 0;			
+			
+			//Creando Delegado
+			ThreadStart delegado = new ThreadStart(RunProcess);
+			//Creando instancia del hilo
+		
+			Thread hilo = new Thread(delegado);
+			hilo.SetApartmentState(ApartmentState.STA);
+			//Se inicia el hilo
+			hilo.Start();
+			
+		}
+		
+		private void RunProcess()
+		{
+			int flag = 0;
 			fbd_copyfiles.SelectedPath="C:/Eliseo/TRES/";
 			fbd_copyfiles.Description="Please select the directory of the Source Files (Enlistment from SDW)";
 			
@@ -381,111 +421,240 @@ namespace TresUpload
 				{
 					if(chkbx_ADBilling.Checked)
 					{
+						
+						lbl_component.Text = "AD Billing";
 						ADBilling();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";						
 					}
 					if(chbx_PIM.Checked)
 					{
+						
+						lbl_component.Text = "PIM";
 						PIM();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ADBillingExtension.Checked)
 					{
+						
+						lbl_component.Text = "AD Billing Extension";
 						ADBillingEx();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ADConnect.Checked)
 					{
+						
+						lbl_component.Text = "AAD Connect";
 						AADConnect();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ADConnectHealth.Checked)
 					{
+						
+						lbl_component.Text = "AAD Connect Health";
 						AADConnectHealth();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_Rome.Checked)
 					{
+						
+						lbl_component.Text = "Rome";
 						Rome();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ERM.Checked)
 					{
+						
+						lbl_component.Text = "ERM";
 						ERM();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_Atlanta.Checked)
 					{
+						
+						lbl_component.Text = "Atlanta";
 						Atlanta();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_Adallom.Checked)
 					{
+						
+						lbl_component.Text = "Adallom";
 						Adallom();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ESTS.Checked)
 					{
+						
+						lbl_component.Text = "ESTS";
 						ESTS();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MIM.Checked)
 					{
+						
+						lbl_component.Text = "MIM";
 						MIM();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_IAMUX.Checked)
 					{
+						
+						lbl_component.Text = "IAMUX";
 						IAMUX();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_AccountKC.Checked)
 					{
+						
+						lbl_component.Text = "MSA Account KC";
 						MSAAccountKC();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_AccountWPWiz.Checked)
 					{
+						
+						lbl_component.Text = "MSA Account WPWiz";
 						MSAAccountWPWiz();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_AccountXbox.Checked)
 					{
+						
+						lbl_component.Text = "MSA Accoutn XBOX";
 						MSAAccountXBox();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_AppRegPortal.Checked)
 					{
+						
+						lbl_component.Text = "MSA App Reg Portal";
 						MSAAppRegPortal();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_AuthAndroid.Checked)
 					{
+						
+						lbl_component.Text = "MSA Authenticator Androi";
 						MSAAuthAndroid();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSA_Account.Checked)
 					{
+						
+						lbl_component.Text = "MSA Account";
 						MSAAccount();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 						
 					}
 					if(chbx_MSA_Login.Checked)
 					{
+						
+						lbl_component.Text = "MSA Login";
 						MSALogin();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 						
 					}
 					if(chbx_SSPR.Checked)
 					{
-						SSPR();						
+						
+						lbl_component.Text = "SSPR";
+						SSPR();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";						
 					}
 					if(chbx_KeyVault.Checked)
 					{
-						KeyVault();						
+						
+						lbl_component.Text = "Key Vault";
+						KeyVault();	
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";						
 					}
 					
 					if(chbx_PowerShell33.Checked)
 					{
-						PowerShell33();						
+						
+						lbl_component.Text = "PowerShell 33";
+						PowerShell33();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";						
 					}
 					if(chbx_PowerShell7.Checked)
 					{
+						
+						lbl_component.Text = "PowerShell 7";
 						PowerShell6();
 						PowerShell7();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSODS33.Checked)
 					{
+						
+						lbl_component.Text = "MSODS 33";
 						MSODS33();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MSODS108.Checked)
 					{
+						
+						lbl_component.Text = "MSODS";
 						MSODS108();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_ADRS.Checked)
-					{
+					{	
+						lbl_component.Text = "ADRS";
 						ADRS();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					/*if(chbx_MFA.Checked)
 					{
@@ -493,16 +662,32 @@ namespace TresUpload
 					}*/
 					if(chbx_MFAAndroid.Checked)
 					{
+						
+						lbl_component.Text = "MFA Authenticator Android";
 						MFAAndroid();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MFAiPhone.Checked)
 					{
+						
+						lbl_component.Text = "MFA Authenticator iPhone";
 						MFAiPhone();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
 					if(chbx_MFAWinPhone.Checked)
 					{
+						
+						lbl_component.Text = "MFA Authenticator WinPhone";
 						MFAWinPhone();
+						pbr_CopyFiles.Value = pbr_CopyFiles.Value + 1;
+						flag = flag + 1;
+						bar.Text = flag.ToString() + "/" + total.ToString() + " Processed components";
 					}
+					MessageBox.Show("Succesfully Done!");
 					
 				}
 				catch(Exception ex)
@@ -511,7 +696,10 @@ namespace TresUpload
 					throw;
 				}
 				
-			
+				pbr_CopyFiles.Value = 0;
+				lbl_component.Text = "...";
+				lbl_file.Text = "...";
+				bar.Text = "*/* Components";
 				
 				//for Files with EOL= 16
 				
@@ -540,11 +728,12 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
-					
-					
 			       
 				}
+			
+			listView1.Items.Add("AD Billing - Success - (2 lcl files per locate, 32 in total)");
 		}
 		
 		public void ADBillingEx()
@@ -563,6 +752,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 					//c:\Eliseo\TRES\AD-BillingExt\OnGoing\stage\BillingExtension\lba\cs\BillingExtension\lcl\Client\
@@ -573,8 +763,10 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 				}
+			listView1.Items.Add("AD Billing Extension - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void PIM()
@@ -593,6 +785,7 @@ namespace TresUpload
 	                		fileName = System.IO.Path.GetFileName(s);
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
+	                		lbl_file.Text = fileName;
 	            		}
 					
 					//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.Common.DbManager\lba\cs\PIM.Common.DbManager\lcl\
@@ -604,6 +797,7 @@ namespace TresUpload
 	                		fileName = System.IO.Path.GetFileName(s);
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
+	                		lbl_file.Text = fileName;
 	            		}
 					
 	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.Extension\lba\cs\PIM.Extension\lcl\Client\
@@ -615,6 +809,7 @@ namespace TresUpload
 	                		fileName = System.IO.Path.GetFileName(s);
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
+	                		lbl_file.Text = fileName;
 	            		}
 	            	
 	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.PSModule\lba\cs\PIM.PSModule\lcl\
@@ -626,6 +821,7 @@ namespace TresUpload
 	                		fileName = System.IO.Path.GetFileName(s);
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
+	                		lbl_file.Text = fileName;
 	            		}
 	            	
 	            	//c:\Eliseo\TRES\AD-PIM\OnGoing\master\PIM.API\lba\cs\PIM.API\lcl\
@@ -637,8 +833,10 @@ namespace TresUpload
 	                		fileName = System.IO.Path.GetFileName(s);
 	                		destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                		System.IO.File.Copy(s, destFile, true);
+	                		lbl_file.Text = fileName;
 	            		}
 				}
+			listView1.Items.Add("PIM - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void AADConnect()
@@ -657,6 +855,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 	            	//c:\Eliseo\TRES\AD-IAM-HybridSync\Continuous\develop\Microsoft.Online.Deployment.Framework\lba\cs\Microsoft.Online.Deployment.Framework\lcl\
@@ -668,6 +867,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 	            	
@@ -679,6 +879,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.PSModule/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.PSModule/lcl/";
@@ -689,6 +890,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	srcpath = src_files + @"/AD-IAM-HybridSync/Continuous/develop/Microsoft.Online.Deployment.Types/lba/"+ src_lcode2_17[i] + "/Microsoft.Online.Deployment.Types/lcl/";
@@ -699,8 +901,10 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 				}
+			listView1.Items.Add("AAD Connect - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void AADConnectHealth()
@@ -719,6 +923,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 	            	//c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\AdHealthAgentConfigurationPowerShell\lba\cs\AdHealthAgentConfigurationPowerShell\lcl\
@@ -730,6 +935,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 		            //c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\ADHealthExtension\lba\cs\ADHealthExtension\lcl\Client\
@@ -743,6 +949,7 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 		            	
 		            //c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\ADHealthMarketplacePackage\lba\cs\AdHealthMarketplacePackage\lcl\GalleryPackages\Strings
@@ -754,6 +961,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD-OneADHealth-Main\OnGoing\develop\Microsoft.Identity.Health.Common.DataAccess\lba\cs\Microsoft.Identity.Health.Common.DataAccess\lcl\TableData\
@@ -765,8 +973,10 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 				}
+			listView1.Items.Add("AAD Connect Health - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void Rome()
@@ -785,10 +995,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 					
 				}
+			listView1.Items.Add("Rome - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void ERM()
@@ -809,10 +1021,12 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 					
 					
 				}
+			listView1.Items.Add("ERM - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void Atlanta()
@@ -831,11 +1045,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 					
 				}
-			
+			listView1.Items.Add("Atlanta - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void Adallom()
@@ -854,11 +1069,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 					
 				}
-			
+			listView1.Items.Add("Adallom - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void ESTS()
@@ -879,10 +1095,11 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 					
 				}
-			
+			listView1.Items.Add("ESTS - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MIM()
@@ -903,9 +1120,11 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 					
 				}
+			listView1.Items.Add("MIM - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void IAMUX()
@@ -924,9 +1143,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("IAMUX - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MSAAccountKC()
@@ -945,9 +1166,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Account KC - Success - (X lcl files per locate, X in total)");
 		}
 		
 		//MSAAccountWPWiz
@@ -967,9 +1190,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Account WPWiz - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MSAAccountXBox()
@@ -988,9 +1213,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Account XBOX - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MSAAppRegPortal()
@@ -1009,9 +1236,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA App Reg Portal - Success - (X lcl files per locate, X in total)");
 		}
 		
 		//MSAAuthAndroid
@@ -1031,9 +1260,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Authenticator Android - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MSALogin()
@@ -1052,9 +1283,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Login - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void MSAAccount()
@@ -1073,9 +1306,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("MSA Account - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void SSPR()
@@ -1094,6 +1329,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD-IAM-Services-PasswordReset\Ongoing\master\PortalWebRole\lba\af\PortalWebRole\lcl\
@@ -1108,8 +1344,10 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 				}
+			listView1.Items.Add("SSPR - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void KeyVault()
@@ -1130,9 +1368,11 @@ namespace TresUpload
 		                	fileName = System.IO.Path.GetFileName(s);
 		                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 		                	System.IO.File.Copy(s, destFile, true);
+		                	lbl_file.Text = fileName;
 		            	}
 					
 				}
+			listView1.Items.Add("Key Vault - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void PowerShell33()
@@ -1151,9 +1391,11 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 					
 				}
+			listView1.Items.Add("PowerShell 33 - Success - (X lcl files per locate, X in total)");
 		}
 		
 		public void PowerShell6()
@@ -1172,11 +1414,13 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\AzureAD16.PowerShell.AutoGen\lba\es\AzureAD16.PowerShell.AutoGen\lcl\
 					
 				}
+			listView1.Items.Add("PowerShell 6 - Success - (X lcl files per locale, X in total)");
 		}
 		
 		public void PowerShell7()
@@ -1195,6 +1439,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	
@@ -1210,6 +1455,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\CommonLibrary\lba\de\CommonLibrary\lcl\
@@ -1223,6 +1469,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\commonLibrary_resources\lba\de\commonLibrary_resources\lcl\
@@ -1236,6 +1483,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\MSGraph.PowerShell.AutoGen\lba\de\MSGraph.PowerShell.AutoGen\lcl\
@@ -1249,6 +1497,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\MSGraphBeta.PowerShell.AutoGen\lba\de\MSGraphBeta.PowerShell.AutoGen\lcl\
@@ -1262,6 +1511,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\psmodule\lba\de\psmodule\lcl\
@@ -1274,6 +1524,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\psmodule_resources\lba\de\psmodule_resources\lcl\
@@ -1286,6 +1537,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\PSSnapin\lba\de\PSSnapin\lcl\
@@ -1298,6 +1550,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\Eliseo\TRES\AD_PowerShell\OnGoing\develop\pssnapin_resources\lba\de\pssnapin_resources\lcl\
@@ -1310,8 +1563,10 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 				}
+			listView1.Items.Add("PowerShell 7 - Success - (X lcl files per locale, X in total)");
 		}
 		
 		public void MSODS33()
@@ -1330,10 +1585,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 					
 				}
+			listView1.Items.Add("MSODS 33 - Success - (X lcl files per locale, X in total)");
 		}
 		public void MSODS108()
 		{
@@ -1351,10 +1608,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 					
 				}
+			listView1.Items.Add("MSODS - Success - (X lcl files per locale, X in total)");
 		}
 		public void ADRS()
 		{
@@ -1372,10 +1631,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 					
 				}
+			listView1.Items.Add("ADRS - Success - (X lcl files per locale, X in total)");
 		}
 		
 		public void MFAAndroid()
@@ -1394,6 +1655,7 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 	            	//c:\LegoSD\Active Directory\AD_MFAApp_Android\OnGoing\SLVso\Projects\AD_MFAApp_Android\Localization\LCL\bg-BG\LocProject\lcl\
@@ -1409,6 +1671,7 @@ namespace TresUpload
 	            	}*/
 					
 				}
+			listView1.Items.Add("MFA Authenticator Android - Success - (X lcl files per locale, X in total)");
 		}
 		
 		public void MFAiPhone()
@@ -1427,10 +1690,12 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 					
 				}
+			listView1.Items.Add("MFA Authenticator iPhone - Success - (X lcl files per locale, X in total)");
 		}
 		
 		public void MFAWinPhone()
@@ -1449,10 +1714,43 @@ namespace TresUpload
 	                	fileName = System.IO.Path.GetFileName(s);
 	                	destFile = System.IO.Path.Combine(tgtpath, fileName);
 	                	System.IO.File.Copy(s, destFile, true);
+	                	lbl_file.Text = fileName;
 	            	}
 	            	
 					
 				}
+			listView1.Items.Add("MFA Authenticator WinPhone - Success - (X lcl files per locale, X in total)");
+		}
+		
+		void Btn_exportClick(object sender, EventArgs e)
+		{
+			string filename = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (listView1.Items.Count==0) {
+            	MessageBox.Show("We have nothing to export :) ");
+            }else{
+            	sfd.Title = "Event Log Export";
+	            sfd.Filter = "Text File (.txt) | *.txt";
+	
+	            if (sfd.ShowDialog() == DialogResult.OK)
+	            {
+	                filename = sfd.FileName.ToString();
+	                if (filename != "")
+	                {
+	                    using (StreamWriter sw = new StreamWriter(filename))
+	                    {
+	                        foreach (ListViewItem item in listView1.Items)
+	                        {
+	                            sw.WriteLine(item.Text);
+				                for (int i = 1; i < item.SubItems.Count; i++)
+				                {
+				                    sw.WriteLine(item.SubItems[i].Text);
+				                }
+	                        }
+	                    }
+	                }
+	            }	
+            }
 		}
 		
 		/*public void MFA()
